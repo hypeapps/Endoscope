@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">VRSTREAM</string>
+
+    <string name="resolution_dialog_title">Set video resolution</string>
+    <string name="stream_sound_dialog_title">Enable stream sound</string>
+    <string name="port_dialog_title">Set port</string>
+    <string name="codec_dialog_title">Set video codec</string>
+    <string name="button_text">Set</string>
+    <string name="stream_audio">Stream audio</string>
+    <string name="settings">SETTINGS</string>
+    <string name="resolution">Resolution</string>
+    <string name="set_video_resolution">Set video resolution</string>
+    <string name="enable_sound_stream">Enable audio stream</string>
+    <string name="off">OFF</string>
+    <string name="enabled">ON</string>
+    <string name="port">Port</string>
+    <string name="set_port">Set port</string>
+    <string name="set_video_encoder_title">Set video encoder</string>
+    <string name="video_encoder">Video encoder</string>
+    <string name="start_stream">START STREAM</string>
+    <string name="view_stream">VIEW STREAM</string>
+    <string name="settings_uppercase">SETTINGS</string>
+    <string name="how_to_use">HOW TO USE</string>
+    <string name="cancel">Cancel</string>
+    <string name="port_changed">Port changed!</string>
+    <string name="skip">SKIP</string>
+    <string name="done">DONE</string>
+    <string name="welcome">Welcome!</string>
+</resources>

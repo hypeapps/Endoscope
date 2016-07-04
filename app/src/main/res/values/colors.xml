@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="main_background2">#f35353</color>
+    <color name="main_background">#c5364a</color>
+
+
+    <color name="start_stream_background">#aa303f</color>
+    <color name="view_stream_background">#962a3a</color>
+    <color name="settings_background">#81242f</color>
+    <color name="how_to_use_background">#651d28</color>
+
+    <color name="colorWlk_page1">#FFF59365</color>
+
+
+</resources>

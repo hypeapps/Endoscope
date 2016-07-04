@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/main_background">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome"
+            android:id="@+id/textView"
+            style="@style/header_style" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:gravity="center_vertical|center_horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:id="@+id/endoscope_icon"
+                android:src="@drawable/endoscope_icon" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:id="@+id/endoscope_text"
+                android:src="@drawable/endoscope_icon_text" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="App that change your life and your ablity to be awesome human "
+            android:id="@+id/textView2"
+            style="@style/text_style"
+            android:gravity="center_vertical|center_horizontal"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

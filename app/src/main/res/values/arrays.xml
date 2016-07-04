@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="resolutions">
+        <item name="0">320x120</item>
+        <item name="1">240x120</item>
+        <item name="2">120x120</item>
+        <item name="3">640x480</item>
+    </string-array>
+
+    <string-array name="stream_audio">
+        <item name="0">ON</item>
+        <item name="1">OFF</item>
+    </string-array>
+
+    <string-array name="video_encoders">
+        <item name="0">H264</item>
+        <item name="1">H263</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,142 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .gitignore
+* LICENSE
+* README.md
+* build.xml
+* doc\
+* doc\allclasses-frame.html
+* doc\allclasses-noframe.html
+* doc\constant-values.html
+* doc\deprecated-list.html
+* doc\help-doc.html
+* doc\index-all.html
+* doc\index.html
+* doc\net\
+* doc\net\majorkernelpanic\
+* doc\net\majorkernelpanic\streaming\
+* doc\net\majorkernelpanic\streaming\MediaStream.html
+* doc\net\majorkernelpanic\streaming\Session.Callback.html
+* doc\net\majorkernelpanic\streaming\Session.html
+* doc\net\majorkernelpanic\streaming\SessionBuilder.html
+* doc\net\majorkernelpanic\streaming\Stream.html
+* doc\net\majorkernelpanic\streaming\audio\
+* doc\net\majorkernelpanic\streaming\audio\AACStream.html
+* doc\net\majorkernelpanic\streaming\audio\AMRNBStream.html
+* doc\net\majorkernelpanic\streaming\audio\AudioQuality.html
+* doc\net\majorkernelpanic\streaming\audio\AudioStream.html
+* doc\net\majorkernelpanic\streaming\audio\package-frame.html
+* doc\net\majorkernelpanic\streaming\audio\package-summary.html
+* doc\net\majorkernelpanic\streaming\audio\package-tree.html
+* doc\net\majorkernelpanic\streaming\exceptions\
+* doc\net\majorkernelpanic\streaming\exceptions\CameraInUseException.html
+* doc\net\majorkernelpanic\streaming\exceptions\ConfNotSupportedException.html
+* doc\net\majorkernelpanic\streaming\exceptions\InvalidSurfaceException.html
+* doc\net\majorkernelpanic\streaming\exceptions\StorageUnavailableException.html
+* doc\net\majorkernelpanic\streaming\exceptions\package-frame.html
+* doc\net\majorkernelpanic\streaming\exceptions\package-summary.html
+* doc\net\majorkernelpanic\streaming\exceptions\package-tree.html
+* doc\net\majorkernelpanic\streaming\gl\
+* doc\net\majorkernelpanic\streaming\gl\SurfaceManager.html
+* doc\net\majorkernelpanic\streaming\gl\SurfaceView.ViewAspectRatioMeasurer.html
+* doc\net\majorkernelpanic\streaming\gl\SurfaceView.html
+* doc\net\majorkernelpanic\streaming\gl\TextureManager.html
+* doc\net\majorkernelpanic\streaming\gl\package-frame.html
+* doc\net\majorkernelpanic\streaming\gl\package-summary.html
+* doc\net\majorkernelpanic\streaming\gl\package-tree.html
+* doc\net\majorkernelpanic\streaming\hw\
+* doc\net\majorkernelpanic\streaming\hw\CodecManager.html
+* doc\net\majorkernelpanic\streaming\hw\EncoderDebugger.html
+* doc\net\majorkernelpanic\streaming\hw\NV21Convertor.html
+* doc\net\majorkernelpanic\streaming\hw\package-frame.html
+* doc\net\majorkernelpanic\streaming\hw\package-summary.html
+* doc\net\majorkernelpanic\streaming\hw\package-tree.html
+* doc\net\majorkernelpanic\streaming\mp4\
+* doc\net\majorkernelpanic\streaming\mp4\MP4Config.html
+* doc\net\majorkernelpanic\streaming\mp4\MP4Parser.html
+* doc\net\majorkernelpanic\streaming\mp4\package-frame.html
+* doc\net\majorkernelpanic\streaming\mp4\package-summary.html
+* doc\net\majorkernelpanic\streaming\mp4\package-tree.html
+* doc\net\majorkernelpanic\streaming\package-frame.html
+* doc\net\majorkernelpanic\streaming\package-summary.html
+* doc\net\majorkernelpanic\streaming\package-tree.html
+* doc\net\majorkernelpanic\streaming\rtcp\
+* doc\net\majorkernelpanic\streaming\rtcp\SenderReport.html
+* doc\net\majorkernelpanic\streaming\rtcp\package-frame.html
+* doc\net\majorkernelpanic\streaming\rtcp\package-summary.html
+* doc\net\majorkernelpanic\streaming\rtcp\package-tree.html
+* doc\net\majorkernelpanic\streaming\rtp\
+* doc\net\majorkernelpanic\streaming\rtp\AACADTSPacketizer.html
+* doc\net\majorkernelpanic\streaming\rtp\AACLATMPacketizer.html
+* doc\net\majorkernelpanic\streaming\rtp\AMRNBPacketizer.html
+* doc\net\majorkernelpanic\streaming\rtp\AbstractPacketizer.html
+* doc\net\majorkernelpanic\streaming\rtp\H263Packetizer.html
+* doc\net\majorkernelpanic\streaming\rtp\H264Packetizer.html
+* doc\net\majorkernelpanic\streaming\rtp\MediaCodecInputStream.html
+* doc\net\majorkernelpanic\streaming\rtp\RtpSocket.html
+* doc\net\majorkernelpanic\streaming\rtp\package-frame.html
+* doc\net\majorkernelpanic\streaming\rtp\package-summary.html
+* doc\net\majorkernelpanic\streaming\rtp\package-tree.html
+* doc\net\majorkernelpanic\streaming\rtsp\
+* doc\net\majorkernelpanic\streaming\rtsp\RtspClient.Callback.html
+* doc\net\majorkernelpanic\streaming\rtsp\RtspClient.html
+* doc\net\majorkernelpanic\streaming\rtsp\RtspServer.CallbackListener.html
+* doc\net\majorkernelpanic\streaming\rtsp\RtspServer.LocalBinder.html
+* doc\net\majorkernelpanic\streaming\rtsp\RtspServer.html
+* doc\net\majorkernelpanic\streaming\rtsp\UriParser.html
+* doc\net\majorkernelpanic\streaming\rtsp\package-frame.html
+* doc\net\majorkernelpanic\streaming\rtsp\package-summary.html
+* doc\net\majorkernelpanic\streaming\rtsp\package-tree.html
+* doc\net\majorkernelpanic\streaming\video\
+* doc\net\majorkernelpanic\streaming\video\CodecManager.html
+* doc\net\majorkernelpanic\streaming\video\H263Stream.html
+* doc\net\majorkernelpanic\streaming\video\H264Stream.html
+* doc\net\majorkernelpanic\streaming\video\VideoQuality.html
+* doc\net\majorkernelpanic\streaming\video\VideoStream.html
+* doc\net\majorkernelpanic\streaming\video\package-frame.html
+* doc\net\majorkernelpanic\streaming\video\package-summary.html
+* doc\net\majorkernelpanic\streaming\video\package-tree.html
+* doc\overview-frame.html
+* doc\overview-summary.html
+* doc\overview-tree.html
+* doc\package-list
+* doc\resources\
+* doc\resources\background.gif
+* doc\resources\tab.gif
+* doc\resources\titlebar.gif
+* doc\resources\titlebar_end.gif
+* doc\serialized-form.html
+* doc\stylesheet.css
+* pom.xml
+* proguard-project.txt
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => libstreaming\src\main\AndroidManifest.xml
+* res\ => libstreaming\src\main\res\
+* src\ => libstreaming\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
