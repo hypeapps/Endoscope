@@ -10,11 +10,153 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <RelativeLayout
+
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#993233"
-        android:visibility="visible"
-        android:id="@+id/about_connection"></RelativeLayout>
+        android:background="@color/main_background"
+        android:id="@+id/about_connection">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/about_connect_content">
+
+            <android.support.v4.view.ViewPager
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/about_connect_pager"
+                android:layout_weight="1"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="0dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp">
+
+                    </android.support.v4.view.ViewPager>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:id="@+id/circles"
+                android:layout_weight="10"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_alignParentBottom="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/circle_page1"
+                    android:src="@drawable/circle_shape_active"
+                    android:layout_gravity="center" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/circle_page2"
+                    android:src="@drawable/circle_shape_inactive"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/circle_page3"
+                    android:src="@drawable/circle_shape_inactive"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:baselineAligned="false"
+                    android:id="@+id/navigator">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:id="@+id/input_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:background="@color/start_stream_background">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/input_icon"
+                            android:src="@drawable/ic_create_white_24dp"
+                            android:cropToPadding="false" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/type_ip"
+                            android:id="@+id/input_text"
+                            style="@style/text_style" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/view_stream_background"
+                        android:id="@+id/qr_content"
+                        android:gravity="center_vertical|center_horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/qr_icon"
+                            android:src="@drawable/ic_memory_white_24dp"
+                            android:cropToPadding="false" />
+
+                        <TextView
+                            style="@style/text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/qr_code"
+                            android:id="@+id/qr_text" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/settings_background"
+                        android:id="@+id/nfc_content"
+                        android:gravity="center_vertical|center_horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/nfc_icon"
+                            android:src="@drawable/ic_nfc_white_24dp"
+                            android:cropToPadding="false" />
+
+                        <TextView
+                            style="@style/text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nfc"
+                            android:id="@+id/nfc_text" />
+                    </LinearLayout>
+
+                </LinearLayout>
+    </LinearLayout>
+
 
 </RelativeLayout>

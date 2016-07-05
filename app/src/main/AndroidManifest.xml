@@ -43,7 +43,8 @@
 
         </activity>
 
-        <activity android:name=".ViewStreamActivity">
+        <activity android:name=".ViewStreamActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,7 +53,8 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".StartStreamActivity">
+        <activity android:name=".StartStreamActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

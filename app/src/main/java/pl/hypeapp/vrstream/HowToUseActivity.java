@@ -1,15 +1,15 @@
 package pl.hypeapp.vrstream;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import pl.hypeapp.HowToUseFragments.vrstream.HowToUsePagerAdapter;
+import pl.hypeapp.Fragments.vrstream.HowToUsePagerAdapter;
 
 
 public class HowToUseActivity extends AppCompatActivity {
@@ -25,6 +25,7 @@ public class HowToUseActivity extends AppCompatActivity {
         HowToUsePagerAdapter pagerAdapter = new HowToUsePagerAdapter(getSupportFragmentManager());
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -32,7 +33,7 @@ public class HowToUseActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                dotStatusManage(position);
+                PagerCirclesManager.dotStatusManage(position, getActivity());
                 viewDoneButton(position);
                 viewSkipButton(position);
             }
@@ -45,36 +46,9 @@ public class HowToUseActivity extends AppCompatActivity {
         viewPager.setAdapter(pagerAdapter);
     }
 
-    void dotStatusManage(int position){
-        ImageView dotOne = (ImageView) findViewById(R.id.circle_page1);
-        ImageView dotTwo = (ImageView) findViewById(R.id.circle_page2);
-        ImageView dotThird = (ImageView) findViewById(R.id.circle_page3);
-        switch(position){
-            case 0:
-                setActiveDot(dotOne);
-                setInactiveDot(dotTwo);
-                setInactiveDot(dotThird);
-                break;
-            case 1:
-                setInactiveDot(dotOne);
-                setActiveDot(dotTwo);
-                setInactiveDot(dotThird);
-                break;
-            case 2:
-                setInactiveDot(dotOne);
-                setInactiveDot(dotTwo);
-                setActiveDot(dotThird);
-                break;
-        }
-    }
 
-    void setActiveDot(ImageView dot){
-        if(dot != null) dot.setImageResource(R.drawable.circle_shape_active);
-    }
 
-    void setInactiveDot(ImageView dot){
-        if(dot != null) dot.setImageResource(R.drawable.circle_shape_inactive);
-    }
+
 
     void viewDoneButton(int position) {
         ImageView nextButton = (ImageView) findViewById(R.id.next_page_button);
@@ -91,10 +65,10 @@ public class HowToUseActivity extends AppCompatActivity {
         }
     }
 
-    void viewSkipButton(int postion){
+    void viewSkipButton(int position){
         TextView skipButton = (TextView) findViewById(R.id.skip_button);
         if(skipButton != null){
-            if(postion > 0){
+            if(position > 0){
                 skipButton.setVisibility(View.GONE);
             }else{
                 skipButton.setVisibility(View.VISIBLE);
@@ -114,6 +88,10 @@ public class HowToUseActivity extends AppCompatActivity {
     public void donePages(View v){
         Intent i = new Intent(HowToUseActivity.this, MainMenuActivity.class);
         startActivity(i);
+    }
+
+    public Activity getActivity(){
+        return this;
     }
 
 }

@@ -4,9 +4,13 @@ import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import net.majorkernelpanic.streaming.Session;
@@ -16,8 +20,11 @@ import net.majorkernelpanic.streaming.rtsp.RtspServer;
 import net.majorkernelpanic.streaming.video.VideoQuality;
 import net.majorkernelpanic.streaming.gl.SurfaceView;
 
+import pl.hypeapp.Fragments.vrstream.HowToUsePagerAdapter;
+import pl.hypeapp.Fragments.vrstream.StartStreamPagerAdapter;
 
-public class StartStreamActivity extends Activity
+
+public class StartStreamActivity extends AppCompatActivity
         implements Session.Callback, RtspServer.CallbackListener
 //          SurfaceHolder.Callback,
 //        RtspServer.CallbackListener
@@ -30,6 +37,7 @@ public class StartStreamActivity extends Activity
     private SurfaceView surfaceView;
     private RtspServer rtspServer;
 
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +46,8 @@ public class StartStreamActivity extends Activity
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_start_stream);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        initViewPager();
 
         surfaceView = (SurfaceView) findViewById(R.id.surface);
 
@@ -66,6 +76,35 @@ public class StartStreamActivity extends Activity
 
 
 
+    }
+
+    void initViewPager(){
+        viewPager = (ViewPager)findViewById(R.id.about_connect_pager);
+
+        StartStreamPagerAdapter startStreamPagerAdapter = new StartStreamPagerAdapter(getSupportFragmentManager());
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                PagerCirclesManager.dotStatusManage(position, getActivity());
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+        viewPager.setAdapter(startStreamPagerAdapter);
+    }
+
+    private Activity getActivity(){
+        return this;
     }
 
     @Override
@@ -118,13 +157,13 @@ public class StartStreamActivity extends Activity
     }
 
     public void coverAboutConnectionLayout(){
-        RelativeLayout aboutConnectionLayout = (RelativeLayout) findViewById(R.id.about_connection);
-        aboutConnectionLayout.setVisibility(View.GONE);
+        LinearLayout aboutConnectionLayout = (LinearLayout) findViewById(R.id.about_connection);
+        if(aboutConnectionLayout != null) aboutConnectionLayout.setVisibility(View.GONE);
     }
 
     public void showAboutConnectionLayout(){
         View aboutConnectionLayout =  findViewById(R.id.about_connection);
-        aboutConnectionLayout.setVisibility(View.VISIBLE);
+        if(aboutConnectionLayout != null) aboutConnectionLayout.setVisibility(View.VISIBLE);
     }
 
 //

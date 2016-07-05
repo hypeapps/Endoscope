@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/start_stream_background">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal" >
+
+            <TextView
+                style="@style/header_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type ip address manually"
+                android:id="@+id/type_ip_header"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginBottom="30dp"
+                android:id="@+id/address"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/icon"
+                    android:src="@drawable/ic_create_white_24dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="192.168.1.5"
+                    android:id="@+id/ip_address"
+                    style="@style/header_style"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="10dp" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/text_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Click view stream on device which you want to connect then type above ip address."
+                android:id="@+id/type_description"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

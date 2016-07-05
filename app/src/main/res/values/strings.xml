@@ -26,4 +26,7 @@
     <string name="skip">SKIP</string>
     <string name="done">DONE</string>
     <string name="welcome">Welcome!</string>
+    <string name="nfc">NFC</string>
+    <string name="qr_code">QR CODE</string>
+    <string name="type_ip">TYPE IP</string>
 </resources>
