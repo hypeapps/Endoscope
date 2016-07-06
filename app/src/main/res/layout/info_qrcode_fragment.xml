@@ -3,4 +3,45 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@color/view_stream_background">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal" >
+
+        <TextView
+            style="@style/header_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scan QR CODE to link to stream"
+            android:id="@+id/textView5"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp" >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/imageView2"
+                android:src="@drawable/ic_nfc_white_24dp" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_nfc_description"
+            android:id="@+id/textView6"
+            android:gravity="center_vertical|center_horizontal"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp" />
+    </LinearLayout>
 </RelativeLayout>

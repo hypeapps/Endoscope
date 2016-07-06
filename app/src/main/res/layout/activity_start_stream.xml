@@ -89,7 +89,8 @@
                         android:id="@+id/input_content"
                         android:layout_weight="1"
                         android:gravity="center_vertical|center_horizontal"
-                        android:background="@color/start_stream_background">
+                        android:background="@color/start_stream_background"
+                        android:onClick="SlideToInputPage">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -114,7 +115,8 @@
                         android:layout_weight="1"
                         android:background="@color/view_stream_background"
                         android:id="@+id/qr_content"
-                        android:gravity="center_vertical|center_horizontal">
+                        android:gravity="center_vertical|center_horizontal"
+                        android:onClick="SlideToQrCodePage">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -138,7 +140,8 @@
                         android:layout_weight="1"
                         android:background="@color/settings_background"
                         android:id="@+id/nfc_content"
-                        android:gravity="center_vertical|center_horizontal">
+                        android:gravity="center_vertical|center_horizontal"
+                        android:onClick="SlideToNfcPage">
 
                         <ImageView
                             android:layout_width="wrap_content"

@@ -17,7 +17,7 @@
                 style="@style/header_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Type ip address manually"
+                android:text="@string/type_ip_address_manually"
                 android:id="@+id/type_ip_header"
                 android:gravity="center_vertical|center_horizontal"
                 android:layout_marginLeft="20dp"

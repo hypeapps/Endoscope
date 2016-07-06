@@ -29,4 +29,8 @@
     <string name="nfc">NFC</string>
     <string name="qr_code">QR CODE</string>
     <string name="type_ip">TYPE IP</string>
+    <string name="about_input_description">Click view stream on device which you want to connect then type above ip address.</string>
+    <string name="about_nfc_description">Enable your NFC then Endoscope will generate signal. Next on device which you want to connect click view stream and touch two smartphones.</string>
+    <string name="link_to_stream_via_nfc">Link to stream via NFC</string>
+    <string name="type_ip_address_manually">Type ip address manually</string>
 </resources>

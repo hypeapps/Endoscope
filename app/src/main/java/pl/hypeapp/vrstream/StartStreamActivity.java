@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import net.majorkernelpanic.streaming.Session;
 import net.majorkernelpanic.streaming.SessionBuilder;
@@ -25,11 +26,7 @@ import pl.hypeapp.Fragments.vrstream.StartStreamPagerAdapter;
 
 
 public class StartStreamActivity extends AppCompatActivity
-        implements Session.Callback, RtspServer.CallbackListener
-//          SurfaceHolder.Callback,
-//        RtspServer.CallbackListener
-
-{
+        implements Session.Callback, RtspServer.CallbackListener {
 
     String TAG = "szynaGada";
 
@@ -50,12 +47,6 @@ public class StartStreamActivity extends AppCompatActivity
         initViewPager();
 
         surfaceView = (SurfaceView) findViewById(R.id.surface);
-
-        WifiManager wifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
-        int ipAddress = wifiManager.getConnectionInfo().getIpAddress();
-        Log.i("info", "ip address " + String.format("%d.%d.%d.%d", (ipAddress & 0xff), (ipAddress >> 8 & 0xff),
-                (ipAddress >> 16 & 0xff), (ipAddress >> 24 & 0xff)));
-
 
         session = SessionBuilder.getInstance()
                 .setCallback(this)
@@ -80,7 +71,6 @@ public class StartStreamActivity extends AppCompatActivity
 
     void initViewPager(){
         viewPager = (ViewPager)findViewById(R.id.about_connect_pager);
-
         StartStreamPagerAdapter startStreamPagerAdapter = new StartStreamPagerAdapter(getSupportFragmentManager());
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -166,72 +156,21 @@ public class StartStreamActivity extends AppCompatActivity
         if(aboutConnectionLayout != null) aboutConnectionLayout.setVisibility(View.VISIBLE);
     }
 
-//
+    public void SlideToInputPage(View view){
+        viewPager.setCurrentItem(0);
+    }
 
-//    @Override
-//    public void onBitrateUpdate(long bitrate) {
-//        Log.d(TAG,"Bitrate: " + bitrate);
-//    }
-//
-//    @Override
-//    public void onSessionError(int reason, int streamType, Exception e) {
-//        Log.e(TAG, "An error occured " + e.getMessage());
-//    }
-//
-//    @Override
-//    public void onPreviewStarted() {
-//        Log.d(TAG,"Preview started.");
-//    }
-//
-//    @Override
-//    public void onSessionConfigured() {
-//        Log.d("szynaGada","Preview configured.");
-//        // Once the stream is configured, you can get a SDP formated session description
-//        // that you can send to the receiver of the stream.
-//        // For example, to receive the stream in VLC, store the session description in a .sdp file
-//        // and open it with VLC while streming.
-//        Log.d("szynaGada", " session desc " + session.getSessionDescription());
-//        session.start();
-//    }
-//
-//    @Override
-//    public void onSessionStarted() {
-//        Log.d(TAG,"Streaming session started.");
-//        ImageView ig = (ImageView) findViewById(R.id.imageView11);
-//        ig.setVisibility(View.INVISIBLE);
-//    }
-//
-//    @Override
-//    public void onSessionStopped() {
-//        Log.d(TAG,"Streaming session stopped.");
-//    }
-//
-//    @Override
-//    public void surfaceCreated(SurfaceHolder holder) {
-//        session.startPreview();
-//    }
-//
-//    @Override
-//    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-//
-//    }
-//
-//    @Override
-//    public void surfaceDestroyed(SurfaceHolder holder) {
-//        session.stop();
-//    }
-//
-//
-//    @Override
-//    public void onError(RtspServer server, Exception e, int error) {
-//            Log.d(TAG, e.getMessage() +  " error number: " + Integer.toString(error));
-//    }
-//
-//    @Override
-//    public void onMessage(RtspServer server, int message) {
-//
-//    }
-//
+
+    public void SlideToQrCodePage(View view){
+        viewPager.setCurrentItem(1);
+    }
+
+    public void SlideToNfcPage(View view){
+        viewPager.setCurrentItem(2);
+    }
+
+
+
 //    private void logError(final String msg) {
 //        final String error = (msg == null) ? "Error unknown" : msg;
 //        AlertDialog.Builder builder = new AlertDialog.Builder(StartStreamActivity.this);
