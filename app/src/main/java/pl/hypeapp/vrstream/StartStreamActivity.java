@@ -160,7 +160,6 @@ public class StartStreamActivity extends AppCompatActivity
         viewPager.setCurrentItem(0);
     }
 
-
     public void SlideToQrCodePage(View view){
         viewPager.setCurrentItem(1);
     }

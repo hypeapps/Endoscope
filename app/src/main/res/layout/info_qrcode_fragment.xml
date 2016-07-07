@@ -19,20 +19,12 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp" />
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical|center_horizontal"
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:id="@+id/qr_code"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp" >
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:id="@+id/imageView2"
-                android:src="@drawable/ic_nfc_white_24dp" />
-        </LinearLayout>
+            android:layout_marginBottom="30dp" />
 
         <TextView
             style="@style/text_style"

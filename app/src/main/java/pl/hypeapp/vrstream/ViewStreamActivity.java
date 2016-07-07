@@ -3,25 +3,31 @@ package pl.hypeapp.vrstream;
 import android.app.Activity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-
 import java.io.IOException;
 
+import pl.hypeapp.Fragments.vrstream.StartStreamPagerAdapter;
+import pl.hypeapp.Fragments.vrstream.ViewStreamPagerAdapter;
 
-public class ViewStreamActivity extends Activity implements SurfaceHolder.Callback, MediaPlayer.OnPreparedListener {
+
+public class ViewStreamActivity extends AppCompatActivity implements SurfaceHolder.Callback, MediaPlayer.OnPreparedListener {
 
     MediaPlayer mediaPlayer;
     SurfaceView surfaceView;
     SurfaceHolder surfaceHolder;
-
+    ViewPager viewPager;
     String TAG = "SzynaGada";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_stream);
+
+        initViewPager();
 
         surfaceView = (SurfaceView) findViewById(R.id.surfacePlay);
         surfaceHolder = surfaceView.getHolder();
@@ -32,6 +38,32 @@ public class ViewStreamActivity extends Activity implements SurfaceHolder.Callba
 
     }
 
+    private Activity getActivity(){ return this; }
+
+    void initViewPager(){
+        viewPager = (ViewPager)findViewById(R.id.about_connect_pager);
+        ViewStreamPagerAdapter viewStreamPagerAdapter = new ViewStreamPagerAdapter(getSupportFragmentManager());
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                PagerCirclesManager.dotStatusManage(position, getActivity());
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+        viewPager.setAdapter(viewStreamPagerAdapter);
+    }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -40,7 +72,7 @@ public class ViewStreamActivity extends Activity implements SurfaceHolder.Callba
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        play();
+//        play();
 
     }
 
