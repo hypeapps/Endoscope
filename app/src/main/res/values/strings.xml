@@ -36,4 +36,7 @@
     <string name="ip">IP</string>
     <string name="scan_qr_code">SCAN QR CODE</string>
     <string name="link_nfc">LINK NFC</string>
+    <string name="write_ip_address_manually">Write ip address manually</string>
+    <string name="connect">Connect</string>
+    <string name="click_start_stream_on_device_which_you_want_to_connect_then_read_the_ip_and_write_it_above">Click start stream on device which you want to connect then read the ip and write it above.</string>
 </resources>

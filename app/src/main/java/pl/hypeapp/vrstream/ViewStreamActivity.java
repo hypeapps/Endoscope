@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
+
 import java.io.IOException;
 
 import pl.hypeapp.Fragments.vrstream.StartStreamPagerAdapter;
@@ -136,6 +138,18 @@ public class ViewStreamActivity extends AppCompatActivity implements SurfaceHold
                 return false;
             }
         });
+    }
+
+    public void SlideToInputPage(View view){
+        viewPager.setCurrentItem(0);
+    }
+
+    public void SlideToQrCodePage(View view){
+        viewPager.setCurrentItem(1);
+    }
+
+    public void SlideToNfcPage(View view){
+        viewPager.setCurrentItem(2);
     }
 
 

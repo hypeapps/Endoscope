@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/start_stream_background">
+    android:background="@color/view_stream_background">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -34,7 +34,20 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ip_addres_scanned"
+                    android:visibility="gone"
+                    android:text="IP 192.168.1.3"
+                    style="@style/header_style"
+                    android:textSize="30sp" />
 
+                <com.dlazaro66.qrcodereaderview.QRCodeReaderView
+                    android:id="@+id/qrdecoderview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
 
 
             </LinearLayout>

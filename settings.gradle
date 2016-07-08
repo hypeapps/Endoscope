@@ -1,1 +1,1 @@
-include ':app', ':libstreaming', ':qrcodereaderview'
+include ':app', ':libstreaming'

@@ -1,9 +1,12 @@
 package pl.hypeapp.vrstream;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -66,7 +69,9 @@ public class StartStreamActivity extends AppCompatActivity
         Log.i(TAG, "ONCREATE");
 
 
-
+        SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(this).edit();
+        editor.putString("ip_local", getIpAddress());
+        editor.commit();
     }
 
     void initViewPager(){
@@ -168,6 +173,13 @@ public class StartStreamActivity extends AppCompatActivity
         viewPager.setCurrentItem(2);
     }
 
+    private String getIpAddress(){
+        WifiManager wifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
+        int ipAddress = wifiManager.getConnectionInfo().getIpAddress();
+        String ipAddressFormatted = String.format("%d.%d.%d.%d", (ipAddress & 0xff), (ipAddress >> 8 & 0xff),
+                (ipAddress >> 16 & 0xff), (ipAddress >> 24 & 0xff));
+        return ipAddressFormatted;
+    }
 
 
 //    private void logError(final String msg) {

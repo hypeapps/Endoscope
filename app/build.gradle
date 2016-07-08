@@ -20,10 +20,7 @@ android {
         }
     }
 
-    dexOptions {
-        javaMaxHeapSize "4g"
 
-    }
 
 
 }
@@ -36,11 +33,11 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.0.0'
     compile 'hanks.xyz:smallbang-library:0.1.2'
     compile 'com.android.support:support-v4:24.0.0'
-    compile 'com.google.android.gms:play-services-ads:9.2.0'
-    compile 'com.google.android.gms:play-services-auth:9.2.0'
-    compile 'com.firebase:firebase-client-android:2.3.1'
-    compile 'com.google.android.gms:play-services-gcm:9.2.0'
+    compile 'com.dlazaro66.qrcodereaderview:qrcodereaderview:1.0.0'
+
+
 }
+
 
 
 

@@ -17,42 +17,55 @@
                 style="@style/header_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/type_ip_address_manually"
+                android:text="@string/write_ip_address_manually"
                 android:id="@+id/type_ip_header"
                 android:gravity="center_vertical|center_horizontal"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp" />
 
             <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_marginBottom="30dp"
-                android:id="@+id/address"
-                android:layout_marginTop="30dp">
+                android:layout_height="wrap_content">
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:id="@+id/icon"
-                    android:src="@drawable/ic_create_white_24dp" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:id="@+id/type_address"
+                    android:layout_marginTop="30dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="192.168.1.5"
-                    android:id="@+id/ip_address"
-                    style="@style/header_style"
-                    android:gravity="center_vertical"
-                    android:layout_marginLeft="10dp" />
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number|text"
+                        android:ems="10"
+                        android:id="@+id/ip_edit_text"
+                        style="@style/text_style"
+                        android:digits="0123456789." />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/icon"
+                        android:src="@drawable/ic_create_white_24dp" />
+
+                </LinearLayout>
             </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/connect"
+                android:id="@+id/connect_to_stream"
+                android:layout_marginBottom="30dp" />
 
             <TextView
                 style="@style/text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Click view stream on device which you want to connect then type above ip address."
+                android:text="@string/click_start_stream_on_device_which_you_want_to_connect_then_read_the_ip_and_write_it_above"
                 android:id="@+id/type_description"
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingLeft="40dp"
