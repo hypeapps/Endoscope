@@ -29,7 +29,9 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile project(':libstreaming')
-    compile 'com.github.kenglxn.QRGen:android:2.2.0'
+    compile ('com.github.kenglxn.QRGen:android:2.2.0'){
+        exclude group: 'com.google.zxing'
+    }
     compile 'com.android.support:appcompat-v7:24.0.0'
     compile 'hanks.xyz:smallbang-library:0.1.2'
     compile 'com.android.support:support-v4:24.0.0'
