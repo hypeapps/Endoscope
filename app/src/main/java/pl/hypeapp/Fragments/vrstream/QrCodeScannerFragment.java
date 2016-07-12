@@ -28,13 +28,13 @@ public class QrCodeScannerFragment extends Fragment implements QRCodeReaderView.
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.qrcode_scanner_fragment, container, false);
 
-        qrCodeReaderView = (QRCodeReaderView) v.findViewById(R.id.qrdecoderview);
-        if(qrCodeReaderView != null){
-            qrCodeReaderView.setVisibility(View.VISIBLE);
-            qrCodeReaderView.setOnQRCodeReadListener(this);
-        }
-
-        ipAddress = (TextView)v.findViewById(R.id.ip_addres_scanned);
+//        qrCodeReaderView = (QRCodeReaderView) v.findViewById(R.id.qrdecoderview);
+//        if(qrCodeReaderView != null){
+//            qrCodeReaderView.setVisibility(View.VISIBLE);
+//            qrCodeReaderView.setOnQRCodeReadListener(this);
+//        }
+//
+//        ipAddress = (TextView)v.findViewById(R.id.ip_addres_scanned);
 
         return v;
     }

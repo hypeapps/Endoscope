@@ -1,17 +1,26 @@
 package pl.hypeapp.vrstream;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.media.MediaPlayer;
+import android.nfc.NdefMessage;
+import android.nfc.NdefRecord;
+import android.nfc.NfcAdapter;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import pl.hypeapp.Fragments.vrstream.NfcReaderFragment;
 import pl.hypeapp.Fragments.vrstream.StartStreamPagerAdapter;
 import pl.hypeapp.Fragments.vrstream.ViewStreamPagerAdapter;
 
@@ -31,12 +40,9 @@ public class ViewStreamActivity extends AppCompatActivity implements SurfaceHold
 
         initViewPager();
 
-        surfaceView = (SurfaceView) findViewById(R.id.surfacePlay);
-        surfaceHolder = surfaceView.getHolder();
-        surfaceHolder.addCallback(this);
-
-
-
+//        surfaceView = (SurfaceView) findViewById(R.id.surfacePlay);
+//        surfaceHolder = surfaceView.getHolder();
+//        surfaceHolder.addCallback(this);
 
     }
 
@@ -73,6 +79,11 @@ public class ViewStreamActivity extends AppCompatActivity implements SurfaceHold
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
     public void surfaceCreated(SurfaceHolder holder) {
 //        play();
 
@@ -85,6 +96,7 @@ public class ViewStreamActivity extends AppCompatActivity implements SurfaceHold
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
+        surfaceHolder.removeCallback(this);
         mediaPlayer.release();
     }
 
@@ -109,7 +121,6 @@ public class ViewStreamActivity extends AppCompatActivity implements SurfaceHold
             e.printStackTrace();
         }
     }
-
 
     private void setErrorListener() {
         mediaPlayer.setOnErrorListener(new MediaPlayer.OnErrorListener() {
@@ -151,6 +162,10 @@ public class ViewStreamActivity extends AppCompatActivity implements SurfaceHold
     public void SlideToNfcPage(View view){
         viewPager.setCurrentItem(2);
     }
+
+
+
+
 
 
 }

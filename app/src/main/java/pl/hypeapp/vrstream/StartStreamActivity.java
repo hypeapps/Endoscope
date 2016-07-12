@@ -74,6 +74,11 @@ public class StartStreamActivity extends AppCompatActivity
         editor.commit();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
     void initViewPager(){
         viewPager = (ViewPager)findViewById(R.id.about_connect_pager);
         StartStreamPagerAdapter startStreamPagerAdapter = new StartStreamPagerAdapter(getSupportFragmentManager());
