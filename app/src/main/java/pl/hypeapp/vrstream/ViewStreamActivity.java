@@ -27,11 +27,12 @@ import pl.hypeapp.Fragments.vrstream.ViewStreamPagerAdapter;
 
 public class ViewStreamActivity extends AppCompatActivity implements SurfaceHolder.Callback, MediaPlayer.OnPreparedListener {
 
-    MediaPlayer mediaPlayer;
-    SurfaceView surfaceView;
-    SurfaceHolder surfaceHolder;
-    ViewPager viewPager;
-    String TAG = "SzynaGada";
+    private MediaPlayer mediaPlayer;
+    private SurfaceView surfaceView;
+    private SurfaceHolder surfaceHolder;
+    private ViewPager viewPager;
+    private String TAG = "SzynaGada";
+    private ArrayList<String> messagesReceivedArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +41,12 @@ public class ViewStreamActivity extends AppCompatActivity implements SurfaceHold
 
         initViewPager();
 
+        messagesReceivedArray = new ArrayList<>();
+
 //        surfaceView = (SurfaceView) findViewById(R.id.surfacePlay);
 //        surfaceHolder = surfaceView.getHolder();
 //        surfaceHolder.addCallback(this);
+
 
     }
 
@@ -73,26 +77,13 @@ public class ViewStreamActivity extends AppCompatActivity implements SurfaceHold
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
     public void surfaceCreated(SurfaceHolder holder) {
 //        play();
 
     }
 
     @Override
-    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-
-    }
+    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {}
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
@@ -163,8 +154,47 @@ public class ViewStreamActivity extends AppCompatActivity implements SurfaceHold
         viewPager.setCurrentItem(2);
     }
 
+    private void handleNfcIntent(Intent NfcIntent) {
+        if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(NfcIntent.getAction())) {
+            Parcelable[] receivedArray =
+                    NfcIntent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
+
+            if(receivedArray != null) {
+                messagesReceivedArray.clear();
+                NdefMessage receivedMessage = (NdefMessage) receivedArray[0];
+                NdefRecord[] attachedRecords = receivedMessage.getRecords();
+
+                for (NdefRecord record:attachedRecords) {
+                    String string = new String(record.getPayload());
+                    //Make sure we don't pass along our AAR (Android Application Record)
+                    if (string.equals(getPackageName())) { continue; }
+                    messagesReceivedArray.add(string);
+                }
+                Toast.makeText(this, "Received " + messagesReceivedArray.size() +
+                        " Messages" + messagesReceivedArray.get(0), Toast.LENGTH_LONG).show();
+                Log.i(TAG, messagesReceivedArray.get(0));
 
 
+
+            }
+            else {
+                Toast.makeText(this, "Received Blank Parcel", Toast.LENGTH_LONG).show();
+            }
+
+        }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        Log.i(TAG, "INTENT");
+        handleNfcIntent(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        handleNfcIntent(getIntent());
+    }
 
 
 

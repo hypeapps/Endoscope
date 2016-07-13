@@ -18,7 +18,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/link_stream_via_nfc"
-                android:id="@+id/type_ip_header"
+                android:id="@+id/nfc_reader_header"
                 android:gravity="center_vertical|center_horizontal"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp" />
@@ -38,11 +38,13 @@
                     android:id="@+id/nfc_icon"
                     android:src="@drawable/ic_nfc_white_24dp" />
 
-                <Button
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/read_nfc"
-                    android:id="@+id/intent_nfc_reader_activity" />
+                    android:text="@string/ip_default"
+                    android:id="@+id/ip_address"
+                    style="@style/header_style"
+                    android:layout_marginLeft="16dp" />
 
             </LinearLayout>
 
@@ -51,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Click view stream on device which you want to connect then type above ip address."
-                android:id="@+id/type_description"
+                android:id="@+id/nfc_description"
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingLeft="40dp"
                 android:paddingRight="40dp" />

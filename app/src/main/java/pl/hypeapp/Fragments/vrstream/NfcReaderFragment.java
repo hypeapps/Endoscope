@@ -20,21 +20,16 @@ import android.widget.Toast;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;
-
-import pl.hypeapp.vrstream.NfcReaderActivity;
 import pl.hypeapp.vrstream.R;
 import pl.hypeapp.vrstream.ViewStreamActivity;
 
 
-public class NfcReaderFragment extends Fragment implements View.OnClickListener{
+public class NfcReaderFragment extends Fragment{
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.nfc_reader_fragment, container, false);
-
-        Button nfcReaderIntent = (Button) v.findViewById(R.id.intent_nfc_reader_activity);
-        nfcReaderIntent.setOnClickListener(this);
 
         return v;
 
@@ -42,9 +37,5 @@ public class NfcReaderFragment extends Fragment implements View.OnClickListener{
 
 
 
-    @Override
-    public void onClick(View view) {
-        Intent i = new Intent(getActivity(), NfcReaderActivity.class);
-        startActivity(i);
-    }
+
 }

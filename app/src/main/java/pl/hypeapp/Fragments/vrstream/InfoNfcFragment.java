@@ -40,7 +40,7 @@ public class InfoNfcFragment extends Fragment  implements NfcAdapter.OnNdefPushC
 
         if(nfcAdapter != null) {
             nfcAdapter.setNdefPushMessageCallback(this, getActivity());
-
+            nfcAdapter.disableForegroundDispatch(getActivity());
             //This will be called if the message is sent successfully
             nfcAdapter.setOnNdefPushCompleteCallback(this, getActivity());
         }

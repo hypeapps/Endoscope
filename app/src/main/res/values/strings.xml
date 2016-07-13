@@ -41,4 +41,5 @@
     <string name="click_start_stream_on_device_which_you_want_to_connect_then_read_the_ip_and_write_it_above">Click start stream on device which you want to connect then read the ip and write it above.</string>
     <string name="link_stream_via_nfc">Link stream via NFC</string>
     <string name="read_nfc">READ NFC</string>
+    <string name="ip_default">255.255.255.255</string>
 </resources>
