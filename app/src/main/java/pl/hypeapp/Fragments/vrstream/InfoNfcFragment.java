@@ -26,13 +26,14 @@ public class InfoNfcFragment extends Fragment  implements NfcAdapter.OnNdefPushC
     private NfcAdapter nfcAdapter;
     private ArrayList<String> messagesToSendArray;
     String TAG = "SZYNA_GADA";
+    private final String IP_DEFAULT = "000.000.000.0000" ;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.info_nfc_fragment, container, false);
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        String ipAddress = sharedPreferences.getString("ip_local", "000.000.000.0000");
+        String ipAddress = sharedPreferences.getString("ip_local", IP_DEFAULT);
 
         nfcAdapter = NfcAdapter.getDefaultAdapter(getActivity());
         messagesToSendArray = new ArrayList<>();
@@ -95,5 +96,7 @@ public class InfoNfcFragment extends Fragment  implements NfcAdapter.OnNdefPushC
         records[messagesToSendArray.size()] = NdefRecord.createApplicationRecord(getActivity().getPackageName());
         return records;
     }
+
+
 
 }

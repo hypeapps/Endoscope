@@ -11,52 +11,67 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical|center_horizontal" >
+            android:gravity="center_vertical|center_horizontal">
 
             <TextView
                 style="@style/header_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/scan_qr_code"
-                android:id="@+id/scan_qr_header"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
+                android:id="@+id/scan_qr_header" />
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_marginBottom="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:id="@+id/scanner"
-                android:layout_marginTop="30dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/ip_addres_scanned"
-                    android:visibility="gone"
-                    android:text="IP 192.168.1.3"
-                    style="@style/header_style"
-                    android:textSize="30sp" />
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:visibility="visible">
 
                 <com.dlazaro66.qrcodereaderview.QRCodeReaderView
                     android:id="@+id/qrdecoderview"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:visibility="gone" />
+                    android:layout_height="150dp" />
 
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:id="@+id/result_container"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/qr_scanner_result"
+                    android:text="@string/ip_default"
+                    style="@style/header_style"
+                    android:textSize="30sp"
+                    android:layout_marginBottom="10dp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/connect"
+                    android:id="@+id/connect"
+                    android:layout_marginBottom="10dp" />
             </LinearLayout>
 
             <TextView
                 style="@style/text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Click view stream on device which you want to connect then type above ip address."
+                android:text="@string/scan_qr_code_description"
                 android:id="@+id/qr_scanner_description"
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingLeft="40dp"

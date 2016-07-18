@@ -13,18 +13,18 @@
             style="@style/header_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Scan QR CODE to link to stream"
-            android:id="@+id/textView5"
+            android:text="@string/scan_qr_code"
+            android:id="@+id/qr_code_header"
             android:gravity="center_vertical|center_horizontal"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp" />
 
         <ImageView
             android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_height="150dp"
             android:id="@+id/qr_code"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp" />
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp" />
 
         <TextView
             style="@style/text_style"

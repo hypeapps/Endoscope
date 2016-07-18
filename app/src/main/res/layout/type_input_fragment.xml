@@ -17,7 +17,7 @@
                 style="@style/header_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/write_ip_address_manually"
+                android:text="@string/write_ip_addres"
                 android:id="@+id/type_ip_header"
                 android:gravity="center_vertical|center_horizontal"
                 android:layout_marginLeft="20dp"
@@ -43,7 +43,9 @@
                         android:ems="10"
                         android:id="@+id/ip_edit_text"
                         style="@style/text_style"
-                        android:digits="0123456789." />
+                        android:digits="0123456789."
+                        android:foregroundGravity="center_vertical|center_horizontal"
+                        android:gravity="center_vertical|center_horizontal" />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -58,8 +60,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/connect"
-                android:id="@+id/connect_to_stream"
-                android:layout_marginBottom="30dp" />
+                android:id="@+id/connect_button"
+                android:layout_marginBottom="30dp"
+                android:enabled="true" />
 
             <TextView
                 style="@style/text_style"

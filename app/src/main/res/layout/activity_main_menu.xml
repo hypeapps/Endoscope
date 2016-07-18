@@ -87,7 +87,7 @@
                     style="@style/text_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/view_stream"
+                    android:text="@string/connect_stream"
                     android:id="@+id/view_stream_text"
                     android:textSize="15sp" />
             </LinearLayout>

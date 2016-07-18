@@ -29,12 +29,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical|center_horizontal"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp">
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
 
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:id="@+id/imageView"
                     android:src="@drawable/ic_nfc_white_24dp" />
 

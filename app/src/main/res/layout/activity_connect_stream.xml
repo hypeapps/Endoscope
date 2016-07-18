@@ -6,22 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainMenuActivity" >
 
-    <FrameLayout
-        android:id="@+id/surface_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="@android:color/black" >
-
-        <VideoView
-            android:id="@+id/surfacePlay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
-
-    </FrameLayout>
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -43,9 +27,7 @@
                 android:id="@+id/about_connect_pager"
                 android:layout_weight="1"
                 android:layout_alignParentLeft="true"
-                android:layout_marginLeft="0dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="0dp">
+                android:layout_alignParentTop="true">
 
             </android.support.v4.view.ViewPager>
 
@@ -141,7 +123,7 @@
                     style="@style/text_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/scan_qr_code"
+                    android:text="@string/scan_qr_code_capital"
                     android:id="@+id/qr_text" />
             </LinearLayout>
 

@@ -1,41 +1,50 @@
 package pl.hypeapp.Fragments.vrstream;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.wifi.WifiManager;
-import android.nfc.NdefMessage;
-import android.nfc.NdefRecord;
-import android.nfc.NfcAdapter;
-import android.nfc.NfcEvent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.nio.charset.Charset;
-import java.util.ArrayList;
+import java.util.HashMap;
+
+import pl.hypeapp.vrstream.ConnectToStreamActivity;
 import pl.hypeapp.vrstream.R;
-import pl.hypeapp.vrstream.ViewStreamActivity;
 
 
-public class NfcReaderFragment extends Fragment{
+public class NfcReaderFragment extends Fragment implements View.OnClickListener{
 
+    private TextView ipTextVIew;
+    private Button button;
+    private String ipAddress;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.nfc_reader_fragment, container, false);
+        ipTextVIew = (TextView) v.findViewById(R.id.ip_address_text_view);
+        button = (Button) v.findViewById(R.id.connect_button);
+        button.setOnClickListener(this);
+
 
         return v;
 
     }
 
+    public void setOnNfcIp(String ip){
+        ipAddress = ip;
+        if((ipTextVIew != null) && (button != null)) {
+            ipTextVIew.setVisibility(View.VISIBLE);
+            ipTextVIew.setText(ip);
+            button.setVisibility(View.VISIBLE);
+        }
+    }
 
 
-
+    @Override
+    public void onClick(View view) {
+        ConnectToStreamActivity connectToStreamActivity = (ConnectToStreamActivity) getActivity();
+        connectToStreamActivity.connectStream(ipAddress);
+    }
 }

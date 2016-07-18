@@ -13,17 +13,17 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <uses-permission android:name="android.permission.NFC" />
-    <uses-feature android:name="android.hardware.nfc" android:required="true"/>
+    <uses-feature android:name="android.hardware.nfc" android:required="false"/>
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/App.Theme" >
         <activity
             android:name=".MainMenuActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            android:theme="@style/App.Theme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,7 +32,7 @@
         </activity>
         <activity
             android:name=".SplashScreenActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            android:theme="@style/App.Theme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,8 +40,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ViewStreamActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:name=".ConnectToStreamActivity"
+            android:theme="@style/App.Theme"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -55,12 +55,10 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
 
-
-
         </activity>
         <activity
             android:name=".StartStreamActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            android:theme="@style/App.Theme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -69,7 +67,7 @@
         </activity>
         <activity
             android:name=".SettingsActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            android:theme="@style/App.Theme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -77,8 +75,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HowToUseActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        android:name=".HowToUseActivity"
+        android:theme="@style/App.Theme" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".PlayStreamActivity"
+            android:theme="@style/App.Theme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

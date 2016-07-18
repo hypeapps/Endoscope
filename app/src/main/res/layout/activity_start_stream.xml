@@ -104,7 +104,8 @@
                             android:layout_height="wrap_content"
                             android:text="@string/ip"
                             android:id="@+id/input_text"
-                            style="@style/text_style" />
+                            style="@style/text_style"
+                            android:layout_marginLeft="-5dp" />
 
                     </LinearLayout>
 

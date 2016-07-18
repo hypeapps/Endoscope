@@ -4,12 +4,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import java.util.HashMap;
+
 
 public class ViewStreamPagerAdapter extends FragmentPagerAdapter {
 
     public ViewStreamPagerAdapter(FragmentManager fm){
         super(fm);
     }
+    private HashMap<Integer, Fragment> fragmentHashMap = new HashMap<>();
 
     @Override
     public Fragment getItem(int position) {
@@ -19,7 +22,12 @@ public class ViewStreamPagerAdapter extends FragmentPagerAdapter {
             case 1:
                 return new QrCodeScannerFragment();
             case 2:
-                return new NfcReaderFragment();
+                if (fragmentHashMap.get(position) != null) {
+                    return fragmentHashMap.get(position);
+                }
+                NfcReaderFragment nfcReaderFragment = new NfcReaderFragment();
+                fragmentHashMap.put(position, nfcReaderFragment);
+                return nfcReaderFragment;
             default:
                 break;
         }

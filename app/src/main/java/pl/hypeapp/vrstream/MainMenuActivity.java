@@ -18,7 +18,7 @@ public class MainMenuActivity extends Activity {
         startActivity(i);
     }
     public void intentViewStream(View view) {
-        Intent i =  new Intent(MainMenuActivity.this, ViewStreamActivity.class);
+        Intent i =  new Intent(MainMenuActivity.this, ConnectToStreamActivity.class);
         startActivity(i);
     }
     public void intentSettings(View View) {
