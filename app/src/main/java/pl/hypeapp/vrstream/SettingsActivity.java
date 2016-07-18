@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.InputFilter;
@@ -26,6 +27,7 @@ public class SettingsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         String port = sharedPreferences.getString(RtspServer.KEY_PORT, "8086");
@@ -116,6 +118,7 @@ public class SettingsActivity extends Activity {
                         changePort(Integer.valueOf(port));
                         TextView portValueText = (TextView) findViewById(R.id.port_option);
                         portValueText.setText(port);
+
                         Toast.makeText(SettingsActivity.this , R.string.port_changed, Toast.LENGTH_SHORT).show();
                     }
                 })

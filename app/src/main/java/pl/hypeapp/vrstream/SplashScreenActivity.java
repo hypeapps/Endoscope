@@ -2,6 +2,7 @@ package pl.hypeapp.vrstream;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,15 +16,13 @@ import xyz.hanks.library.SmallBangListener;
 public class SplashScreenActivity extends Activity {
 
     private SmallBang smallBang;
-    private ImageView aparatIconAnim;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         setContentView(R.layout.activity_splash_screen);
-        aparatIconAnim = (ImageView)findViewById(R.id.logo_aparat_icon);
         smallBang = SmallBang.attach2Window(this);
         splashAnimation();
     }
@@ -37,9 +36,6 @@ public class SplashScreenActivity extends Activity {
                 smallBang.bang(textLogoSwapper, 180, new SmallBangListener() {
                     @Override
                     public void onAnimationStart() {
-//                        aparatIconAnim.setBackgroundResource(R.drawable.aparat_animation);
-//                        AnimationDrawable frameAnimation = (AnimationDrawable) aparatIconAnim.getBackground();
-//                        frameAnimation.start();
                         ImageView mImageViewFilling = (ImageView) findViewById(R.id.logo_aparat_icon);
                         ((AnimationDrawable) mImageViewFilling.getBackground()).start();
 
@@ -73,6 +69,6 @@ public class SplashScreenActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("onDest", "onDeste");
+
     }
 }

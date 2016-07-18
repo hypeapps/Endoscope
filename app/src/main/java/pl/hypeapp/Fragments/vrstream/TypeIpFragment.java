@@ -13,11 +13,10 @@ import pl.hypeapp.vrstream.ConnectToStreamActivity;
 import pl.hypeapp.vrstream.R;
 
 
-public class TypeInputFragment extends Fragment implements View.OnClickListener{
+public class TypeIpFragment extends Fragment implements View.OnClickListener{
 
-
-    EditText editTextIpAddress;
-    Button buttonConnect;
+    private EditText editTextIpAddress;
+    private Button buttonConnect;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

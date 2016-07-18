@@ -2,6 +2,7 @@ package pl.hypeapp.vrstream;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
@@ -15,7 +16,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import pl.hypeapp.Fragments.vrstream.NfcReaderFragment;
-import pl.hypeapp.Fragments.vrstream.ViewStreamPagerAdapter;
 
 
 public class ConnectToStreamActivity extends AppCompatActivity {
@@ -29,6 +29,7 @@ public class ConnectToStreamActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_connect_stream);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         initViewPager();
 

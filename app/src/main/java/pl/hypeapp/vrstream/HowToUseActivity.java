@@ -2,14 +2,13 @@ package pl.hypeapp.vrstream;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import pl.hypeapp.Fragments.vrstream.HowToUsePagerAdapter;
 
 
 public class HowToUseActivity extends AppCompatActivity {
@@ -20,7 +19,7 @@ public class HowToUseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_how_to_use);
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         viewPager = (ViewPager)findViewById(R.id.how_to_use_pager);
         HowToUsePagerAdapter pagerAdapter = new HowToUsePagerAdapter(getSupportFragmentManager());
 

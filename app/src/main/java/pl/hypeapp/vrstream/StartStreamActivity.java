@@ -1,21 +1,17 @@
 package pl.hypeapp.vrstream;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import net.majorkernelpanic.streaming.Session;
 import net.majorkernelpanic.streaming.SessionBuilder;
@@ -23,9 +19,6 @@ import net.majorkernelpanic.streaming.audio.AudioQuality;
 import net.majorkernelpanic.streaming.rtsp.RtspServer;
 import net.majorkernelpanic.streaming.video.VideoQuality;
 import net.majorkernelpanic.streaming.gl.SurfaceView;
-
-import pl.hypeapp.Fragments.vrstream.HowToUsePagerAdapter;
-import pl.hypeapp.Fragments.vrstream.StartStreamPagerAdapter;
 
 
 public class StartStreamActivity extends AppCompatActivity

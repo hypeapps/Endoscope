@@ -1,10 +1,14 @@
-package pl.hypeapp.Fragments.vrstream;
+package pl.hypeapp.vrstream;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.HashMap;
+
+import pl.hypeapp.Fragments.vrstream.NfcReaderFragment;
+import pl.hypeapp.Fragments.vrstream.QrCodeScannerFragment;
+import pl.hypeapp.Fragments.vrstream.TypeIpFragment;
 
 
 public class ViewStreamPagerAdapter extends FragmentPagerAdapter {
@@ -18,7 +22,7 @@ public class ViewStreamPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new TypeInputFragment();
+                return new TypeIpFragment();
             case 1:
                 return new QrCodeScannerFragment();
             case 2:
