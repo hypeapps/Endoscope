@@ -2,7 +2,9 @@ package pl.hypeapp.vrstream;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
+import android.net.wifi.WifiManager;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
@@ -24,6 +26,7 @@ public class ConnectToStreamActivity extends AppCompatActivity {
     private ViewStreamPagerAdapter viewStreamPagerAdapter;
     private String TAG = "SzynaGada";
     private ArrayList<String> messagesReceivedArray;
+    private WiFiStateChangeReceiver wiFiStateChangeReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,9 @@ public class ConnectToStreamActivity extends AppCompatActivity {
         initViewPager();
 
         messagesReceivedArray = new ArrayList<>();
+
+        wiFiStateChangeReceiver = new WiFiStateChangeReceiver();
+        registerReceiver(wiFiStateChangeReceiver, new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION));
 
     }
 
@@ -118,13 +124,23 @@ public class ConnectToStreamActivity extends AppCompatActivity {
         handleNfcIntent(getIntent());
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(wiFiStateChangeReceiver);
+    }
+
     public void connectStream(String ipAddress){
         Intent i = new Intent(ConnectToStreamActivity.this, PlayStreamActivity.class);
         i.putExtra("ip_connect", ipAddress);
         startActivity(i);
     }
 
-
-
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(ConnectToStreamActivity.this, MainMenuActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+    }
 }
 

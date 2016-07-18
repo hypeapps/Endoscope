@@ -1,6 +1,7 @@
 package pl.hypeapp.vrstream;
 
 import android.app.Activity;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.net.wifi.WifiManager;
@@ -30,6 +31,7 @@ public class StartStreamActivity extends AppCompatActivity
     private SurfaceView surfaceView;
     private RtspServer rtspServer;
 
+    private WiFiStateChangeReceiver wiFiStateChangeReceiver;
     private ViewPager viewPager;
 
     @Override
@@ -65,6 +67,9 @@ public class StartStreamActivity extends AppCompatActivity
         SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(this).edit();
         editor.putString("ip_local", getIpAddress());
         editor.commit();
+
+        wiFiStateChangeReceiver = new WiFiStateChangeReceiver();
+        registerReceiver(wiFiStateChangeReceiver, new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION));
     }
 
     @Override
@@ -105,6 +110,7 @@ public class StartStreamActivity extends AppCompatActivity
         super.onDestroy();
         session.release();
         rtspServer.stop();
+        unregisterReceiver(wiFiStateChangeReceiver);
     }
 
     @Override

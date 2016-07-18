@@ -48,6 +48,7 @@
     <string name="nfc_reader_description">Be sure NFC is enabled. Click start stream on the device which you want to connect choose nfc then touch two devices.</string>
     <string name="scan_qr_code_description">Click view stream on the device which you want to connect then scan qr code.</string>
     <string name="about_type_ip">Click view stream on device which you want to connect then type above ip address.</string>
+    <string name="wi_fi_disabled">WiFi is disabled..</string>
 
 
 </resources>
