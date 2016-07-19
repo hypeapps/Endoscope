@@ -71,7 +71,7 @@
                 style="@style/text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/scan_qr_code_description"
+                android:text="@string/scanner_qr_code"
                 android:id="@+id/qr_scanner_description"
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingLeft="40dp"

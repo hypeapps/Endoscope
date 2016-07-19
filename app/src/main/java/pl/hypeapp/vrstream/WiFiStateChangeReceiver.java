@@ -5,51 +5,52 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-
-
-import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
-import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.View;
 
 
 public class WiFiStateChangeReceiver extends BroadcastReceiver {
 
     AlertDialog alertDialog;
+    final String PACKAGE_NAME = "pl.hypeapp.vrstream";
+    final String START_STREAM_ACTIVITY_CLASS_NAME = "pl.hypeapp.vrstream.StartStreamActivity";
+
     @Override
     public void onReceive(Context context, Intent intent) {
-        int extraWifiState = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE ,
-                WifiManager.WIFI_STATE_UNKNOWN);
-        Log.i("WIFI_STATE", "" + extraWifiState);
 
-        switch(extraWifiState){
-            case WifiManager.WIFI_STATE_ENABLED:
-                if((alertDialog != null) && (alertDialog.isShowing())){
-                    alertDialog.dismiss();
-                    if(context.getClass() == StartStreamActivity.class){
-                        Log.i("HALO", "HANS");
+        NetworkInfo wifiInfo = intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
 
-                        ConnectivityManager connManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-                        NetworkInfo wifi = connManager.getActiveNetworkInfo();
-                        if (wifi.isConnected()) {
-                            Intent startStreamRestart = new Intent();
-                            startStreamRestart.setClassName("pl.hypeapp.vrstream", "pl.hypeapp.vrstream.StartStreamActivity");
-                            startStreamRestart.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            context.startActivity(startStreamRestart);
-                        }
-                    }
+        if(wifiInfo.isConnected()){
+            if((alertDialog != null) && (alertDialog.isShowing())){
+                destroyAlertDialog();
+                if(isStartStreamActivityClass(context)) {
+                    restartStartStreamActivity(context);
                 }
-                break;
-            case WifiManager.WIFI_STATE_DISABLED:
+            }
+        }else{
+            if(alertDialog == null) {
                 alertDialog = newWiFiAlertDialog(context);
                 alertDialog.show();
-                break;
+            }
         }
 
+    }
+
+    private void restartStartStreamActivity(Context context) {
+        Intent startStreamRestart = new Intent();
+        startStreamRestart.setClassName(PACKAGE_NAME , START_STREAM_ACTIVITY_CLASS_NAME);
+        startStreamRestart.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        context.startActivity(startStreamRestart);
+    }
+
+    private boolean isStartStreamActivityClass(Context context) {
+        return context.getClass() == StartStreamActivity.class;
+    }
+
+    private void destroyAlertDialog() {
+        alertDialog.dismiss();
+        alertDialog = null;
     }
 
     private AlertDialog newWiFiAlertDialog(final Context context){

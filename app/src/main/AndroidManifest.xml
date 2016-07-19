@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <uses-permission android:name="android.permission.NFC" />
     <uses-feature android:name="android.hardware.nfc" android:required="false"/>
@@ -64,6 +65,8 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+
+
         </activity>
         <activity
             android:name=".SettingsActivity"

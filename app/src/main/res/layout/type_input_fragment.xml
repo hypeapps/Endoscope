@@ -68,7 +68,7 @@
                 style="@style/text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/click_start_stream_on_device_which_you_want_to_connect_then_read_the_ip_and_write_it_above"
+                android:text="@string/about_input_ip"
                 android:id="@+id/type_description"
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingLeft="40dp"

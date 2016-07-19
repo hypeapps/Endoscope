@@ -30,7 +30,7 @@
             style="@style/text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/about_nfc_description"
+            android:text="@string/scan_qr_code_description"
             android:id="@+id/textView6"
             android:gravity="center_vertical|center_horizontal"
             android:paddingLeft="40dp"

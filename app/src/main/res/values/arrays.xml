@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="resolutions">
-        <item name="0">320x120</item>
-        <item name="1">240x120</item>
-        <item name="2">120x120</item>
-        <item name="3">640x480</item>
+        <item name="0">640x480</item>
+        <item name="1">400x300</item>
+        <item name="2">144x168</item>
+        <item name="3">120x60</item>
     </string-array>
+
+
+    <integer-array name="resolution_width">
+        <item>640</item>
+        <item>400</item>
+        <item>144</item>
+        <item>120</item>
+    </integer-array>
+
+    <integer-array name="resolution_height">
+        <item>480</item>
+        <item>300</item>
+        <item>168</item>
+        <item>120</item>
+    </integer-array>
+
 
     <string-array name="stream_audio">
         <item name="0">ON</item>

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
+import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
@@ -39,7 +40,7 @@ public class ConnectToStreamActivity extends AppCompatActivity {
         messagesReceivedArray = new ArrayList<>();
 
         wiFiStateChangeReceiver = new WiFiStateChangeReceiver();
-        registerReceiver(wiFiStateChangeReceiver, new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION));
+        registerReceiver(wiFiStateChangeReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
 
     }
 

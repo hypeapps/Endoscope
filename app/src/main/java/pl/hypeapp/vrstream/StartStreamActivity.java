@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -46,15 +47,24 @@ public class StartStreamActivity extends AppCompatActivity
 
         surfaceView = (SurfaceView) findViewById(R.id.surface);
 
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        boolean isAudioStream = sharedPreferences.getBoolean("is_audio_stream", false);
+        int videoEncoder = sharedPreferences.getInt("video_encoder", 0);
+        int resolution = sharedPreferences.getInt("resolution", 0);
+        int width[] = getResources().getIntArray(R.array.resolution_width);
+        int height[] = getResources().getIntArray(R.array.resolution_height);
+
+
         session = SessionBuilder.getInstance()
                 .setCallback(this)
                 .setSurfaceView(surfaceView)
                 .setPreviewOrientation(90)
                 .setContext(getApplicationContext())
-                .setAudioEncoder(SessionBuilder.AUDIO_NONE)
+                .setAudioEncoder(isAudioStream ? SessionBuilder.AUDIO_AAC : SessionBuilder.AUDIO_NONE)
                 .setAudioQuality(new AudioQuality(16000, 32000))
-                .setVideoEncoder(SessionBuilder.VIDEO_H264)
-                .setVideoQuality(new VideoQuality(320,240,30,500000))
+                .setVideoEncoder((videoEncoder == 0) ? SessionBuilder.VIDEO_H264 : SessionBuilder.VIDEO_H263)
+                .setVideoQuality(new VideoQuality(width[resolution], height[resolution], 20, 1200000))
                 .build();
 
 
@@ -69,7 +79,7 @@ public class StartStreamActivity extends AppCompatActivity
         editor.commit();
 
         wiFiStateChangeReceiver = new WiFiStateChangeReceiver();
-        registerReceiver(wiFiStateChangeReceiver, new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION));
+        registerReceiver(wiFiStateChangeReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
     }
 
     @Override
