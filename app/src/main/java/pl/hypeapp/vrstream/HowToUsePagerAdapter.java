@@ -20,6 +20,6 @@ public class HowToUsePagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 }

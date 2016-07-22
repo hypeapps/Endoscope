@@ -36,6 +36,8 @@ public class HowToUseFragmentFactory extends Fragment {
                 return R.layout.htu_fragment2;
             case 2:
                 return R.layout.htu_fragment3;
+            case 3:
+                return R.layout.htu_fragment4;
         }
         return 0;
     }

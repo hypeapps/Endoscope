@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
 import android.view.KeyEvent;
@@ -21,21 +22,37 @@ public class WiFiStateChangeReceiver extends BroadcastReceiver {
 
         NetworkInfo wifiInfo = intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
 
-        if(wifiInfo.isConnected()){
-            if((alertDialog != null) && (alertDialog.isShowing())){
+        int extraWifiState = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE ,
+                WifiManager.WIFI_STATE_UNKNOWN);
+
+        if(isWifiDisabled(extraWifiState)){
+            alertDialog = newWiFiAlertDialog(context);
+            alertDialog.show();
+        }
+
+        if (wifiInfo != null) {
+            if ((isWifiConnected(wifiInfo)) && (isAlertDialogShowing())) {
                 destroyAlertDialog();
-                if(isStartStreamActivityClass(context)) {
-                    restartStartStreamActivity(context);
-                }
-            }
-        }else{
-            if(alertDialog == null) {
-                alertDialog = newWiFiAlertDialog(context);
-                alertDialog.show();
+                    if (isStartStreamActivityClass(context)) {
+                        restartStartStreamActivity(context);
+                    }
             }
         }
 
     }
+
+    private boolean isWifiDisabled(int extraWifiState) {
+        return extraWifiState == WifiManager.WIFI_STATE_DISABLED;
+    }
+
+    private boolean isAlertDialogShowing() {
+        return (alertDialog != null) && (alertDialog.isShowing());
+    }
+
+    private boolean isWifiConnected(NetworkInfo wifiInfo) {
+        return (wifiInfo.isConnected()) && (wifiInfo.getType() == ConnectivityManager.TYPE_WIFI);
+    }
+
 
     private void restartStartStreamActivity(Context context) {
         Intent startStreamRestart = new Intent();

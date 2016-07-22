@@ -54,6 +54,7 @@
 
     <string name="wi_fi_disabled">WiFi is disabled..</string>
     <string name="package_name">pl.hypeapp.vrstream</string>
+    <string name="header_enable_wifi">Enable Wi-Fi</string>
 
 
 </resources>

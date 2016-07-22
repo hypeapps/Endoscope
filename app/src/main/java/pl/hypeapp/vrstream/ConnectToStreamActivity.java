@@ -41,6 +41,7 @@ public class ConnectToStreamActivity extends AppCompatActivity {
 
         wiFiStateChangeReceiver = new WiFiStateChangeReceiver();
         registerReceiver(wiFiStateChangeReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+        registerReceiver(wiFiStateChangeReceiver, new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION));
 
     }
 

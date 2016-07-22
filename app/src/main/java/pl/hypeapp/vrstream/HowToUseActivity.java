@@ -53,7 +53,7 @@ public class HowToUseActivity extends AppCompatActivity {
         ImageView nextButton = (ImageView) findViewById(R.id.next_page_button);
         TextView doneButton = (TextView) findViewById(R.id.done_button);
         if ((nextButton != null) && (doneButton != null)) {
-            if (position < 2) {
+            if (position < 3) {
                 nextButton.setVisibility(View.VISIBLE);
                 doneButton.setVisibility(View.GONE);
 
@@ -81,7 +81,7 @@ public class HowToUseActivity extends AppCompatActivity {
     }
 
     public void skipPages(View v){
-        viewPager.setCurrentItem(2);
+        viewPager.setCurrentItem(3);
     }
 
     public void donePages(View v){

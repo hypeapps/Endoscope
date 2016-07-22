@@ -31,7 +31,6 @@ public class StartStreamActivity extends AppCompatActivity
     private Session session;
     private SurfaceView surfaceView;
     private RtspServer rtspServer;
-
     private WiFiStateChangeReceiver wiFiStateChangeReceiver;
     private ViewPager viewPager;
 
@@ -64,22 +63,28 @@ public class StartStreamActivity extends AppCompatActivity
                 .setAudioEncoder(isAudioStream ? SessionBuilder.AUDIO_AAC : SessionBuilder.AUDIO_NONE)
                 .setAudioQuality(new AudioQuality(16000, 32000))
                 .setVideoEncoder((videoEncoder == 0) ? SessionBuilder.VIDEO_H264 : SessionBuilder.VIDEO_H263)
-                .setVideoQuality(new VideoQuality(width[resolution], height[resolution], 20, 1200000))
+                .setVideoQuality(new VideoQuality(width[resolution], height[resolution], 30, 1200000))
                 .build();
 
+        startRtspServer();
 
-        rtspServer = new RtspServer();
-        rtspServer.addCallbackListener(this);
-        rtspServer.start();
-        Log.i(TAG, "ONCREATE");
-
-
-        SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(this).edit();
-        editor.putString("ip_local", getIpAddress());
-        editor.commit();
+        putIpAddressToSharedPref(getIpAddress());
 
         wiFiStateChangeReceiver = new WiFiStateChangeReceiver();
         registerReceiver(wiFiStateChangeReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+        registerReceiver(wiFiStateChangeReceiver, new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION));
+    }
+
+    private void startRtspServer() {
+        rtspServer = new RtspServer();
+        rtspServer.addCallbackListener(this);
+        rtspServer.start();
+    }
+
+    private void putIpAddressToSharedPref(String ipAddress) {
+        SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(this).edit();
+        editor.putString("ip_local", ipAddress);
+        editor.commit();
     }
 
     @Override
