@@ -36,7 +36,7 @@
             style="@style/text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Make sure that wifi on your devices is enabled and connected to the same network."
+            android:text="@string/ht_wi_fi_enabled"
             android:id="@+id/textView7"
             android:gravity="center_vertical|center_horizontal"
             android:paddingLeft="40dp"

@@ -55,6 +55,13 @@
     <string name="wi_fi_disabled">WiFi is disabled..</string>
     <string name="package_name">pl.hypeapp.vrstream</string>
     <string name="header_enable_wifi">Enable Wi-Fi</string>
+    <string name="header_link_via">You can link to stream via</string>
+    <string name="or">or</string>
+    <string name="ht_wi_fi_enabled">Make sure that wifi on your devices is enabled and connected to the same network.</string>
+    <string name="ht_link_via">Linking devices is possible with different ways.</string>
+    <string name="ht_welcome_desc">Endoscope lets you to stream live video between android devices!</string>
+    <string name="made_by_header">Endoscope made by</string>
+    <string name="ht_made_by_desc">Thank you for installing! \n \nContact E-MAIL: \n PSZEM.SZYM@GMAIL.COM</string>
 
 
 </resources>

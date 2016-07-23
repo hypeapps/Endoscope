@@ -25,7 +25,6 @@ public class ConnectToStreamActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private ViewStreamPagerAdapter viewStreamPagerAdapter;
-    private String TAG = "SzynaGada";
     private ArrayList<String> messagesReceivedArray;
     private WiFiStateChangeReceiver wiFiStateChangeReceiver;
 

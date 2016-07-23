@@ -8,7 +8,6 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.widget.ImageView;
 
 import xyz.hanks.library.SmallBang;
@@ -60,6 +59,9 @@ public class SplashScreenActivity extends Activity {
         boolean isFirstRun = sharedPreferences.getBoolean("is_first_run", true);
         Intent intentTo;
         if(isFirstRun){
+            SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(this).edit();
+            editor.putBoolean("is_first_run", false);
+            editor.commit();
             intentTo = new Intent(SplashScreenActivity.this, HowToUseActivity.class);
         }else{
             intentTo = new Intent(SplashScreenActivity.this, MainMenuActivity.class);
@@ -80,6 +82,6 @@ public class SplashScreenActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
+        finish();
     }
 }

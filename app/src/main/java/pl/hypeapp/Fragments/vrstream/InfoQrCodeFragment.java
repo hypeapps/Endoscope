@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.google.zxing.qrcode.encoder.QRCode;
 
 import pl.hypeapp.vrstream.R;
 

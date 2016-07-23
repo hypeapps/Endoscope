@@ -40,7 +40,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="App that change your life and your ablity to be awesome human "
+            android:text="@string/ht_welcome_desc"
             android:id="@+id/textView2"
             style="@style/text_style"
             android:gravity="center_vertical|center_horizontal"

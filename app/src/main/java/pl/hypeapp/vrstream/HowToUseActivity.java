@@ -45,10 +45,6 @@ public class HowToUseActivity extends AppCompatActivity {
         viewPager.setAdapter(pagerAdapter);
     }
 
-
-
-
-
     void viewDoneButton(int position) {
         ImageView nextButton = (ImageView) findViewById(R.id.next_page_button);
         TextView doneButton = (TextView) findViewById(R.id.done_button);

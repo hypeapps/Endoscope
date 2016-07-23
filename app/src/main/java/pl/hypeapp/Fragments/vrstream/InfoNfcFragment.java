@@ -9,7 +9,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +24,6 @@ public class InfoNfcFragment extends Fragment  implements NfcAdapter.OnNdefPushC
 
     private NfcAdapter nfcAdapter;
     private ArrayList<String> messagesToSendArray;
-    String TAG = "SZYNA_GADA";
     private final String IP_DEFAULT = "000.000.000.0000" ;
 
     @Override
@@ -53,19 +51,16 @@ public class InfoNfcFragment extends Fragment  implements NfcAdapter.OnNdefPushC
     @Override
     public NdefMessage createNdefMessage(NfcEvent nfcEvent) {
         NdefRecord[] recordsToAttach = createRecords();
-        Log.i(TAG, "createNdefMessage");
         //When creating an NdefMessage we need to provide an NdefRecord[]
         return new NdefMessage(recordsToAttach);
     }
 
     @Override
-    public void onNdefPushComplete(NfcEvent nfcEvent) {
-        Log.i("SZYNA GADA", "onNdefPushComplete");
-    }
+    public void onNdefPushComplete(NfcEvent nfcEvent) {}
 
 
     public NdefRecord[] createRecords() {
-        Log.i(TAG, "createRecords");
+
         NdefRecord[] records = new NdefRecord[messagesToSendArray.size() + 1];
         //To Create Messages Manually if API is less than
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
@@ -78,7 +73,6 @@ public class InfoNfcFragment extends Fragment  implements NfcAdapter.OnNdefPushC
                         payload);                       //Our payload for the Record
 
                 records[i] = record;
-                Log.i(TAG, "createRecodrds IF1");
             }
         }
         //Api is high enough that we can use createMime, which is preferred.
@@ -90,7 +84,6 @@ public class InfoNfcFragment extends Fragment  implements NfcAdapter.OnNdefPushC
                 NdefRecord record = NdefRecord.createMime("text/plain",payload);
                 records[i] = record;
 
-                Log.i(TAG, "createRecodrds IF2");
             }
         }
         records[messagesToSendArray.size()] = NdefRecord.createApplicationRecord(getActivity().getPackageName());
