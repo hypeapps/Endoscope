@@ -2,10 +2,12 @@ package pl.hypeapp.vrstream;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.ImageView;
 
@@ -54,12 +56,21 @@ public class SplashScreenActivity extends Activity {
     }
 
     private void intentNextActivityAfterSeconds(long seconds){
-        final Intent intentToMainActivity = new Intent(SplashScreenActivity.this, MainMenuActivity.class);
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean isFirstRun = sharedPreferences.getBoolean("is_first_run", true);
+        Intent intentTo;
+        if(isFirstRun){
+            intentTo = new Intent(SplashScreenActivity.this, HowToUseActivity.class);
+        }else{
+            intentTo = new Intent(SplashScreenActivity.this, MainMenuActivity.class);
+        }
+
+        final Intent intent = intentTo;
         Handler handler = new Handler();
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                startActivity(intentToMainActivity);
+                startActivity(intent);
                 onDestroy();
             }
         };
