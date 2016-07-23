@@ -38,7 +38,7 @@ public class SettingsActivity extends Activity {
         TextView videoEncoderTextView = (TextView) findViewById(R.id.vide_encoder_option);
         videoEncoderTextView.setText(getResources().getTextArray(R.array.video_encoders)[videoEncoder]);
 
-        int resolution = sharedPreferences.getInt("resolution", 0);
+        int resolution = sharedPreferences.getInt("resolution", 2);
         TextView resolutionTextView = (TextView) findViewById(R.id.resolution_option);
         resolutionTextView.setText(getResources().getTextArray(R.array.resolutions)[resolution]);
 

@@ -5,10 +5,24 @@
     android:layout_height="match_parent"
     tools:context=".StartStreamActivity">
 
-    <net.majorkernelpanic.streaming.gl.SurfaceView
-        android:id="@+id/surface"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <net.majorkernelpanic.streaming.gl.SurfaceView
+            android:id="@+id/surface"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/imageView33"
+            android:src="@drawable/endoscope_icon_text"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp" />
+    </RelativeLayout>
 
 
     <LinearLayout
@@ -16,7 +30,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/main_background"
-        android:id="@+id/about_connection">
+        android:id="@+id/about_connection"
+        android:visibility="visible">
 
         <RelativeLayout
             android:orientation="vertical"

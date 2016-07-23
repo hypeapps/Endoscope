@@ -88,7 +88,8 @@
         </activity>
         <activity
             android:name=".PlayStreamActivity"
-            android:theme="@style/App.Theme" >
+            android:theme="@style/App.Theme"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

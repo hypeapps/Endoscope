@@ -80,7 +80,7 @@ public class RtpSocket implements Runnable {
 	public RtpSocket() {
 		
 		mCacheSize = 0;
-		mBufferCount = 300; // TODO: readjust that when the FIFO is full 
+		mBufferCount = 300; // TODO: readjust that when the FIFO is full
 		mBuffers = new byte[mBufferCount][];
 		mPackets = new DatagramPacket[mBufferCount];
 		mReport = new SenderReport();

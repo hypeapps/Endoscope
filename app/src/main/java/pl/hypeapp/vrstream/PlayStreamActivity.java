@@ -10,6 +10,7 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.WindowManager;
 
 import net.majorkernelpanic.streaming.rtsp.RtspServer;
 
@@ -29,7 +30,11 @@ public class PlayStreamActivity extends Activity implements SurfaceHolder.Callba
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_stream);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         surfaceView = (SurfaceView) findViewById(R.id.surface_play);
         surfaceHolder = surfaceView.getHolder();
@@ -39,13 +44,18 @@ public class PlayStreamActivity extends Activity implements SurfaceHolder.Callba
         ipAddress = i.getStringExtra("ip_connect");
     }
 
+
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
+
         play(ipAddress);
     }
 
     @Override
-    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {}
+    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+
+
+    }
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {

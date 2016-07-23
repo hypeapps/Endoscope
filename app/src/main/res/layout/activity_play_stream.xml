@@ -3,18 +3,26 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="@android:color/black" >
+        android:layout_height="match_parent">
 
         <VideoView
             android:id="@+id/surface_play"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
-    </FrameLayout>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/imageView4"
+            android:src="@drawable/endoscope_icon_text"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="bottom|right"
+            android:rotation="-90"
+            android:layout_marginTop="10dp" />
+    </RelativeLayout>
+
 </LinearLayout>

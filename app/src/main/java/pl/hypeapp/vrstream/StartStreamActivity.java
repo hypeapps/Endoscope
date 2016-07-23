@@ -50,7 +50,7 @@ public class StartStreamActivity extends AppCompatActivity
 
         boolean isAudioStream = sharedPreferences.getBoolean("is_audio_stream", false);
         int videoEncoder = sharedPreferences.getInt("video_encoder", 0);
-        int resolution = sharedPreferences.getInt("resolution", 0);
+        int resolution = sharedPreferences.getInt("resolution", 2);
         int width[] = getResources().getIntArray(R.array.resolution_width);
         int height[] = getResources().getIntArray(R.array.resolution_height);
 
@@ -63,7 +63,7 @@ public class StartStreamActivity extends AppCompatActivity
                 .setAudioEncoder(isAudioStream ? SessionBuilder.AUDIO_AAC : SessionBuilder.AUDIO_NONE)
                 .setAudioQuality(new AudioQuality(16000, 32000))
                 .setVideoEncoder((videoEncoder == 0) ? SessionBuilder.VIDEO_H264 : SessionBuilder.VIDEO_H263)
-                .setVideoQuality(new VideoQuality(width[resolution], height[resolution], 30, 1200000))
+                .setVideoQuality(new VideoQuality(width[resolution], height[resolution], 30 , 500000))
                 .build();
 
         startRtspServer();
@@ -151,12 +151,20 @@ public class StartStreamActivity extends AppCompatActivity
     @Override
     public void onSessionStarted() {
         coverAboutConnectionLayout();
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         Log.i(TAG, "sStarted");
     }
 
     @Override
     public void onSessionStopped() {
         showAboutConnectionLayout();
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+
         Log.i(TAG, "sStopped");
     }
 
