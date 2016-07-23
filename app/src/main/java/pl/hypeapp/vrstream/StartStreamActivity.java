@@ -1,6 +1,8 @@
 package pl.hypeapp.vrstream;
 
 import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -9,8 +11,9 @@ import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
@@ -23,10 +26,8 @@ import net.majorkernelpanic.streaming.video.VideoQuality;
 import net.majorkernelpanic.streaming.gl.SurfaceView;
 
 
-public class StartStreamActivity extends AppCompatActivity
-        implements Session.Callback, RtspServer.CallbackListener {
+public class StartStreamActivity extends AppCompatActivity implements Session.Callback, RtspServer.CallbackListener {
 
-    String TAG = "szynaGada";
 
     private Session session;
     private SurfaceView surfaceView;
@@ -135,7 +136,7 @@ public class StartStreamActivity extends AppCompatActivity
 
     @Override
     public void onSessionError(int reason, int streamType, Exception e) {
-        Log.i(TAG, "sError " +  reason);
+        logError(e.getMessage());
     }
 
     @Override
@@ -151,32 +152,24 @@ public class StartStreamActivity extends AppCompatActivity
     @Override
     public void onSessionStarted() {
         coverAboutConnectionLayout();
-
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        Log.i(TAG, "sStarted");
     }
 
     @Override
     public void onSessionStopped() {
         showAboutConnectionLayout();
-
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
-
-        Log.i(TAG, "sStopped");
     }
 
     @Override
     public void onError(RtspServer server, Exception e, int error) {
-        Log.i(TAG, "rERROR " + error);
+        logError(e.getMessage());
     }
 
     @Override
-    public void onMessage(RtspServer server, int message) {
-        Log.i(TAG, "rSTART " + message);
-    }
+    public void onMessage(RtspServer server, int message) {}
 
     public void coverAboutConnectionLayout(){
         LinearLayout aboutConnectionLayout = (LinearLayout) findViewById(R.id.about_connection);
@@ -208,14 +201,27 @@ public class StartStreamActivity extends AppCompatActivity
         return ipAddressFormatted;
     }
 
-
-//    private void logError(final String msg) {
-//        final String error = (msg == null) ? "Error unknown" : msg;
-//        AlertDialog.Builder builder = new AlertDialog.Builder(StartStreamActivity.this);
-//        builder.setMessage(error).setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//            public void onClick(DialogInterface dialog, int id) {}
-//        });
-//        AlertDialog dialog = builder.create();
-//        dialog.show();
-//    }
+    private void logError(final String msg) {
+        final String error = (msg == null) ? "Error unknown" : msg;
+        AlertDialog.Builder builder = new AlertDialog.Builder(StartStreamActivity.this);
+        builder.setTitle("Error");
+        builder.setMessage(error).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                Intent intent = new Intent(StartStreamActivity.this, MainMenuActivity.class);
+                startActivity(intent);
+            }
+        });
+        builder.setOnKeyListener(new DialogInterface.OnKeyListener() {
+            @Override
+            public boolean onKey(DialogInterface dialogInterface, int i, KeyEvent keyEvent) {
+                if (i == KeyEvent.KEYCODE_BACK) {
+                    Intent intent = new Intent(StartStreamActivity.this, MainMenuActivity.class);
+                    startActivity(intent);
+                }
+                return false;
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 }

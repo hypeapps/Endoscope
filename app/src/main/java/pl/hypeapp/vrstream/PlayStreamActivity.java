@@ -1,13 +1,15 @@
 package pl.hypeapp.vrstream;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
+import android.support.v7.app.AlertDialog;
+import android.view.KeyEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.WindowManager;
@@ -22,9 +24,7 @@ public class PlayStreamActivity extends Activity implements SurfaceHolder.Callba
     private MediaPlayer mediaPlayer;
     private SurfaceView surfaceView;
     private SurfaceHolder surfaceHolder;
-    private String TAG = "SzynaGada";
     private String ipAddress;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,15 +47,11 @@ public class PlayStreamActivity extends Activity implements SurfaceHolder.Callba
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-
         play(ipAddress);
     }
 
     @Override
-    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-
-
-    }
+    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {}
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
@@ -76,7 +72,6 @@ public class PlayStreamActivity extends Activity implements SurfaceHolder.Callba
         mediaPlayer.setDisplay(surfaceHolder);
         mediaPlayer.setOnPreparedListener(this);
         try {
-            Log.i(TAG, "Video URI: " + "rtsp://" + ipAddress + ":" + getPort() + "/");
             String videoUri = "rtsp://" + ipAddress + ":" + getPort() + "/";
             mediaPlayer.setDataSource(videoUri);
             mediaPlayer.prepareAsync();
@@ -95,28 +90,47 @@ public class PlayStreamActivity extends Activity implements SurfaceHolder.Callba
             @Override
             public boolean onError(MediaPlayer mp, int what, int extra) {
                 if(extra == MediaPlayer.MEDIA_ERROR_IO) {
-                    Log.e(TAG, "MEDIA ERROR");
-                }
-                else if(extra == MediaPlayer.MEDIA_ERROR_SERVER_DIED) {
-                    Log.e(TAG, "SERVER DIED ERROR");
-                }
-                else if(extra == MediaPlayer.MEDIA_ERROR_UNSUPPORTED) {
-                    Log.e(TAG, "MEDIA UNSUPPORTED");
-                }
-                else if(extra == MediaPlayer.MEDIA_ERROR_UNKNOWN) {
-                    Log.e(TAG, "MEDIA ERROR UNKOWN");
-                }
-                else if(extra == MediaPlayer.MEDIA_ERROR_NOT_VALID_FOR_PROGRESSIVE_PLAYBACK) {
-                    Log.e(TAG, "NOT VALID PROGRESSIVE PLAYBACK");
-                }
-                else {
-                    Log.e(TAG, String.valueOf(what));
-                    Log.e(TAG, String.valueOf(extra));
-                    Log.e(TAG, "ERROR UNKNOWN!");
+                    logError("MEDIA ERROR");
+                }else if(extra == MediaPlayer.MEDIA_ERROR_SERVER_DIED) {
+                    logError("SERVER DIED ERROR");
+                }else if(extra == MediaPlayer.MEDIA_ERROR_UNSUPPORTED) {
+                    logError("MEDIA UNSUPPORTED");
+                }else if(extra == MediaPlayer.MEDIA_ERROR_UNKNOWN) {
+                    logError("MEDIA ERROR UNKNOWN");
+                }else if(extra == MediaPlayer.MEDIA_ERROR_NOT_VALID_FOR_PROGRESSIVE_PLAYBACK) {
+                    logError("NOT VALID PROGRESSIVE PLAYBACK");
+                }else if(extra == MediaPlayer.MEDIA_ERROR_TIMED_OUT){
+                    logError("MEDIA ERROR TIMED OUT");
+                }else {
+                    logError("ERROR UNKNOWN (" + what + ")" + "(" + extra + ")");
                 }
                 return false;
             }
         });
+    }
+
+    private void logError(final String msg) {
+        final String error = (msg == null) ? "Error unknown" : msg;
+        AlertDialog.Builder builder = new AlertDialog.Builder(PlayStreamActivity.this);
+        builder.setTitle("Error");
+        builder.setMessage(error).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                Intent intent = new Intent(PlayStreamActivity.this, MainMenuActivity.class);
+                startActivity(intent);
+            }
+        });
+        builder.setOnKeyListener(new DialogInterface.OnKeyListener() {
+            @Override
+            public boolean onKey(DialogInterface dialogInterface, int i, KeyEvent keyEvent) {
+                if (i == KeyEvent.KEYCODE_BACK) {
+                    Intent intent = new Intent(PlayStreamActivity.this, MainMenuActivity.class);
+                    startActivity(intent);
+                }
+                return false;
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
 }
