@@ -1,4 +1,4 @@
-package pl.hypeapp.Fragments.vrstream;
+package pl.hypeapp.Fragments.endoscope;
 
 import android.graphics.PointF;
 import android.os.Bundle;
@@ -13,8 +13,8 @@ import android.widget.TextView;
 import com.dlazaro66.qrcodereaderview.QRCodeReaderView;
 
 
-import pl.hypeapp.vrstream.ConnectToStreamActivity;
-import pl.hypeapp.vrstream.R;
+import pl.hypeapp.endoscope.ConnectToStreamActivity;
+import pl.hypeapp.endoscope.R;
 
 
 public class QrCodeScannerFragment extends Fragment implements QRCodeReaderView.OnQRCodeReadListener, View.OnClickListener {

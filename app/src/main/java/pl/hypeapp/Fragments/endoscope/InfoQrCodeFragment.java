@@ -1,4 +1,4 @@
-package pl.hypeapp.Fragments.vrstream;
+package pl.hypeapp.Fragments.endoscope;
 
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 
-import pl.hypeapp.vrstream.R;
+import pl.hypeapp.endoscope.R;
 
 
 public class InfoQrCodeFragment extends Fragment {

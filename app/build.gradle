@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "pl.hypeapp.vrstream"
+        applicationId "pl.hypeapp.endoscope"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1

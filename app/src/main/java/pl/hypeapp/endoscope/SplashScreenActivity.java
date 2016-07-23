@@ -1,4 +1,4 @@
-package pl.hypeapp.vrstream;
+package pl.hypeapp.endoscope;
 
 import android.app.Activity;
 import android.content.Intent;

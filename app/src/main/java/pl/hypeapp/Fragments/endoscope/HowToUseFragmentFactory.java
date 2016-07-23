@@ -1,13 +1,12 @@
-package pl.hypeapp.Fragments.vrstream;
+package pl.hypeapp.Fragments.endoscope;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import pl.hypeapp.vrstream.R;
+import pl.hypeapp.endoscope.R;
 
 
 public class HowToUseFragmentFactory extends Fragment {

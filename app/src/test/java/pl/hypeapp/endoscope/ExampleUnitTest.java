@@ -1,4 +1,4 @@
-package pl.hypeapp.vrstream;
+package pl.hypeapp.endoscope;
 
 import org.junit.Test;
 

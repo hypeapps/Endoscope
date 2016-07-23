@@ -1,4 +1,4 @@
-package pl.hypeapp.vrstream;
+package pl.hypeapp.endoscope;
 
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
@@ -14,8 +14,8 @@ import android.view.KeyEvent;
 public class WiFiStateChangeReceiver extends BroadcastReceiver {
 
     AlertDialog alertDialog;
-    final String PACKAGE_NAME = "pl.hypeapp.vrstream";
-    final String START_STREAM_ACTIVITY_CLASS_NAME = "pl.hypeapp.vrstream.StartStreamActivity";
+    final String PACKAGE_NAME = "pl.hypeapp.endoscope";
+    final String START_STREAM_ACTIVITY_CLASS_NAME = "pl.hypeapp.endoscope.StartStreamActivity";
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -95,7 +95,7 @@ public class WiFiStateChangeReceiver extends BroadcastReceiver {
 
     private void intentToMainMenu(Context context){
         Intent intent = new Intent();
-        intent.setClassName("pl.hypeapp.vrstream", "pl.hypeapp.vrstream.MainMenuActivity");
+        intent.setClassName("pl.hypeapp.endoscope", "pl.hypeapp.endoscope.MainMenuActivity");
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         context.startActivity(intent);
     }

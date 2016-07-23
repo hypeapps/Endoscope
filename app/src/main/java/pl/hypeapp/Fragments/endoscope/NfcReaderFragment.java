@@ -1,4 +1,4 @@
-package pl.hypeapp.Fragments.vrstream;
+package pl.hypeapp.Fragments.endoscope;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-import pl.hypeapp.vrstream.ConnectToStreamActivity;
-import pl.hypeapp.vrstream.R;
+import pl.hypeapp.endoscope.ConnectToStreamActivity;
+import pl.hypeapp.endoscope.R;
 
 
 public class NfcReaderFragment extends Fragment implements View.OnClickListener{

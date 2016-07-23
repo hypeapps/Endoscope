@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VRSTREAM</string>
+    <string name="app_name">Endoscope</string>
 
     <string name="resolution_dialog_title">Set video resolution</string>
     <string name="stream_sound_dialog_title">Enable stream sound</string>

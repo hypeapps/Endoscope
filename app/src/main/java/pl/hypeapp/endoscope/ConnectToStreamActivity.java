@@ -1,4 +1,4 @@
-package pl.hypeapp.vrstream;
+package pl.hypeapp.endoscope;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import pl.hypeapp.Fragments.vrstream.NfcReaderFragment;
+import pl.hypeapp.Fragments.endoscope.NfcReaderFragment;
 
 
 public class ConnectToStreamActivity extends AppCompatActivity {

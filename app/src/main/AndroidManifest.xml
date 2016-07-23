@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="pl.hypeapp.vrstream" >
+    package="pl.hypeapp.endoscope" >
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -23,7 +23,7 @@
         android:supportsRtl="true"
         android:theme="@style/App.Theme" >
         <activity
-            android:name=".MainMenuActivity"
+            android:name="pl.hypeapp.endoscope.MainMenuActivity"
             android:theme="@style/App.Theme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +32,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SplashScreenActivity"
+            android:name="pl.hypeapp.endoscope.SplashScreenActivity"
             android:theme="@style/App.Theme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,7 +41,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ConnectToStreamActivity"
+            android:name="pl.hypeapp.endoscope.ConnectToStreamActivity"
             android:theme="@style/App.Theme"
             android:launchMode="singleTask">
             <intent-filter>
@@ -58,7 +58,7 @@
 
         </activity>
         <activity
-            android:name=".StartStreamActivity"
+            android:name="pl.hypeapp.endoscope.StartStreamActivity"
             android:theme="@style/App.Theme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -69,7 +69,7 @@
 
         </activity>
         <activity
-            android:name=".SettingsActivity"
+            android:name="pl.hypeapp.endoscope.SettingsActivity"
             android:theme="@style/App.Theme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -78,7 +78,7 @@
             </intent-filter>
         </activity>
         <activity
-        android:name=".HowToUseActivity"
+        android:name="pl.hypeapp.endoscope.HowToUseActivity"
         android:theme="@style/App.Theme" >
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -87,7 +87,7 @@
         </intent-filter>
         </activity>
         <activity
-            android:name=".PlayStreamActivity"
+            android:name="pl.hypeapp.endoscope.PlayStreamActivity"
             android:theme="@style/App.Theme"
             android:configChanges="orientation|screenSize">
             <intent-filter>

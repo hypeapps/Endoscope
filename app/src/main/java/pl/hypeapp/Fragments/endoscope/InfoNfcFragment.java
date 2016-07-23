@@ -1,4 +1,4 @@
-package pl.hypeapp.Fragments.vrstream;
+package pl.hypeapp.Fragments.endoscope;
 
 import android.content.SharedPreferences;
 import android.nfc.NdefMessage;
@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 
-import pl.hypeapp.vrstream.R;
+import pl.hypeapp.endoscope.R;
 
 
 public class InfoNfcFragment extends Fragment  implements NfcAdapter.OnNdefPushCompleteCallback,

@@ -1,12 +1,12 @@
-package pl.hypeapp.vrstream;
+package pl.hypeapp.endoscope;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import pl.hypeapp.Fragments.vrstream.InfoInputFragment;
-import pl.hypeapp.Fragments.vrstream.InfoNfcFragment;
-import pl.hypeapp.Fragments.vrstream.InfoQrCodeFragment;
+import pl.hypeapp.Fragments.endoscope.InfoInputFragment;
+import pl.hypeapp.Fragments.endoscope.InfoNfcFragment;
+import pl.hypeapp.Fragments.endoscope.InfoQrCodeFragment;
 
 
 public class StartStreamPagerAdapter extends FragmentPagerAdapter {

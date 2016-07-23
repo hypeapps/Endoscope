@@ -1,4 +1,4 @@
-package pl.hypeapp.Fragments.vrstream;
+package pl.hypeapp.Fragments.endoscope;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import pl.hypeapp.vrstream.R;
+import pl.hypeapp.endoscope.R;
 
 
 public class InfoInputFragment extends Fragment {
