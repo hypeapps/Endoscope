@@ -1,4 +1,4 @@
-# Endoscope - RTSP Wi-Fi live video streamer for android devices.
+# Endoscope - RTSP live video streamer for android devices via Wi-Fi.
 
 ![banner](https://s32.postimg.org/rsfitgp9x/endoscope_banner.png)
 
