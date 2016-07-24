@@ -43,8 +43,8 @@ Thanks to
 
 ## Contact me
 
-** **E-mail: pszem.szym@gmail.com
-** **Twitter: https://twitter.com/hype_app
+E-mail: pszem.szym@gmail.com
+Twitter: https://twitter.com/hype_app
 
 
 
