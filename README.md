@@ -1,5 +1,8 @@
 # Endoscope - RTSP Wi-Fi live video streamer for android devices.
 
+![banner](https://s32.postimg.org/rsfitgp9x/endoscope_banner.png)
+
+
 Endoscope allows you to fast link two android devices and stream live video from camera one device to another. Video stream is over Wi-Fi. One device hosts live stream and another connect to it. Remember to use Endscope your devices must be connect to the same wi-fi network.
 
 You can stream directly at VLC. Ip address looks like rtsp://ip address:port/
@@ -40,6 +43,16 @@ Thanks to
 - dlazaro66 [QRCodeReaderView](https://github.com/dlazaro66/QRCodeReaderView)
 
 - hanks-zyh [SmallBang](https://github.com/hanks-zyh/SmallBang)
+
+
+## Screenshots
+
+![scr1](https://s31.postimg.org/tlnf27c97/scr10.png) 
+![scr2](https://s31.postimg.org/melq6c1cb/scr3.png) 
+![scr3](https://s31.postimg.org/uvl8h9617/scr1.png) 
+![scr4](hhttps://s31.postimg.org/9ohht8te3/scr7.png) 
+![scr5](https://s31.postimg.org/a2itsudhn/scr8.png) 
+
 
 ## Contact me
 
