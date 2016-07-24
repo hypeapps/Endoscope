@@ -52,7 +52,8 @@ Thanks to
 ![scr3](https://s31.postimg.org/uvl8h9617/scr1.png) 
 ![scr4](https://s31.postimg.org/9ohht8te3/scr7.png) 
 ![scr5](https://s31.postimg.org/a2itsudhn/scr8.png) 
-
+![scr5](https://s32.postimg.org/4gij8qz6d/scr6.png) 
+![scr5](https://s32.postimg.org/uasbyiz6d/scr4.png) 
 
 ## Contact me
 
