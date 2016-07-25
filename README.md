@@ -17,7 +17,7 @@ You can stream directly at VLC. Ip address looks like rtsp://ip address:port/
 
 - You can type ip address manually.
 
-## SETTINGS
+## Settings
 
 You can configure:
 
@@ -54,6 +54,10 @@ Thanks to
 ![scr5](https://s31.postimg.org/a2itsudhn/scr8.png) 
 ![scr5](https://s32.postimg.org/4gij8qz6d/scr6.png) 
 ![scr5](https://s32.postimg.org/uasbyiz6d/scr4.png) 
+
+## Download
+
+You can download app at [Google Play](https://play.google.com/store/apps/details?id=pl.hypeapp.endoscope)
 
 ## Contact me
 
