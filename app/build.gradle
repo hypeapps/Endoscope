@@ -15,7 +15,6 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -37,8 +36,6 @@ dependencies {
     compile "com.android.support:support-v4:$androidSupportVersion"
     compile "hanks.xyz:smallbang-library:$hanksSmallbangVersion"
     compile "com.dlazaro66.qrcodereaderview:qrcodereaderview:$qrCodereaderViewVersion"
-
-
 }
 
 
