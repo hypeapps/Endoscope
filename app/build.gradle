@@ -15,29 +15,27 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-
-
-
 }
+
+def androidSupportAppcompatVersion = '24.1.1'
+def androidSupportVersion = '24.1.1'
+def hanksSmallbangVersion = '0.1.2'
+def qrCodereaderViewVersion = '1.0.0'
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile project(':libstreaming')
-    compile ('com.github.kenglxn.QRGen:android:2.2.0'){
+    compile('com.github.kenglxn.QRGen:android:2.2.0') {
         exclude group: 'com.google.zxing'
     }
-    compile 'com.android.support:appcompat-v7:24.0.0'
-    compile 'hanks.xyz:smallbang-library:0.1.2'
-    compile 'com.android.support:support-v4:24.0.0'
-    compile 'com.dlazaro66.qrcodereaderview:qrcodereaderview:1.0.0'
-
-
+    compile "com.android.support:appcompat-v7:$androidSupportAppcompatVersion"
+    compile "com.android.support:support-v4:$androidSupportVersion"
+    compile "hanks.xyz:smallbang-library:$hanksSmallbangVersion"
+    compile "com.dlazaro66.qrcodereaderview:qrcodereaderview:$qrCodereaderViewVersion"
 }
 
 
