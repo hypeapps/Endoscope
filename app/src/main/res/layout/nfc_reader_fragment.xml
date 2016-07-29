@@ -36,7 +36,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:id="@+id/nfc_icon"
-                    android:src="@drawable/ic_nfc_white_24dp" />
+                    android:src="@drawable/ic_nfc" />
 
                 <TextView
                     android:layout_width="wrap_content"

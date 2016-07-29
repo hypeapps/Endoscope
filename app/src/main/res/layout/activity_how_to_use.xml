@@ -118,7 +118,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:id="@+id/next_page_button"
-                        android:src="@drawable/ic_navigate_next_white_24dp"
+                        android:src="@drawable/ic_navigate"
                     android:visibility="visible"
                     android:layout_gravity="right"
                     android:layout_alignParentRight="true"

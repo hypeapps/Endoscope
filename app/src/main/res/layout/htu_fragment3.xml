@@ -37,7 +37,7 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:id="@+id/imageView3"
-                    android:src="@drawable/ic_nfc_white_24dp" />
+                    android:src="@drawable/ic_nfc" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -59,7 +59,7 @@
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:id="@+id/imageView5"
-                    android:src="@drawable/ic_memory_white_24dp" />
+                    android:src="@drawable/ic_memory" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -91,7 +91,7 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:id="@+id/imageView6"
-                android:src="@drawable/ic_create_white_24dp"
+                android:src="@drawable/ic_create"
                 android:layout_marginBottom="10dp" />
 
             <TextView

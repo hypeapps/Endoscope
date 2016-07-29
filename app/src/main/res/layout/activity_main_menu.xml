@@ -55,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/start_stream_icon"
-                    android:src="@drawable/ic_linked_camera_white_24dp"
+                    android:src="@drawable/ic_linked_camera"
                     android:layout_above="@+id/start_stream_text" />
 
                 <TextView
@@ -81,7 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/view_stream_icon"
-                    android:src="@drawable/ic_phonelink_ring_white_24dp" />
+                    android:src="@drawable/ic_phonelink" />
 
                 <TextView
                     style="@style/text_style"
@@ -115,7 +115,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/settings_icon"
-                    android:src="@drawable/ic_settings_white_24dp" />
+                    android:src="@drawable/ic_settings" />
 
                 <TextView
                     style="@style/text_style"
@@ -140,7 +140,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/how_to_use_icon"
-                    android:src="@drawable/ic_explore_white_24dp" />
+                    android:src="@drawable/ic_explore" />
 
                 <TextView
                     style="@style/text_style"
