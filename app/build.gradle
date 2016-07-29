@@ -20,7 +20,7 @@ android {
     }
 }
 
-def androidSupportAppcompatVersio = '24.1.1'
+def androidSupportAppcompatVersion = '24.1.1'
 def androidSupportVersion = '24.1.1'
 def hanksSmallbangVersion = '0.1.2'
 def qrCodereaderViewVersion = '1.0.0'
@@ -32,7 +32,7 @@ dependencies {
     compile('com.github.kenglxn.QRGen:android:2.2.0') {
         exclude group: 'com.google.zxing'
     }
-    compile "com.android.support:appcompat-v7:$androidSupportAppcompatVersio"
+    compile "com.android.support:appcompat-v7:$androidSupportAppcompatVersion"
     compile "com.android.support:support-v4:$androidSupportVersion"
     compile "hanks.xyz:smallbang-library:$hanksSmallbangVersion"
     compile "com.dlazaro66.qrcodereaderview:qrcodereaderview:$qrCodereaderViewVersion"
