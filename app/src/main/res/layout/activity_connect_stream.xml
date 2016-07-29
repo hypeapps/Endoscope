@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_background"
     tools:context=".MainMenuActivity">
 
     <LinearLayout
         android:id="@+id/get_connection"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/main_background"
         android:orientation="vertical"
         android:visibility="visible">
 
