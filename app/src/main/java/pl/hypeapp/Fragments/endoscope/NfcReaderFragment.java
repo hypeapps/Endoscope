@@ -23,7 +23,7 @@ public class NfcReaderFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.nfc_reader_fragment, container, false);
         ipTextVIew = (TextView) v.findViewById(R.id.ip_address_text_view);
-        button = (Button) v.findViewById(R.id.connect_button);
+        button = (Button) v.findViewById(R.id.btn_connect);
         button.setOnClickListener(this);
 
 
