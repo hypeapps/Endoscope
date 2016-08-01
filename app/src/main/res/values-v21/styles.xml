@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-
     <style name="App.Theme" parent="Theme.AppCompat.Light.NoActionBar" >
         <item name="android:colorPrimary">@color/main_background</item>
         <item name="android:colorPrimaryDark">@color/how_to_use_background</item>
         <item name="android:colorAccent">@color/settings_background</item>
     </style>
-
-
 </resources>

@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Endoscope</string>
+
+    <string name="resolution_dialog_title">Set video resolution</string>
+    <string name="stream_sound_dialog_title">Enable stream sound</string>
+    <string name="port_dialog_title">Set port</string>
+    <string name="codec_dialog_title">Set video codec</string>
+    <string name="button_text">Set</string>
+    <string name="stream_audio">Stream audio</string>
+    <string name="settings">SETTINGS</string>
+    <string name="resolution">Resolution</string>
+    <string name="set_video_resolution">Set video resolution</string>
+    <string name="enable_sound_stream">Enable audio stream</string>
+    <string name="off">OFF</string>
+    <string name="enabled">ON</string>
+    <string name="port">Port</string>
+    <string name="set_port">Set port</string>
+    <string name="set_video_encoder_title">Set video encoder</string>
+    <string name="video_encoder">Video encoder</string>
+    <string name="start_stream">START STREAM</string>
+    <string name="connect_stream">CONNECT STREAM</string>
+    <string name="settings_uppercase">SETTINGS</string>
+    <string name="how_to_use">HOW TO USE</string>
+    <string name="cancel">Cancel</string>
+    <string name="port_changed">Port changed!</string>
+    <string name="skip">SKIP</string>
+    <string name="done">DONE</string>
+    <string name="welcome">Welcome!</string>
+    <string name="nfc">NFC</string>
+    <string name="qr_code">QR CODE</string>
+    <string name="type_ip">TYPE IP</string>
+    <string name="link_to_stream_via_nfc">Link to stream via NFC</string>
+    <string name="type_ip_address">Type ip address</string>
+    <string name="ip">IP</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="scan_qr_code_capital">SCAN QR CODE</string>
+    <string name="link_nfc">LINK NFC</string>
+    <string name="write_ip_addres">Write ip address</string>
+    <string name="connect">Connect</string>
+
+    <string name="link_stream_via_nfc">Link stream via NFC</string>
+    <string name="read_nfc">READ NFC</string>
+    <string name="ip_default">255.255.255.255</string>
+    <string name="camera_not_found">Camera not found.</string>
+    <string name="qr_code_not_found">Qr code not found.</string>
+
+    <string name="about_nfc_description">Enable NFC. Next on the device which you want to connect click connect stream and touch two devices.</string>
+    <string name="about_input_ip">Click start stream on the device which you want to connect then type ip.</string>
+    <string name="nfc_reader_description">Click start stream on the device which you want to connect choose nfc then touch two devices. Make sure that NFC is enabled. </string>
+    <string name="scan_qr_code_description">Click connect stream on the device which you want to connect then scan qr code.</string>
+    <string name="scanner_qr_code">Click start stream on the device which you want to connect then scan qr code.</string>
+    <string name="about_type_ip">Click view stream on the device which you want to connect then type above ip address.</string>
+    <string name="about_qr_code"></string>
+
+    <string name="wi_fi_disabled">WiFi is disabled..</string>
+    <string name="package_name">pl.hypeapp.vrstream</string>
+    <string name="header_enable_wifi">Enable Wi-Fi</string>
+    <string name="header_link_via">You can link to stream via</string>
+    <string name="or">or</string>
+    <string name="ht_wi_fi_enabled">Make sure that wifi on your devices is enabled and connected to the same network.</string>
+    <string name="ht_link_via">Linking devices is possible with different ways.</string>
+    <string name="ht_welcome_desc">Endoscope lets you to stream live video between android devices!</string>
+    <string name="made_by_header">Endoscope made by</string>
+    <string name="ht_made_by_desc">Thank you for installing! \n \nContact E-MAIL: \n PSZEM.SZYM@GMAIL.COM</string>
+
+
+</resources>

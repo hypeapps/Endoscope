@@ -1,155 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainMenuActivity" >
+    android:background="@color/main_background"
+    tools:context=".MainMenuActivity">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/get_connection"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/main_background"
-        android:id="@+id/get_connection"
+        android:orientation="vertical"
         android:visibility="visible">
 
         <RelativeLayout
-            android:orientation="vertical"
+            android:id="@+id/get_connect_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/get_connect_content">
+            android:orientation="vertical">
 
             <android.support.v4.view.ViewPager
+                android:id="@+id/about_connect_pager"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/about_connect_pager"
-                android:layout_weight="1"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true">
+                android:layout_alignParentTop="true"
+                android:layout_weight="1">
 
             </android.support.v4.view.ViewPager>
 
             <LinearLayout
-                android:orientation="horizontal"
+                android:id="@+id/circles"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:id="@+id/circles"
+                android:layout_alignParentBottom="true"
                 android:layout_weight="10"
-                android:paddingTop="15dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
                 android:paddingBottom="15dp"
-                android:layout_alignParentBottom="true">
+                android:paddingTop="15dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
                     android:id="@+id/circle_page1"
-                    android:src="@drawable/circle_shape_active"
-                    android:layout_gravity="center" />
-
-                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:src="@drawable/circle_shape_active" />
+
+                <ImageView
                     android:id="@+id/circle_page2"
-                    android:src="@drawable/circle_shape_inactive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp" />
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/circle_shape_inactive" />
 
                 <ImageView
+                    android:id="@+id/circle_page3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:id="@+id/circle_page3"
-                    android:src="@drawable/circle_shape_inactive"
-                    android:layout_gravity="center" />
+                    android:layout_gravity="center"
+                    android:src="@drawable/circle_shape_inactive" />
             </LinearLayout>
 
         </RelativeLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:id="@+id/navigator"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="4"
             android:baselineAligned="false"
-            android:id="@+id/navigator">
+            android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/input_content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:id="@+id/input_content"
                 android:layout_weight="1"
-                android:gravity="center_vertical|center_horizontal"
                 android:background="@color/start_stream_background"
-                android:onClick="SlideToInputPage">
+                android:gravity="center_vertical|center_horizontal"
+                android:onClick="SlideToInputPage"
+                android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/input_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/input_icon"
-                    android:src="@drawable/ic_create_white_24dp"
-                    android:cropToPadding="false" />
+                    android:cropToPadding="false"
+                    android:src="@drawable/ic_create" />
 
                 <TextView
+                    style="@style/text_style"
+                    android:id="@+id/input_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/type_ip"
-                    android:id="@+id/input_text"
-                    style="@style/text_style" />
+                    android:text="@string/type_ip" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
+                android:id="@+id/qr_content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/view_stream_background"
-                android:id="@+id/qr_content"
                 android:gravity="center_vertical|center_horizontal"
-                android:onClick="SlideToQrCodePage">
+                android:onClick="SlideToQrCodePage"
+                android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/qr_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/qr_icon"
-                    android:src="@drawable/ic_memory_white_24dp"
-                    android:cropToPadding="false" />
+                    android:cropToPadding="false"
+                    android:src="@drawable/ic_memory" />
 
                 <TextView
                     style="@style/text_style"
+                    android:id="@+id/qr_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/scan_qr_code_capital"
-                    android:id="@+id/qr_text" />
+                    android:text="@string/scan_qr_code_capital" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical"
+                android:id="@+id/nfc_content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/settings_background"
-                android:id="@+id/nfc_content"
                 android:gravity="center_vertical|center_horizontal"
-                android:onClick="SlideToNfcPage">
+                android:onClick="SlideToNfcPage"
+                android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/nfc_icon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/nfc_icon"
-                    android:src="@drawable/ic_nfc_white_24dp"
-                    android:cropToPadding="false" />
+                    android:cropToPadding="false"
+                    android:src="@drawable/ic_nfc" />
 
                 <TextView
                     style="@style/text_style"
+                    android:id="@+id/nfc_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/link_nfc"
-                    android:id="@+id/nfc_text" />
+                    android:text="@string/link_nfc" />
             </LinearLayout>
 
         </LinearLayout>

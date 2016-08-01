@@ -22,10 +22,10 @@ public class TypeIpFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.type_input_fragment, container, false);
 
-        editTextIpAddress = (EditText) v.findViewById(R.id.ip_edit_text);
+        editTextIpAddress = (EditText) v.findViewById(R.id.et_ip_number);
         int maxLength = 15;
         editTextIpAddress.setFilters(new InputFilter[] {new InputFilter.LengthFilter(maxLength)});
-        buttonConnect = (Button) v.findViewById(R.id.connect_button);
+        buttonConnect = (Button) v.findViewById(R.id.btn_connect);
         buttonConnect.setOnClickListener(this);
 
         return v;

@@ -7,7 +7,6 @@
         <item name="3">320x240</item>
     </string-array>
 
-
     <integer-array name="resolution_width">
         <item>800</item>
         <item>640</item>
@@ -22,7 +21,6 @@
         <item>240</item>
     </integer-array>
 
-
     <string-array name="stream_audio">
         <item name="0">ON</item>
         <item name="1">OFF</item>
@@ -32,5 +30,4 @@
         <item name="0">H264</item>
         <item name="1">H263</item>
     </string-array>
-
 </resources>
