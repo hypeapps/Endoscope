@@ -1,78 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/start_stream_background">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/start_stream_background"
+    >
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <TextView
+        style="@style/header_style"
+        android:id="@+id/tv_type_ip"
+        android:layout_above="@+id/et_ip_number"
+        android:layout_centerHorizontal="true"
+        android:text="@string/write_ip_addres"
+        />
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical|center_horizontal" >
+    <EditText
+        android:id="@+id/et_ip_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:digits="0123456789."
+        android:ems="10"
+        android:inputType="number|text"
+        android:textColor="@color/white"
+        android:theme="@style/edit_text_style"
+        />
 
-            <TextView
-                style="@style/header_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/write_ip_addres"
-                android:id="@+id/type_ip_header"
-                android:gravity="center_vertical|center_horizontal"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
+    <Button
+        android:id="@+id/btn_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_ip_number"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:text="@string/connect"
+        />
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:id="@+id/type_address"
-                    android:layout_marginTop="30dp">
-
-                    <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="number|text"
-                        android:ems="10"
-                        android:id="@+id/ip_edit_text"
-                        style="@style/text_style"
-                        android:digits="0123456789."
-                        android:foregroundGravity="center_vertical|center_horizontal"
-                        android:gravity="center_vertical|center_horizontal" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/icon"
-                        android:src="@drawable/ic_create" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/connect"
-                android:id="@+id/connect_button"
-                android:layout_marginBottom="30dp"
-                android:enabled="true" />
-
-            <TextView
-                style="@style/text_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/about_input_ip"
-                android:id="@+id/type_description"
-                android:gravity="center_vertical|center_horizontal"
-                android:paddingLeft="40dp"
-                android:paddingRight="40dp" />
-        </LinearLayout>
-    </RelativeLayout>
+    <TextView
+        style="@style/text_style"
+        android:id="@+id/tv_description"
+        android:layout_below="@id/btn_connect"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:gravity="center"
+        android:text="@string/about_input_ip"
+        />
 </RelativeLayout>
