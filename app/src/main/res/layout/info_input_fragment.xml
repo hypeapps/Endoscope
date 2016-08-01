@@ -18,7 +18,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/type_ip_address"
-                android:id="@+id/type_ip_header"
+                android:id="@+id/tv_type_ip"
                 android:gravity="center_vertical|center_horizontal"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp" />
@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/about_type_ip"
-                android:id="@+id/type_description"
+                android:id="@+id/tv_description"
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingLeft="40dp"
                 android:paddingRight="40dp" />
