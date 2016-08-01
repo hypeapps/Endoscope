@@ -1,52 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/main_background">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    >
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical|center_horizontal">
+    <TextView
+        style="@style/header_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome"
+        />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/welcome"
-            android:id="@+id/textView"
-            style="@style/header_style" />
+    <ImageView
+        android:id="@+id/endoscope_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:src="@drawable/endoscope_icon"
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical|center_horizontal"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="20dp">
+        />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:id="@+id/endoscope_icon"
-                android:src="@drawable/endoscope_icon" />
+    <ImageView
+        android:id="@+id/endoscope_text"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:src="@drawable/endoscope_icon_text"
+        />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:id="@+id/endoscope_text"
-                android:src="@drawable/endoscope_icon_text" />
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ht_welcome_desc"
-            android:id="@+id/textView2"
-            style="@style/text_style"
-            android:gravity="center_vertical|center_horizontal"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp" />
-
-    </LinearLayout>
+    <TextView
+        style="@style/text_style"
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text="@string/ht_welcome_desc" />
 
 </RelativeLayout>
