@@ -62,6 +62,7 @@
     <string name="ht_welcome_desc">Endoscope lets you to stream live video between android devices!</string>
     <string name="made_by_header">Endoscope made by</string>
     <string name="ht_made_by_desc">Thank you for installing! \n \nContact E-MAIL: \n PSZEM.SZYM@GMAIL.COM</string>
+    <string name="type_ip_manually">Type IP manually</string>
 
 
 </resources>
