@@ -8,7 +8,7 @@
 
     <TextView
         style="@style/header_style"
-        android:id="@+id/tv_welcome"
+        android:id="@+id/tv_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/iv_endoscope_icon"
@@ -45,6 +45,7 @@
         android:paddingLeft="@dimen/fragment_tutorial_horizontal_margin"
         android:paddingRight="@dimen/fragment_tutorial_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        android:text="@string/ht_welcome_desc" />
+        android:text="@string/ht_welcome_desc"
+        />
 
 </RelativeLayout>
