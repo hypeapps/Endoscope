@@ -1,115 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="@color/view_stream_background">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/view_stream_background"
+    >
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical|center_horizontal" >
+    <TextView
+        style="@style/header_style"
+        android:id="@+id/tv_header"
+        android:layout_above="@+id/tv_qr_code"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:text="@string/header_link_via"
+        />
 
-        <TextView
-            style="@style/header_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/header_link_via"
-            android:id="@+id/textView8"
-            android:gravity="center_horizontal"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp" />
+    <TextView
+        style="@style/text_style"
+        android:id="@+id/tv_nfc"
+        android:layout_above="@+id/tv_or"
+        android:layout_toEndOf="@+id/tv_or"
+        android:layout_toRightOf="@+id/tv_or"
+        android:drawableTop="@drawable/ic_nfc"
+        android:text="@string/nfc"
+        />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical|center_horizontal"
-            android:layout_marginTop="40dp">
+    <TextView
+        style="@style/text_style"
+        android:id="@+id/tv_qr_code"
+        android:layout_above="@+id/tv_or"
+        android:layout_toLeftOf="@+id/tv_or"
+        android:layout_toStartOf="@+id/tv_or"
+        android:drawableTop="@drawable/ic_memory"
+        android:text="@string/qr_code"
+        />
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/nfc"
-                android:gravity="center_vertical|center_horizontal">
+    <TextView
+        style="@style/text_style"
+        android:id="@+id/tv_or"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:text="@string/or"
+        />
 
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:id="@+id/imageView3"
-                    android:src="@drawable/ic_nfc" />
+    <TextView
+        style="@style/text_style"
+        android:id="@+id/tv_ip_number"
+        android:layout_below="@id/tv_or"
+        android:layout_centerHorizontal="true"
+        android:drawableTop="@drawable/ic_create"
+        android:text="@string/type_ip_manually"
+        />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/nfc"
-                    android:id="@+id/textView10"
-                    style="@style/text_style" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/qr_code"
-                android:layout_marginLeft="50dp"
-                android:gravity="center_vertical|center_horizontal">
-
-                <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:id="@+id/imageView5"
-                    android:src="@drawable/ic_memory" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/qr_code"
-                    android:id="@+id/textView11"
-                    style="@style/text_style" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical|center_horizontal"
-            android:layout_marginBottom="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="or"
-                android:id="@+id/textView13"
-                style="@style/text_style"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" />
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:id="@+id/imageView6"
-                android:src="@drawable/ic_create"
-                android:layout_marginBottom="10dp" />
-
-            <TextView
-                style="@style/text_style"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Type IP manually"
-                android:id="@+id/textView12" />
-        </LinearLayout>
-
-        <TextView
-            style="@style/text_style"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ht_link_via"
-            android:id="@+id/textView9"
-            android:gravity="center_vertical|center_horizontal"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp" />
-    </LinearLayout>
+    <TextView
+        style="@style/text_style"
+        android:id="@+id/tv_description"
+        android:layout_below="@id/tv_ip_number"
+        android:paddingLeft="@dimen/fragment_tutorial_horizontal_margin"
+        android:paddingRight="@dimen/fragment_tutorial_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:text="@string/ht_link_via"
+        />
 </RelativeLayout>
