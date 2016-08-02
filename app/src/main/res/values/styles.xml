@@ -1,24 +1,28 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="App.Theme" parent="Theme.AppCompat.Light.NoActionBar" >
+    <style name="App.Theme" parent="Theme.AppCompat.Light.DarkActionBar">
 
     </style>
 
-    <style name="text_style">
+    <style name="text_style" parent="App.Theme">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="edit_text_style" parent="App.Theme">
+        <item name="colorControlHighlight">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlNormal">@color/gray</item>
     </style>
 
     <style name="header_style">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">#FFFFFF</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/header_text_size</item>
     </style>
-
-
 
 </resources>

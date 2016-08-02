@@ -111,7 +111,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/input_icon"
-                            android:src="@drawable/ic_create_white_24dp"
+                            android:src="@drawable/ic_create"
                             android:cropToPadding="false" />
 
                         <TextView
@@ -138,7 +138,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/qr_icon"
-                            android:src="@drawable/ic_memory_white_24dp"
+                            android:src="@drawable/ic_memory"
                             android:cropToPadding="false" />
 
                         <TextView
@@ -163,7 +163,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/nfc_icon"
-                            android:src="@drawable/ic_nfc_white_24dp"
+                            android:src="@drawable/ic_nfc"
                             android:cropToPadding="false" />
 
                         <TextView

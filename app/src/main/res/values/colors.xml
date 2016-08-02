@@ -15,5 +15,6 @@
 
     <color name="colorWlk_page1">#FFF59365</color>
 
-
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#d2d2d2</color>
 </resources>

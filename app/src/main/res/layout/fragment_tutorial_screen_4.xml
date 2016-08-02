@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/how_to_use_background"
+    >
+
+    <TextView
+        style="@style/header_style"
+        android:id="@+id/tv_header"
+        android:layout_above="@+id/iv_application_logo"
+        android:layout_centerHorizontal="true"
+        android:text="@string/made_by_header"
+        />
+
+    <ImageView
+        android:id="@+id/iv_application_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/hypeap_logo_text"
+        />
+
+    <TextView
+        style="@style/text_style"
+        android:id="@+id/tv_description"
+        android:layout_below="@id/iv_application_logo"
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="@dimen/fragment_tutorial_horizontal_margin"
+        android:paddingRight="@dimen/fragment_tutorial_horizontal_margin"
+        android:text="@string/ht_made_by_desc"
+        />
+</RelativeLayout>

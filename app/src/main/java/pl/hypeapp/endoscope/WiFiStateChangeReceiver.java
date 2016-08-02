@@ -73,7 +73,7 @@ public class WiFiStateChangeReceiver extends BroadcastReceiver {
     private AlertDialog newWiFiAlertDialog(final Context context){
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle(context.getString(R.string.wi_fi_disabled));
-        builder.setIcon(R.drawable.ic_signal_wifi_off_black_24dp);
+        builder.setIcon(R.drawable.ic_signal_wifi_off);
         builder.setPositiveButton("BACK TO MAIN MENU", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

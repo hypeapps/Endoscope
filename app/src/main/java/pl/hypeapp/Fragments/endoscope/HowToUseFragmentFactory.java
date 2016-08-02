@@ -30,13 +30,13 @@ public class HowToUseFragmentFactory extends Fragment {
     int getProperLayout(int position){
         switch(position){
             case 0:
-                return R.layout.htu_fragment1;
+                return R.layout.fragment_tutorial_screen_1;
             case 1:
-                return R.layout.htu_fragment2;
+                return R.layout.fragment_tutorial_screen_2;
             case 2:
-                return R.layout.htu_fragment3;
+                return R.layout.fragment_tutorial_screen_3;
             case 3:
-                return R.layout.htu_fragment4;
+                return R.layout.fragment_tutorial_screen_4;
         }
         return 0;
     }
