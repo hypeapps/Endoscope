@@ -9,10 +9,8 @@
     <TextView
         style="@style/header_style"
         android:id="@+id/tv_header"
-        android:layout_above="@id/iv_application_logo"
+        android:layout_above="@+id/iv_application_logo"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
         android:text="@string/made_by_header"
         />
 
