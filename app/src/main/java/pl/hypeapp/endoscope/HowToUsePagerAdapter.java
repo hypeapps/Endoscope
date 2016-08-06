@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import pl.hypeapp.Fragments.endoscope.HowToUseFragmentFactory;
+import pl.hypeapp.fragments.endoscope.HowToUseFragmentFactory;
 
 
 public class HowToUsePagerAdapter extends FragmentPagerAdapter {

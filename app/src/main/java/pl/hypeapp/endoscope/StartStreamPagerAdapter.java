@@ -4,9 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import pl.hypeapp.Fragments.endoscope.InfoInputFragment;
-import pl.hypeapp.Fragments.endoscope.InfoNfcFragment;
-import pl.hypeapp.Fragments.endoscope.InfoQrCodeFragment;
+import pl.hypeapp.fragments.endoscope.InfoInputFragment;
+import pl.hypeapp.fragments.endoscope.InfoNfcFragment;
+import pl.hypeapp.fragments.endoscope.InfoQrCodeFragment;
 
 
 public class StartStreamPagerAdapter extends FragmentPagerAdapter {

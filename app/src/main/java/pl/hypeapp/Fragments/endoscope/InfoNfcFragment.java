@@ -1,4 +1,4 @@
-package pl.hypeapp.Fragments.endoscope;
+package pl.hypeapp.fragments.endoscope;
 
 import android.content.SharedPreferences;
 import android.nfc.NdefMessage;

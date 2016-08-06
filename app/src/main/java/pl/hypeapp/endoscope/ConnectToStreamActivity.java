@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import pl.hypeapp.Fragments.endoscope.NfcReaderFragment;
+import pl.hypeapp.fragments.endoscope.NfcReaderFragment;
 
 
 public class ConnectToStreamActivity extends AppCompatActivity {

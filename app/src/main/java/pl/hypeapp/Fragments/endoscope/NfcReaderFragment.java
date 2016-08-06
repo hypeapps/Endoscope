@@ -1,4 +1,4 @@
-package pl.hypeapp.Fragments.endoscope;
+package pl.hypeapp.fragments.endoscope;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
