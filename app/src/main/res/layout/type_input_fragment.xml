@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/start_stream_background">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -8,71 +9,71 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical|center_horizontal" >
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical">
 
             <TextView
+                android:id="@+id/type_ip_header"
                 style="@style/header_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/write_ip_addres"
-                android:id="@+id/type_ip_header"
-                android:gravity="center_vertical|center_horizontal"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
+                android:layout_marginRight="20dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/write_ip_addres" />
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:id="@+id/type_address"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:layout_marginTop="30dp"
                     android:gravity="center_vertical|center_horizontal"
-                    android:id="@+id/type_address"
-                    android:layout_marginTop="30dp">
+                    android:orientation="horizontal">
 
                     <EditText
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="number|text"
-                        android:ems="10"
                         android:id="@+id/ip_edit_text"
                         style="@style/text_style"
-                        android:digits="0123456789."
-                        android:foregroundGravity="center_vertical|center_horizontal"
-                        android:gravity="center_vertical|center_horizontal" />
-
-                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:digits="0123456789."
+                        android:ems="10"
+                        android:foregroundGravity="center_vertical|center_horizontal"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:inputType="number|text" />
+
+                    <ImageView
                         android:id="@+id/icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:src="@drawable/ic_create_white_24dp" />
 
                 </LinearLayout>
             </LinearLayout>
 
             <Button
+                android:id="@+id/connect_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/connect"
-                android:id="@+id/connect_button"
                 android:layout_marginBottom="30dp"
-                android:enabled="true" />
+                android:enabled="true"
+                android:text="@string/connect" />
 
             <TextView
+                android:id="@+id/type_description"
                 style="@style/text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/about_input_ip"
-                android:id="@+id/type_description"
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingLeft="40dp"
-                android:paddingRight="40dp" />
+                android:paddingRight="40dp"
+                android:text="@string/about_input_ip" />
         </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>

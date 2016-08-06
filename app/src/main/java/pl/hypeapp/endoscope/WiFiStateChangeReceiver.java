@@ -19,9 +19,7 @@ public class WiFiStateChangeReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-
         NetworkInfo wifiInfo = intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_INFO);
-
         int extraWifiState = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE ,
                 WifiManager.WIFI_STATE_UNKNOWN);
 
@@ -38,7 +36,6 @@ public class WiFiStateChangeReceiver extends BroadcastReceiver {
                     }
             }
         }
-
     }
 
     private boolean isWifiDisabled(int extraWifiState) {

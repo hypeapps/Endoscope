@@ -1,188 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout
-
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/settings_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/settings_layout"
-    android:gravity="center_vertical|center_horizontal"
     android:background="@color/settings_background"
-    android:visibility="visible"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-
+    android:gravity="center_vertical|center_horizontal"
+    android:visibility="visible">
 
     <TextView
+        android:id="@+id/settings_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/settings_window"
+        android:layout_alignParentTop="false"
         android:text="@string/settings"
-        android:id="@+id/settings_header"
-        android:textStyle="bold"
+        android:textColor="#FFFFFF"
         android:textIsSelectable="false"
         android:textSize="30sp"
-        android:textColor="#FFFFFF"
-        android:layout_alignParentTop="false"
-        android:layout_alignLeft="@+id/settings_window" />
+        android:textStyle="bold" />
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/settings_window"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/main_background"
-        android:padding="10dp"
-        android:id="@+id/settings_window"
+        android:layout_below="@+id/settings_header"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_below="@+id/settings_header">
+        android:background="@color/main_background"
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <RelativeLayout
+            android:id="@+id/resolution"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/resolution"
             android:onClick="setResolution">
 
             <TextView
+                android:id="@+id/resolution_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/resolution"
-                android:id="@+id/resolution_text"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/resolution_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/set_video_resolution"
-                android:id="@+id/resolution_desc"
                 android:layout_alignLeft="@+id/resolution_text"
                 android:layout_below="@+id/resolution_text"
+                android:text="@string/set_video_resolution"
                 android:textColor="#FFFFFF" />
 
             <TextView
+                android:id="@+id/resolution_option"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="000x000"
-                android:id="@+id/resolution_option"
-                android:textColor="@color/settings_background"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="false"
+                android:layout_alignParentRight="true"
                 android:layout_alignParentTop="false"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"
+                android:text="000x000"
+                android:textColor="@color/settings_background" />
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/video_encoder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/video_encoder"
-            android:onClick="setVideoEncoder"
-            android:layout_marginTop="25dp">
+            android:layout_marginTop="25dp"
+            android:onClick="setVideoEncoder">
 
             <TextView
+                android:id="@+id/video_encoder_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/video_encoder"
-                android:id="@+id/video_encoder_text"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/video_encoder_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/set_video_encoder_title"
-                android:id="@+id/video_encoder_desc"
                 android:layout_alignLeft="@+id/video_encoder_text"
                 android:layout_below="@+id/video_encoder_text"
+                android:text="@string/set_video_encoder_title"
                 android:textColor="#FFFFFF" />
 
             <TextView
+                android:id="@+id/vide_encoder_option"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="H263"
-                android:id="@+id/vide_encoder_option"
-                android:textColor="@color/settings_background"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="false"
+                android:layout_alignParentRight="true"
                 android:layout_alignParentTop="false"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"
+                android:text="H263"
+                android:textColor="@color/settings_background" />
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/stream_sound"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/stream_sound"
             android:layout_marginTop="25dp"
             android:onClick="setAudioStream">
 
             <TextView
+                android:id="@+id/stream_sound_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/stream_audio"
-                android:id="@+id/stream_sound_text"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/stream_sound_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/enable_sound_stream"
-                android:id="@+id/stream_sound_desc"
                 android:layout_alignLeft="@+id/stream_sound_text"
                 android:layout_below="@+id/stream_sound_text"
+                android:text="@string/enable_sound_stream"
                 android:textColor="#FFFFFF" />
 
             <TextView
+                android:id="@+id/stream_sound_option"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/off"
-                android:id="@+id/stream_sound_option"
-                android:textColor="@color/settings_background"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="false"
+                android:layout_alignParentRight="true"
                 android:layout_alignParentTop="false"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"
+                android:text="@string/off"
+                android:textColor="@color/settings_background" />
 
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/port"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:id="@+id/port"
             android:onClick="setPort">
 
             <TextView
+                android:id="@+id/port_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/port"
-                android:id="@+id/port_text"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/port_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/set_port"
-                android:id="@+id/port_desc"
                 android:layout_alignLeft="@+id/port_text"
                 android:layout_below="@+id/port_text"
+                android:text="@string/set_port"
                 android:textColor="#FFFFFF" />
 
             <TextView
+                android:id="@+id/port_option"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0000"
-                android:id="@+id/port_option"
-                android:textColor="@color/settings_background"
-                android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="false"
+                android:layout_alignParentRight="true"
                 android:layout_alignParentTop="false"
-                android:layout_centerVertical="true" />
+                android:layout_centerVertical="true"
+                android:text="0000"
+                android:textColor="@color/settings_background" />
         </RelativeLayout>
 
-
-</LinearLayout>
-    </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

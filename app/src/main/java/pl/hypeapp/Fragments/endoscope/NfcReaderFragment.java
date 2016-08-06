@@ -25,10 +25,7 @@ public class NfcReaderFragment extends Fragment implements View.OnClickListener{
         ipTextVIew = (TextView) v.findViewById(R.id.ip_address_text_view);
         button = (Button) v.findViewById(R.id.connect_button);
         button.setOnClickListener(this);
-
-
         return v;
-
     }
 
     public void setOnNfcIp(String ip){

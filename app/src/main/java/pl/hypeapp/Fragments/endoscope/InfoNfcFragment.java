@@ -44,9 +44,7 @@ public class InfoNfcFragment extends Fragment  implements NfcAdapter.OnNdefPushC
             nfcAdapter.setOnNdefPushCompleteCallback(this, getActivity());
         }
         return v;
-
     }
-
 
     @Override
     public NdefMessage createNdefMessage(NfcEvent nfcEvent) {
@@ -58,9 +56,7 @@ public class InfoNfcFragment extends Fragment  implements NfcAdapter.OnNdefPushC
     @Override
     public void onNdefPushComplete(NfcEvent nfcEvent) {}
 
-
     public NdefRecord[] createRecords() {
-
         NdefRecord[] records = new NdefRecord[messagesToSendArray.size() + 1];
         //To Create Messages Manually if API is less than
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
@@ -89,7 +85,5 @@ public class InfoNfcFragment extends Fragment  implements NfcAdapter.OnNdefPushC
         records[messagesToSendArray.size()] = NdefRecord.createApplicationRecord(getActivity().getPackageName());
         return records;
     }
-
-
 
 }

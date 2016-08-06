@@ -27,10 +27,8 @@ public class TypeIpFragment extends Fragment implements View.OnClickListener{
         editTextIpAddress.setFilters(new InputFilter[] {new InputFilter.LengthFilter(maxLength)});
         buttonConnect = (Button) v.findViewById(R.id.connect_button);
         buttonConnect.setOnClickListener(this);
-
         return v;
     }
-
 
     @Override
     public void onClick(View view) {

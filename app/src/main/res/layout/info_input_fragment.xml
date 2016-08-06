@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/start_stream_background">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -8,55 +9,55 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical|center_horizontal" >
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical">
 
             <TextView
+                android:id="@+id/type_ip_header"
                 style="@style/header_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/type_ip_address"
-                android:id="@+id/type_ip_header"
-                android:gravity="center_vertical|center_horizontal"
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
+                android:layout_marginRight="20dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/type_ip_address" />
 
             <LinearLayout
-                android:orientation="horizontal"
+                android:id="@+id/address"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:gravity="center_vertical|center_horizontal"
                 android:layout_marginBottom="30dp"
-                android:id="@+id/address"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal">
 
                 <ImageView
+                    android:id="@+id/icon"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:id="@+id/icon"
                     android:src="@drawable/ic_create_white_24dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="@string/ip_default"
                     android:id="@+id/ip_address"
                     style="@style/header_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
                     android:gravity="center_vertical"
-                    android:layout_marginLeft="10dp" />
+                    android:text="@string/ip_default" />
             </LinearLayout>
 
             <TextView
+                android:id="@+id/type_description"
                 style="@style/text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/about_type_ip"
-                android:id="@+id/type_description"
                 android:gravity="center_vertical|center_horizontal"
                 android:paddingLeft="40dp"
-                android:paddingRight="40dp" />
+                android:paddingRight="40dp"
+                android:text="@string/about_type_ip" />
         </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>

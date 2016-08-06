@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/view_stream_background">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_vertical|center_horizontal" >
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/qr_code_header"
             style="@style/header_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/scan_qr_code"
-            android:id="@+id/qr_code_header"
-            android:gravity="center_vertical|center_horizontal"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp" />
+            android:layout_marginRight="20dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/scan_qr_code" />
 
         <ImageView
+            android:id="@+id/qr_code"
             android:layout_width="200dp"
             android:layout_height="150dp"
-            android:id="@+id/qr_code"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp" />
 
         <TextView
+            android:id="@+id/textView6"
             style="@style/text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/scan_qr_code_description"
-            android:id="@+id/textView6"
             android:gravity="center_vertical|center_horizontal"
             android:paddingLeft="40dp"
-            android:paddingRight="40dp" />
+            android:paddingRight="40dp"
+            android:text="@string/scan_qr_code_description" />
     </LinearLayout>
 </RelativeLayout>

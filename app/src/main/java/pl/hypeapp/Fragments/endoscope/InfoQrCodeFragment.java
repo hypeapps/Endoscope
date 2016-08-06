@@ -25,7 +25,6 @@ public class InfoQrCodeFragment extends Fragment {
         Bitmap qrCOde = net.glxn.qrgen.android.QRCode.from(ipAddress).bitmap();
         ImageView qrCodeContainer = (ImageView) v.findViewById(R.id.qr_code);
         qrCodeContainer.setImageBitmap(qrCOde);
-
         return v;
     }
 }

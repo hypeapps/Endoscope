@@ -67,7 +67,6 @@ public class QrCodeScannerFragment extends Fragment implements QRCodeReaderView.
 
     }
 
-
     @Override
     public void onClick(View view) {
         ConnectToStreamActivity connectToStreamActivity = (ConnectToStreamActivity) getActivity();

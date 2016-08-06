@@ -23,7 +23,6 @@ public class HowToUseFragmentFactory extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         int layoutResource = getProperLayout(getArguments().getInt("htu_fragment", 0));
         View v = inflater.inflate(layoutResource, container, false);
-
         return v;
     }
 

@@ -1,136 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <android.support.v4.view.ViewPager
+        android:id="@+id/how_to_use_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/how_to_use_pager">
-
-
-
-    </android.support.v4.view.ViewPager>
+        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
 
     <LinearLayout
-            android:orientation="vertical"
+        android:id="@+id/navigator_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <Space
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-        android:id="@+id/navigator_container">
+            android:layout_weight="1" />
 
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"></LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
+            android:id="@+id/navigator"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="10"
-            android:id="@+id/navigator">
+            android:orientation="vertical">
 
             <View
+                android:id="@+id/divider"
                 android:layout_width="match_parent"
                 android:layout_height="0.25dp"
-                android:background="@color/foreground_material_light"
                 android:layout_alignParentBottom="true"
-                android:id="@+id/divider"
-                android:alpha="20" />
+                android:alpha="20"
+                android:background="@color/foreground_material_light" />
 
             <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2" />
 
             <RelativeLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                        android:text="@string/skip"
-                    android:id="@+id/skip_button"
-                        style="@style/text_style"
-                        android:layout_alignParentLeft="true"
-                        android:gravity="center_vertical"
-                        android:layout_marginLeft="20dp"
-                        android:onClick="skipPages" />
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center_horizontal"
-                    android:id="@+id/circles">
-
-                    <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:id="@+id/circle_page1"
-                            android:src="@drawable/circle_shape_active"
-                        android:layout_gravity="center" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:id="@+id/circle_page2"
-                        android:src="@drawable/circle_shape_inactive"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:id="@+id/circle_page3"
-                        android:src="@drawable/circle_shape_inactive"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="10dp" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:id="@+id/circle_page4"
-                        android:src="@drawable/circle_shape_inactive"
-                        android:layout_gravity="center" />
-                </LinearLayout>
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/skip_button"
                     style="@style/text_style"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="@string/done"
-                    android:id="@+id/done_button"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
                     android:gravity="center_vertical"
-                    android:singleLine="false"
-                    android:visibility="gone"
-                    android:layout_gravity="right"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="20dp"
-                    android:onClick="donePages" />
+                    android:onClick="skipPages"
+                    android:text="@string/skip" />
 
-                <ImageView
+                <LinearLayout
+                    android:id="@+id/circles"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/circle_page1"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:id="@+id/next_page_button"
-                        android:src="@drawable/ic_navigate_next_white_24dp"
-                    android:visibility="visible"
-                    android:layout_gravity="right"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="20dp"
-                    android:onClick="nextPage" />
+                        android:layout_gravity="center"
+                        android:src="@drawable/circle_shape_active" />
 
-                </RelativeLayout>
+                    <ImageView
+                        android:id="@+id/circle_page2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/circle_shape_inactive" />
+
+                    <ImageView
+                        android:id="@+id/circle_page3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/circle_shape_inactive" />
+
+                    <ImageView
+                        android:id="@+id/circle_page4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:src="@drawable/circle_shape_inactive" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/done_button"
+                    style="@style/text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center_vertical"
+                    android:onClick="donePages"
+                    android:singleLine="false"
+                    android:text="@string/done"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/next_page_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:onClick="nextPage"
+                    android:src="@drawable/ic_navigate_next_white_24dp"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
 
             <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2" />
         </LinearLayout>
 
     </LinearLayout>
