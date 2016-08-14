@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Endoscope</string>
+
+    <string name="resolution_dialog_title">ビデオの解像度をセット</string>
+    <string name="stream_sound_dialog_title">ストリームサウンドを有効にする</string>
+    <string name="port_dialog_title">ポートをセット</string>
+    <string name="codec_dialog_title">ビデオのコーデックをセット</string>
+    <string name="button_text">セット</string>
+    <string name="stream_audio">ストリームオーディオ</string>
+    <string name="settings">設定</string>
+    <string name="resolution">解像度</string>
+    <string name="set_video_resolution">ビデオの解像度をセット</string>
+    <string name="enable_sound_stream">オーディオストリームを有効にする</string>
+    <string name="off">オフ</string>
+    <string name="enabled">オン</string>
+    <string name="port">ポート</string>
+    <string name="set_port">ポートをセット</string>
+    <string name="set_video_encoder_title">ビデオエンコーダーをセット</string>
+    <string name="video_encoder">ビデオエンコーダー</string>
+    <string name="start_stream">ストリームを開始</string>
+    <string name="connect_stream">ストリームに接続</string>
+    <string name="settings_uppercase">設定</string>
+    <string name="how_to_use">使用方法</string>
+    <string name="cancel">キャンセル</string>
+    <string name="port_changed">ポートを変更しました!</string>
+    <string name="skip">スキップ</string>
+    <string name="done">完了</string>
+    <string name="welcome">ようこそ!</string>
+    <string name="nfc">NFC</string>
+    <string name="qr_code">QR コード</string>
+    <string name="type_ip">IP を入力</string>
+    <string name="link_to_stream_via_nfc">NFC 経由でストリームをリンク</string>
+    <string name="type_ip_address">IP アドレスを入力</string>
+    <string name="ip">IP</string>
+    <string name="scan_qr_code">QR コードをスキャン</string>
+    <string name="scan_qr_code_capital">QR コードをスキャン</string>
+    <string name="link_nfc">NFC リンク</string>
+    <string name="write_ip_addres">IP アドレスを書く</string>
+    <string name="connect">接続</string>
+
+    <string name="link_stream_via_nfc">NFC 経由でストリームをリンク</string>
+    <string name="read_nfc">NFC を読む</string>
+    <string name="ip_default">255.255.255.255</string>
+    <string name="camera_not_found">カメラが見つかりません。</string>
+    <string name="qr_code_not_found">QR コードが見つかりません。</string>
+
+    <string name="about_nfc_description">Enable NFC を有効にします。 次に、接続したいデバイスでストリームに接続をクリックして、2 つのデバイスにタッチしてください。</string>
+    <string name="about_input_ip">接続したいデバイスでストリームを開始をクリックして、IP を入力してください。</string>
+    <string name="nfc_reader_description">接続したいデバイスでストリームを開始をクリックして、NFC を選択し、2 つのデバイスにタッチしてください。 NFC が有効になっていることを確認してください。 </string>
+    <string name="scan_qr_code_description">接続したいデバイスでストリームに接続をクリックして、QR コードをスキャンしてください。</string>
+    <string name="scanner_qr_code">接続したいデバイスでストリームを開始をクリックして、QR コードをスキャンしてください。</string>
+    <string name="about_type_ip">接続したいデバイスでストリームを表示をクリックして、上の IP を入力してください。</string>
+    <string name="about_qr_code"></string>
+
+    <string name="wi_fi_disabled">WiFi は無効です..</string>
+    <string name="package_name">pl.hypeapp.vrstream</string>
+    <string name="header_enable_wifi">Wi-Fi を有効にする</string>
+    <string name="header_link_via">ストリームにリンクします...</string>
+    <string name="or">または</string>
+    <string name="ht_wi_fi_enabled">お使いのデバイスで WiFi を有効にして、同じネットワークに接続していることを確認してください。</string>
+    <string name="ht_link_via">デバイスのリンクは異なる方法で可能です。</string>
+    <string name="ht_welcome_desc">Endoscope は Android デバイス間でライブビデオをストリームします!</string>
+    <string name="made_by_header">Endoscope 作者</string>
+    <string name="ht_made_by_desc">インストールありがとうございます! \n \n連絡先 メール: \n PSZEM.SZYM@GMAIL.COM</string>
+
+
+</resources>
