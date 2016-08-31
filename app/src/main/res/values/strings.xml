@@ -41,7 +41,7 @@
     <string name="link_stream_via_nfc">Link stream via NFC</string>
     <string name="read_nfc">READ NFC</string>
     <string name="ip_default">255.255.255.255</string>
-    <string name="camera_not_found">Camera not found.</string>
+    <string name="camera_not_found">Camera permission not found.</string>
     <string name="qr_code_not_found">Qr code not found.</string>
 
     <string name="about_nfc_description">Enable NFC. Next on the device which you want to connect click connect stream and touch two devices.</string>
