@@ -1,18 +1,24 @@
 package pl.hypeapp.endoscope;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -34,6 +40,7 @@ public class StartStreamActivity extends AppCompatActivity implements Session.Ca
     private RtspServer rtspServer;
     private WiFiStateChangeReceiver wiFiStateChangeReceiver;
     private ViewPager viewPager;
+    private final static int MY_PERMISSIONS_REQUEST_CAMERA = 69;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,12 +56,23 @@ public class StartStreamActivity extends AppCompatActivity implements Session.Ca
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
+        requestPermission();
+
+        startRtspServer();
+
+        putIpAddressToSharedPref(getIpAddress());
+
+        wiFiStateChangeReceiver = new WiFiStateChangeReceiver();
+        registerReceiver(wiFiStateChangeReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+        registerReceiver(wiFiStateChangeReceiver, new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION));
+    }
+
+    private void buildSession(SharedPreferences sharedPreferences) {
         boolean isAudioStream = sharedPreferences.getBoolean("is_audio_stream", false);
         int videoEncoder = sharedPreferences.getInt("video_encoder", 0);
         int resolution = sharedPreferences.getInt("resolution", 2);
         int width[] = getResources().getIntArray(R.array.resolution_width);
         int height[] = getResources().getIntArray(R.array.resolution_height);
-
 
         session = SessionBuilder.getInstance()
                 .setCallback(this)
@@ -66,14 +84,6 @@ public class StartStreamActivity extends AppCompatActivity implements Session.Ca
                 .setVideoEncoder((videoEncoder == 0) ? SessionBuilder.VIDEO_H264 : SessionBuilder.VIDEO_H263)
                 .setVideoQuality(new VideoQuality(width[resolution], height[resolution], 30 , 500000))
                 .build();
-
-        startRtspServer();
-
-        putIpAddressToSharedPref(getIpAddress());
-
-        wiFiStateChangeReceiver = new WiFiStateChangeReceiver();
-        registerReceiver(wiFiStateChangeReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-        registerReceiver(wiFiStateChangeReceiver, new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION));
     }
 
     private void startRtspServer() {
@@ -124,9 +134,36 @@ public class StartStreamActivity extends AppCompatActivity implements Session.Ca
     @Override
     public void onDestroy() {
         super.onDestroy();
-        session.release();
         rtspServer.stop();
         unregisterReceiver(wiFiStateChangeReceiver);
+    }
+
+    public void requestPermission(){
+        if (ContextCompat.checkSelfPermission(getActivity(),
+                Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(getActivity(),
+                    new String[]{Manifest.permission.CAMERA},
+                    MY_PERMISSIONS_REQUEST_CAMERA);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_CAMERA: {
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+                    buildSession(sharedPreferences);
+                } else {
+                    startActivity(new Intent(getActivity(), MainMenuActivity.class));
+                    finish();
+                }
+                return;
+            }
+        }
     }
 
     @Override
@@ -161,6 +198,7 @@ public class StartStreamActivity extends AppCompatActivity implements Session.Ca
         showAboutConnectionLayout();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+        session.release();
     }
 
     @Override
