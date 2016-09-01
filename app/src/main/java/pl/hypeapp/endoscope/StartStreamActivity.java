@@ -57,7 +57,6 @@ public class StartStreamActivity extends AppCompatActivity implements Session.Ca
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         requestPermission();
-
         startRtspServer();
 
         putIpAddressToSharedPref(getIpAddress());
