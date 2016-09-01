@@ -49,7 +49,6 @@ public class ConnectToStreamActivity extends AppCompatActivity {
     void initViewPager(){
         viewPager = (ViewPager)findViewById(R.id.about_connect_pager);
         viewStreamPagerAdapter = new ViewStreamPagerAdapter(getSupportFragmentManager());
-
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
