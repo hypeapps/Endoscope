@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
 
     defaultConfig {
         applicationId "pl.hypeapp.endoscope"
-        minSdkVersion 15
-        targetSdkVersion 24
-        versionCode 4
-        versionName "1.3"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 6
+        versionName "2.0"
         multiDexEnabled true
     }
     buildTypes {
@@ -19,25 +19,34 @@ android {
     }
 }
 
-def androidSupportAppcompatVersion = '24.1.1'
-def androidSupportVersion = '24.1.1'
+def androidSupportAppcompatVersion = '25.1.1'
+def androidSupportVersion = '25.1.1'
 def hanksSmallbangVersion = '0.1.2'
-def qrCodereaderViewVersion = '2.0.0'
+def qrCodeReaderViewVersion = '2.0.1'
+def rxPermissionVersion = '0.9.1@aar'
+def thirtyinchVersion = '0.7.1'
+def butterKnifeVersion = '8.5.1'
+def rxJavaVersion = '1.2.7'
+def rxAndroidVersion = '1.2.1'
 
 dependencies {
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
     compile project(':libstreaming')
+    compile "com.android.support:appcompat-v7:$androidSupportAppcompatVersion"
+    compile "com.android.support:support-v4:$androidSupportVersion"
+    compile "com.dlazaro66.qrcodereaderview:qrcodereaderview:$qrCodeReaderViewVersion"
     compile('com.github.kenglxn.QRGen:android:2.2.0') {
         exclude group: 'com.google.zxing'
     }
-    compile "com.android.support:appcompat-v7:$androidSupportAppcompatVersion"
-    compile "com.android.support:support-v4:$androidSupportVersion"
+    compile "com.jakewharton:butterknife:$butterKnifeVersion"
+    compile "com.tbruyelle.rxpermissions:rxpermissions:$rxPermissionVersion"
     compile "hanks.xyz:smallbang-library:$hanksSmallbangVersion"
-    compile ('com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.0@aar'){
-        transitive = true
-    }
-    compile "com.dlazaro66.qrcodereaderview:qrcodereaderview:$qrCodereaderViewVersion"
+    compile "io.reactivex:rxandroid:$rxAndroidVersion"
+    compile "io.reactivex:rxjava:$rxJavaVersion"
+    compile "net.grandcentrix.thirtyinch:thirtyinch:$thirtyinchVersion"
+    compile "net.grandcentrix.thirtyinch:thirtyinch-rx:$thirtyinchVersion"
+    testCompile 'junit:junit:4.12'
 }
 
 
