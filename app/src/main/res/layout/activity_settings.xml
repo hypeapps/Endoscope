@@ -18,7 +18,7 @@
         android:textColor="#FFFFFF"
         android:textIsSelectable="false"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"/>
 
     <LinearLayout
         android:id="@+id/settings_window"
@@ -32,7 +32,7 @@
         android:padding="10dp">
 
         <RelativeLayout
-            android:id="@+id/resolution"
+            android:id="@+id/resolution_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="setResolution">
@@ -44,7 +44,7 @@
                 android:text="@string/resolution"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/resolution_desc"
@@ -53,7 +53,7 @@
                 android:layout_alignLeft="@+id/resolution_text"
                 android:layout_below="@+id/resolution_text"
                 android:text="@string/set_video_resolution"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"/>
 
             <TextView
                 android:id="@+id/resolution_option"
@@ -64,15 +64,15 @@
                 android:layout_alignParentTop="false"
                 android:layout_centerVertical="true"
                 android:text="000x000"
-                android:textColor="@color/settings_background" />
+                android:textColor="@color/settings_background"/>
+
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/video_encoder"
+            android:id="@+id/video_encoder_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:onClick="setVideoEncoder">
+            android:layout_marginTop="25dp">
 
             <TextView
                 android:id="@+id/video_encoder_text"
@@ -81,7 +81,7 @@
                 android:text="@string/video_encoder"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/video_encoder_desc"
@@ -90,7 +90,7 @@
                 android:layout_alignLeft="@+id/video_encoder_text"
                 android:layout_below="@+id/video_encoder_text"
                 android:text="@string/set_video_encoder_title"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"/>
 
             <TextView
                 android:id="@+id/vide_encoder_option"
@@ -101,15 +101,15 @@
                 android:layout_alignParentTop="false"
                 android:layout_centerVertical="true"
                 android:text="H263"
-                android:textColor="@color/settings_background" />
+                android:textColor="@color/settings_background"/>
+
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/stream_sound"
+            android:id="@+id/stream_sound_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:onClick="setAudioStream">
+            android:layout_marginTop="25dp">
 
             <TextView
                 android:id="@+id/stream_sound_text"
@@ -118,7 +118,7 @@
                 android:text="@string/stream_audio"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/stream_sound_desc"
@@ -127,7 +127,7 @@
                 android:layout_alignLeft="@+id/stream_sound_text"
                 android:layout_below="@+id/stream_sound_text"
                 android:text="@string/enable_sound_stream"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"/>
 
             <TextView
                 android:id="@+id/stream_sound_option"
@@ -137,17 +137,16 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="false"
                 android:layout_centerVertical="true"
-                android:text="@string/off"
-                android:textColor="@color/settings_background" />
+                android:text="@string/disabled"
+                android:textColor="@color/settings_background"/>
 
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/port"
+            android:id="@+id/port_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:onClick="setPort">
+            android:layout_marginTop="25dp">
 
             <TextView
                 android:id="@+id/port_text"
@@ -156,7 +155,7 @@
                 android:text="@string/port"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/port_desc"
@@ -165,10 +164,10 @@
                 android:layout_alignLeft="@+id/port_text"
                 android:layout_below="@+id/port_text"
                 android:text="@string/set_port"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"/>
 
             <TextView
-                android:id="@+id/port_option"
+                android:id="@+id/port_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="false"
@@ -176,8 +175,9 @@
                 android:layout_alignParentTop="false"
                 android:layout_centerVertical="true"
                 android:text="0000"
-                android:textColor="@color/settings_background" />
+                android:textColor="@color/settings_background"/>
         </RelativeLayout>
 
     </LinearLayout>
+
 </RelativeLayout>

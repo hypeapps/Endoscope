@@ -11,7 +11,7 @@
     <string name="resolution">解像度</string>
     <string name="set_video_resolution">ビデオの解像度をセット</string>
     <string name="enable_sound_stream">オーディオストリームを有効にする</string>
-    <string name="off">オフ</string>
+    <string name="disabled">オフ</string>
     <string name="enabled">オン</string>
     <string name="port">ポート</string>
     <string name="set_port">ポートをセット</string>
@@ -62,6 +62,8 @@
     <string name="ht_welcome_desc">Endoscope は Android デバイス間でライブビデオをストリームします!</string>
     <string name="made_by_header">Endoscope 作者</string>
     <string name="ht_made_by_desc">インストールありがとうございます! \n \n連絡先 メール: \n PSZEM.SZYM@GMAIL.COM</string>
+    <string name="dialog_set">SET</string>
+    <string name="port_error">Port cannot be empty</string>
 
 
 </resources>
