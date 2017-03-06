@@ -2,7 +2,6 @@ package pl.hypeapp.endoscope.ui.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
@@ -20,6 +19,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.hypeapp.endoscope.R;
 import pl.hypeapp.endoscope.presenter.SettingsPresenter;
+import pl.hypeapp.endoscope.util.SettingsPreferencesUtil;
 import pl.hypeapp.endoscope.view.SettingsView;
 
 public class SettingsActivity extends TiActivity<SettingsPresenter, SettingsView> implements SettingsView {
@@ -33,8 +33,8 @@ public class SettingsActivity extends TiActivity<SettingsPresenter, SettingsView
     @NonNull
     @Override
     public SettingsPresenter providePresenter() {
-        final SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        return new SettingsPresenter(sharedPreferences);
+        final SettingsPreferencesUtil settingsPreferencesUtil = new SettingsPreferencesUtil(PreferenceManager.getDefaultSharedPreferences(this));
+        return new SettingsPresenter(settingsPreferencesUtil);
     }
 
     @Override

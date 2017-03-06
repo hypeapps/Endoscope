@@ -1,7 +1,6 @@
 package pl.hypeapp.endoscope.ui.activity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -14,13 +13,13 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import pl.hypeapp.endoscope.R;
 import pl.hypeapp.endoscope.presenter.SplashScreenPresenter;
+import pl.hypeapp.endoscope.util.SettingsPreferencesUtil;
 import pl.hypeapp.endoscope.view.SplashScreenView;
 import xyz.hanks.library.SmallBang;
 import xyz.hanks.library.SmallBangListener;
 
 public class SplashScreenActivity extends TiActivity<SplashScreenPresenter, SplashScreenView> implements SplashScreenView {
     private static final int SMALLBANG_RADIUS = 180;
-    public static final String SHARED_PREF_IS_FIRST_RUN = "isFirstRun";
     private SplashScreenPresenter splashScreenPresenter;
     private SmallBang smallBang;
     @BindView(R.id.logo_text) ImageView logoTextSwap;
@@ -29,9 +28,8 @@ public class SplashScreenActivity extends TiActivity<SplashScreenPresenter, Spla
     @NonNull
     @Override
     public SplashScreenPresenter providePresenter() {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        boolean isFirstRun = sharedPreferences.getBoolean(SHARED_PREF_IS_FIRST_RUN, true);
-        splashScreenPresenter = new SplashScreenPresenter(isFirstRun);
+        final SettingsPreferencesUtil settingsPreferencesUtil = new SettingsPreferencesUtil(PreferenceManager.getDefaultSharedPreferences(this));
+        splashScreenPresenter = new SplashScreenPresenter(settingsPreferencesUtil);
         return splashScreenPresenter;
     }
 
@@ -68,9 +66,6 @@ public class SplashScreenActivity extends TiActivity<SplashScreenPresenter, Spla
 
     @Override
     public void intentToHowToUse() {
-        SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(this).edit();
-        editor.putBoolean(SHARED_PREF_IS_FIRST_RUN, false);
-        editor.apply();
         Intent intent = new Intent(SplashScreenActivity.this, HowToUseActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);

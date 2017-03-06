@@ -6,6 +6,7 @@ import net.grandcentrix.thirtyinch.rx.RxTiPresenterUtils;
 
 import java.util.concurrent.TimeUnit;
 
+import pl.hypeapp.endoscope.util.SettingsPreferencesUtil;
 import pl.hypeapp.endoscope.view.SplashScreenView;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
@@ -13,13 +14,13 @@ import rx.functions.Action1;
 import rx.schedulers.Schedulers;
 
 public class SplashScreenPresenter extends TiPresenter<SplashScreenView> {
-    private final boolean isFirstRun;
     private static final long ANIMATION_DELAY = 3000;
     private static final long RUN_ACTIVITY_DELAY = 2000;
     private final RxTiPresenterSubscriptionHandler rxHelper = new RxTiPresenterSubscriptionHandler(this);
+    private SettingsPreferencesUtil settingsPreferencesUtil;
 
-    public SplashScreenPresenter(boolean isFirstRun) {
-        this.isFirstRun = isFirstRun;
+    public SplashScreenPresenter(SettingsPreferencesUtil settingsPreferencesUtil) {
+        this.settingsPreferencesUtil = settingsPreferencesUtil;
     }
 
     @Override
@@ -43,7 +44,9 @@ public class SplashScreenPresenter extends TiPresenter<SplashScreenView> {
     }
 
     private void intentToNextActivity() {
+        boolean isFirstRun = settingsPreferencesUtil.loadIsFirstRunPreference();
         if (isFirstRun) {
+            settingsPreferencesUtil.saveIsFirstRunPreference(false);
             getView().intentToHowToUse();
         } else {
             getView().intentToMainMenu();

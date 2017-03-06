@@ -1,58 +1,42 @@
 package pl.hypeapp.endoscope.presenter;
 
-import android.content.SharedPreferences;
-
 import net.grandcentrix.thirtyinch.TiPresenter;
-import net.majorkernelpanic.streaming.rtsp.RtspServer;
 
+import pl.hypeapp.endoscope.util.SettingsPreferencesUtil;
 import pl.hypeapp.endoscope.view.SettingsView;
 
 public class SettingsPresenter extends TiPresenter<SettingsView> {
-    private static final String SHARED_PREF_DEFAULT_PORT = "8086";
-    private static final String SHARED_PREF_RESOLUTION = "resolution";
-    private static final String SHARED_PREF_VIDEO_ENCODER = "video_encoder";
-    private static final int SHARED_PREF_DEF_RESOLUTION = 2;
-    private static final int SHARED_PREF_DEF_VIDEO_ENCODER = 0;
-    public static final String SHARED_PREF_IS_AUDIO_STREAM = "is_audio_stream";
-    private final SharedPreferences sharedPreferences;
+    private static final String OPTION_RESOLUTION = "resolution";
+    private static final String OPTION_VIDEO_ENCODER = "video_encoder";
+    private final SettingsPreferencesUtil settingsPreferencesUtil;
     private boolean isAudioStream;
 
-    public SettingsPresenter(SharedPreferences sharedPreferences) {
-        this.sharedPreferences = sharedPreferences;
+    public SettingsPresenter(SettingsPreferencesUtil settingsPreferencesUtil) {
+        this.settingsPreferencesUtil = settingsPreferencesUtil;
     }
 
     @Override
     protected void onWakeUp() {
         super.onWakeUp();
-        String port = sharedPreferences.getString(RtspServer.KEY_PORT, SHARED_PREF_DEFAULT_PORT);
-        getView().setPort(port);
-        int resolution = sharedPreferences.getInt(SHARED_PREF_RESOLUTION, SHARED_PREF_DEF_RESOLUTION);
-        getView().setResolution(resolution);
-        int videoEncoder = sharedPreferences.getInt(SHARED_PREF_VIDEO_ENCODER, SHARED_PREF_DEF_VIDEO_ENCODER);
-        getView().setVideoEncoder(videoEncoder);
-        isAudioStream = sharedPreferences.getBoolean(SHARED_PREF_IS_AUDIO_STREAM, true);
-        getView().setAudioStream(isAudioStream);
+        loadPortPreference();
+        loadResolutionPreference();
+        loadVideoEncoderPreference();
+        loadAudioPreference();
     }
 
     public void onChangeResolution(int selectedPosition) {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(SHARED_PREF_RESOLUTION, selectedPosition);
-        editor.apply();
+        settingsPreferencesUtil.saveResolutionPreference(selectedPosition);
         getView().setResolution(selectedPosition);
     }
 
     public void onChangeVideoEncoder(int selectedPosition) {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt(SHARED_PREF_VIDEO_ENCODER, selectedPosition);
-        editor.apply();
+        settingsPreferencesUtil.saveVideoEncoderPreference(selectedPosition);
         getView().setVideoEncoder(selectedPosition);
     }
 
     public void onChangeAudioStream() {
         isAudioStream = !isAudioStream;
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean(SHARED_PREF_IS_AUDIO_STREAM, isAudioStream);
-        editor.apply();
+        settingsPreferencesUtil.saveAudioStreamPreference(isAudioStream);
         getView().setAudioStream(isAudioStream);
     }
 
@@ -60,21 +44,39 @@ public class SettingsPresenter extends TiPresenter<SettingsView> {
         if (port.isEmpty()) {
             getView().changePortError();
         } else {
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString(RtspServer.KEY_PORT, String.valueOf(port));
-            editor.apply();
+            settingsPreferencesUtil.savePortPreferencePreference(port);
             getView().setPort(port);
             getView().changePortSuccessful();
         }
     }
 
     public void showChangeVideoEncoderDialog(CharSequence[] videoEncoders, String dialogTitle) {
-        int selectedItem = sharedPreferences.getInt(SHARED_PREF_VIDEO_ENCODER, 0);
-        getView().showSelectItemDialog(videoEncoders, dialogTitle, selectedItem, SHARED_PREF_VIDEO_ENCODER);
+        int selectedItem = settingsPreferencesUtil.loadVideoEncoderPreference();
+        getView().showSelectItemDialog(videoEncoders, dialogTitle, selectedItem, OPTION_VIDEO_ENCODER);
     }
 
     public void showChangeResolutionDialog(CharSequence[] resolutions, String dialogTitle) {
-        int selectedItem = sharedPreferences.getInt(SHARED_PREF_RESOLUTION, 0);
-        getView().showSelectItemDialog(resolutions, dialogTitle, selectedItem, SHARED_PREF_RESOLUTION);
+        int selectedItem = settingsPreferencesUtil.loadResolutionPreference();
+        getView().showSelectItemDialog(resolutions, dialogTitle, selectedItem, OPTION_RESOLUTION);
+    }
+
+    private void loadPortPreference() {
+        String port = settingsPreferencesUtil.loadPortPreference();
+        getView().setPort(port);
+    }
+
+    private void loadResolutionPreference() {
+        int resolution = settingsPreferencesUtil.loadResolutionPreference();
+        getView().setResolution(resolution);
+    }
+
+    private void loadVideoEncoderPreference() {
+        int videoEncoder = settingsPreferencesUtil.loadVideoEncoderPreference();
+        getView().setVideoEncoder(videoEncoder);
+    }
+
+    private void loadAudioPreference() {
+        isAudioStream = settingsPreferencesUtil.loadAudioPreference();
+        getView().setAudioStream(isAudioStream);
     }
 }
