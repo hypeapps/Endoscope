@@ -67,6 +67,8 @@
     <string name="grant_permission_to_camera">Grant permission to camera</string>
     <string name="permission_not_granted">Camera permission not granted</string>
     <string name="permission_never_ask">Camera permission set to never ask. You should go to android permission settings.</string>
+    <string name="nfc_error">NFC FAIL</string>
+    <string name="receiver_back_to_menu">BACK TO MAIN MENU</string>
 
 
 </resources>
