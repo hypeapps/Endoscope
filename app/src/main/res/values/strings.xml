@@ -64,6 +64,9 @@
     <string name="ht_made_by_desc">Thank you for installing! \n \nContact E-MAIL: \n PSZEM.SZYM@GMAIL.COM</string>
     <string name="dialog_set">SET</string>
     <string name="port_error">Port cannot be empty</string>
+    <string name="grant_permission_to_camera">Grant permission to camera</string>
+    <string name="permission_not_granted">Camera permission not granted</string>
+    <string name="permission_never_ask">Camera permission set to never ask. You should go to android permission settings.</string>
 
 
 </resources>
