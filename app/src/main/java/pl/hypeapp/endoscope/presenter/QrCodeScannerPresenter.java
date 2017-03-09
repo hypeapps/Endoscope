@@ -1,7 +1,6 @@
 package pl.hypeapp.endoscope.presenter;
 
 import android.Manifest;
-import android.util.Log;
 
 import com.tbruyelle.rxpermissions.Permission;
 import com.tbruyelle.rxpermissions.RxPermissions;
@@ -90,7 +89,6 @@ public class QrCodeScannerPresenter extends TiPresenter<QrCodeScannerView> {
 
     private void startQrCodeCamera() {
         if (rxPermissions.isGranted(CAMERA_PERMISSION)) {
-            Log.e("GRANTED", "GRANTED");
             getView().startQrCodeScanner();
         }
     }
