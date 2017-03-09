@@ -1,4 +1,4 @@
-package pl.hypeapp.endoscope;
+package pl.hypeapp.endoscope.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -6,26 +6,28 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.HashMap;
 
-import pl.hypeapp.fragments.endoscope.NfcReaderFragment;
-import pl.hypeapp.fragments.endoscope.QrCodeScannerFragment;
-import pl.hypeapp.fragments.endoscope.TypeIpFragment;
+import pl.hypeapp.endoscope.ui.fragment.InputIpFragment;
+import pl.hypeapp.endoscope.ui.fragment.NfcReaderFragment;
+import pl.hypeapp.endoscope.ui.fragment.QrCodeScannerFragment;
 
 
-public class ViewStreamPagerAdapter extends FragmentPagerAdapter {
+public class ConnectToStreamPagerAdapter extends FragmentPagerAdapter {
+    private static final int CONNECT_TO_STREAM_PAGES = 3;
+    private HashMap<Integer, Fragment> fragmentHashMap = new HashMap<>();
 
-    public ViewStreamPagerAdapter(FragmentManager fm){
+    public ConnectToStreamPagerAdapter(FragmentManager fm) {
         super(fm);
     }
-    private HashMap<Integer, Fragment> fragmentHashMap = new HashMap<>();
 
     @Override
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new TypeIpFragment();
+                return new InputIpFragment();
             case 1:
                 return new QrCodeScannerFragment();
             case 2:
+                //Due to use fragment's method in activity must be added to hashmap. (Pointer reference)
                 if (fragmentHashMap.get(position) != null) {
                     return fragmentHashMap.get(position);
                 }
@@ -40,6 +42,6 @@ public class ViewStreamPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return CONNECT_TO_STREAM_PAGES;
     }
 }
