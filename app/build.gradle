@@ -8,8 +8,8 @@ android {
         applicationId "pl.hypeapp.endoscope"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 6
-        versionName "2.0"
+        versionCode 5
+        versionName "1.4"
         multiDexEnabled true
     }
     buildTypes {
