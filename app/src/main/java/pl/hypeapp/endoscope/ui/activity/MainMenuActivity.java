@@ -1,18 +1,18 @@
-package pl.hypeapp.endoscope;
+package pl.hypeapp.endoscope.ui.activity;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class MainMenuActivity extends Activity {
+import pl.hypeapp.endoscope.R;
+
+public class MainMenuActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
     public void intentStreamVideo(View view) {
         Intent i =  new Intent(MainMenuActivity.this, StartStreamActivity.class);
