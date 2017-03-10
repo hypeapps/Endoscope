@@ -4,9 +4,9 @@ import android.util.Patterns;
 
 import net.grandcentrix.thirtyinch.TiPresenter;
 
-import pl.hypeapp.endoscope.view.InputIpView;
+import pl.hypeapp.endoscope.view.WriteIpAddressView;
 
-public class InputIpPresenter extends TiPresenter<InputIpView> {
+public class WriteIpAddressPresenter extends TiPresenter<WriteIpAddressView> {
 
     public void validateIpAddress(String streamIpAddress) {
         if (Patterns.IP_ADDRESS.matcher(streamIpAddress).matches()) {

@@ -6,9 +6,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.HashMap;
 
-import pl.hypeapp.endoscope.ui.fragment.InputIpFragment;
 import pl.hypeapp.endoscope.ui.fragment.NfcReaderFragment;
 import pl.hypeapp.endoscope.ui.fragment.QrCodeScannerFragment;
+import pl.hypeapp.endoscope.ui.fragment.WriteIpAddressFragment;
 
 
 public class ConnectToStreamPagerAdapter extends FragmentPagerAdapter {
@@ -23,7 +23,7 @@ public class ConnectToStreamPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new InputIpFragment();
+                return new WriteIpAddressFragment();
             case 1:
                 return new QrCodeScannerFragment();
             case 2:

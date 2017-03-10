@@ -15,23 +15,23 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.hypeapp.endoscope.R;
-import pl.hypeapp.endoscope.presenter.InputIpPresenter;
+import pl.hypeapp.endoscope.presenter.WriteIpAddressPresenter;
 import pl.hypeapp.endoscope.ui.activity.ConnectToStreamActivity;
-import pl.hypeapp.endoscope.view.InputIpView;
+import pl.hypeapp.endoscope.view.WriteIpAddressView;
 
-public class InputIpFragment extends TiFragment<InputIpPresenter, InputIpView> implements InputIpView {
+public class WriteIpAddressFragment extends TiFragment<WriteIpAddressPresenter, WriteIpAddressView> implements WriteIpAddressView {
     @BindView(R.id.ip_edit_text)
     EditText inputIpAddress;
 
     @NonNull
     @Override
-    public InputIpPresenter providePresenter() {
-        return new InputIpPresenter();
+    public WriteIpAddressPresenter providePresenter() {
+        return new WriteIpAddressPresenter();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.type_input_fragment, container, false);
+        View v = inflater.inflate(R.layout.fragemnt_write_ip, container, false);
         ButterKnife.bind(this, v);
         int inputMaxLength = 15;
         inputIpAddress.setFilters(new InputFilter[]{new InputFilter.LengthFilter(inputMaxLength)});
