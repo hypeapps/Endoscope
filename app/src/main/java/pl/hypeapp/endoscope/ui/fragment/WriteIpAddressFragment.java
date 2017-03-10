@@ -31,7 +31,7 @@ public class WriteIpAddressFragment extends TiFragment<WriteIpAddressPresenter, 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragemnt_write_ip, container, false);
+        View v = inflater.inflate(R.layout.fragment_write_ip, container, false);
         ButterKnife.bind(this, v);
         int inputMaxLength = 15;
         inputIpAddress.setFilters(new InputFilter[]{new InputFilter.LengthFilter(inputMaxLength)});
