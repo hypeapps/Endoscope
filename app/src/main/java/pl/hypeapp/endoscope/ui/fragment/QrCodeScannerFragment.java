@@ -39,7 +39,7 @@ public class QrCodeScannerFragment extends TiFragment<QrCodeScannerPresenter, Qr
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.qrcode_scanner_fragment, container, false);
+        View v = inflater.inflate(R.layout.fragment_qrcode_scanner, container, false);
         ButterKnife.bind(this, v);
         initQrCodeScanner();
         return v;
@@ -89,10 +89,16 @@ public class QrCodeScannerFragment extends TiFragment<QrCodeScannerPresenter, Qr
     }
 
     @Override
-    public void showQrCodeScannerResult(String ipAddress) {
+    public void showQrCodeScanResult(String ipAddress) {
         qrCodeScannerResult.setVisibility(View.VISIBLE);
         connectButton.setVisibility(View.VISIBLE);
         qrCodeScannerResult.setText(ipAddress);
+    }
+
+    @Override
+    public void hideQrCodeScanResult() {
+        qrCodeScannerResult.setVisibility(View.GONE);
+        connectButton.setVisibility(View.GONE);
     }
 
     @OnClick(R.id.button_connect)

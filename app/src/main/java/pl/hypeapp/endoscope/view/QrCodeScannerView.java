@@ -27,7 +27,10 @@ public interface QrCodeScannerView extends TiView {
     void stopQrCodeScanner();
 
     @CallOnMainThread
-    void showQrCodeScannerResult(String ipAddress);
+    void showQrCodeScanResult(String ipAddress);
+
+    @CallOnMainThread
+    void hideQrCodeScanResult();
 
     @CallOnMainThread
     void intentToPlayStreamActivity(String ipAddress);

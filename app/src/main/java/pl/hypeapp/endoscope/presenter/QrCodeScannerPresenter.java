@@ -60,7 +60,7 @@ public class QrCodeScannerPresenter extends TiPresenter<QrCodeScannerView> {
     public void onQrCodeRead(String ipAddress) {
         this.ipAddress = ipAddress;
         getView().stopQrCodeScanner();
-        getView().showQrCodeScannerResult(ipAddress);
+        getView().showQrCodeScanResult(ipAddress);
     }
 
     public void connectToStream() {
@@ -90,6 +90,7 @@ public class QrCodeScannerPresenter extends TiPresenter<QrCodeScannerView> {
     private void startQrCodeCamera() {
         if (rxPermissions.isGranted(CAMERA_PERMISSION)) {
             getView().startQrCodeScanner();
+            getView().hideQrCodeScanResult();
         }
     }
 }
