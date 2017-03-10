@@ -10,7 +10,7 @@ public class SettingsPreferencesUtil {
     private static final String SHARED_PREF_VIDEO_ENCODER = "video_encoder";
     private static final String SHARED_PREF_IS_AUDIO_STREAM = "is_audio_stream";
     private static final String SHARED_PREF_IS_FIRST_RUN = "isFirstRun";
-    private static final int SHARED_PREF_DEFAULT_RESOLUTION = 2;
+    private static final int SHARED_PREF_DEFAULT_RESOLUTION = 3;
     private static final int SHARED_PREF_DEFAULT_VIDEO_ENCODER = 0;
     private SharedPreferences settingsPreferences;
 
@@ -31,7 +31,7 @@ public class SettingsPreferencesUtil {
     }
 
     public boolean loadAudioPreference() {
-        return settingsPreferences.getBoolean(SHARED_PREF_IS_AUDIO_STREAM, true);
+        return settingsPreferences.getBoolean(SHARED_PREF_IS_AUDIO_STREAM, false);
     }
 
     public boolean loadIsFirstRunPreference() {
