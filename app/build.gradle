@@ -19,12 +19,12 @@ android {
     }
 }
 
-def androidSupportAppcompatVersion = '25.1.1'
-def androidSupportVersion = '25.1.1'
+def androidSupportAppcompatVersion = '25.2.0'
+def androidSupportVersion = '25.2.0'
 def hanksSmallbangVersion = '0.1.2'
 def qrCodeReaderViewVersion = '2.0.1'
 def rxPermissionVersion = '0.9.1@aar'
-def thirtyinchVersion = '0.7.1'
+def thirtyinchVersion = '0.8.0-rc3'
 def butterKnifeVersion = '8.5.1'
 def rxJavaVersion = '1.2.7'
 def rxAndroidVersion = '1.2.1'
