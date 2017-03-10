@@ -33,7 +33,7 @@ public class NfcReaderFragment extends TiFragment<NfcReaderPresenter, NfcReaderV
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.nfc_reader_fragment, container, false);
+        View v = inflater.inflate(R.layout.fragment_nfc_reader, container, false);
         ButterKnife.bind(this, v);
         return v;
     }
