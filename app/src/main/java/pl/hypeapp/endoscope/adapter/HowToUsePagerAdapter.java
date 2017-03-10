@@ -1,13 +1,13 @@
-package pl.hypeapp.endoscope;
+package pl.hypeapp.endoscope.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import pl.hypeapp.fragments.endoscope.HowToUseFragmentFactory;
-
+import pl.hypeapp.endoscope.ui.fragment.HowToUseFragmentFactory;
 
 public class HowToUsePagerAdapter extends FragmentPagerAdapter {
+    private static final int HOW_TO_USE_PAGES = 4;
 
     public HowToUsePagerAdapter(FragmentManager fm){
         super(fm);
@@ -20,6 +20,6 @@ public class HowToUsePagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return HOW_TO_USE_PAGES;
     }
 }
