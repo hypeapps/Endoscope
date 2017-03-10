@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartStreamActivity">
+    android:keepScreenOn="true"
+    tools:context=".ui.activity.StartStreamActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,7 +14,7 @@
         <net.majorkernelpanic.streaming.gl.SurfaceView
             android:id="@+id/surface"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"/>
 
         <ImageView
             android:id="@+id/imageView33"
@@ -21,9 +23,9 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
-            android:src="@drawable/endoscope_icon_text" />
-    </RelativeLayout>
+            android:src="@drawable/endoscope_icon_text"/>
 
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/about_connection"
@@ -68,7 +70,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:src="@drawable/circle_shape_active" />
+                    android:tag="0"
+                    android:src="@drawable/circle_shape_active"/>
 
                 <ImageView
                     android:id="@+id/circle_page2"
@@ -77,14 +80,17 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:src="@drawable/circle_shape_inactive" />
+                    android:tag="1"
+                    android:src="@drawable/circle_shape_inactive"/>
 
                 <ImageView
                     android:id="@+id/circle_page3"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:src="@drawable/circle_shape_inactive" />
+                    android:tag="2"
+                    android:src="@drawable/circle_shape_inactive"/>
+
             </LinearLayout>
 
         </RelativeLayout>
@@ -98,13 +104,12 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/input_content"
+                android:id="@+id/input_ip_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/start_stream_background"
                 android:gravity="center_vertical|center_horizontal"
-                android:onClick="SlideToInputPage"
                 android:orientation="vertical">
 
                 <ImageView
@@ -112,7 +117,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:cropToPadding="false"
-                    android:src="@drawable/ic_create_white_24dp" />
+                    android:src="@drawable/ic_create_white_24dp"/>
 
                 <TextView
                     android:id="@+id/input_text"
@@ -120,18 +125,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="-5dp"
-                    android:text="@string/ip" />
+                    android:text="@string/ip"/>
 
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/qr_content"
+                android:id="@+id/qr_code_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/view_stream_background"
                 android:gravity="center_vertical|center_horizontal"
-                android:onClick="SlideToQrCodePage"
                 android:orientation="vertical">
 
                 <ImageView
@@ -139,24 +143,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:cropToPadding="false"
-                    android:src="@drawable/ic_memory_white_24dp" />
+                    android:src="@drawable/ic_memory_white_24dp"/>
 
                 <TextView
                     android:id="@+id/qr_text"
                     style="@style/text_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/qr_code" />
+                    android:text="@string/qr_code"/>
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/nfc_content"
+                android:id="@+id/nfc_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/settings_background"
                 android:gravity="center_vertical|center_horizontal"
-                android:onClick="SlideToNfcPage"
                 android:orientation="vertical">
 
                 <ImageView
@@ -164,18 +167,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:cropToPadding="false"
-                    android:src="@drawable/ic_nfc_white_24dp" />
+                    android:src="@drawable/ic_nfc_white_24dp"/>
 
                 <TextView
                     android:id="@+id/nfc_text"
                     style="@style/text_style"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/nfc" />
+                    android:text="@string/nfc"/>
             </LinearLayout>
 
         </LinearLayout>
-    </LinearLayout>
 
+    </LinearLayout>
 
 </RelativeLayout>

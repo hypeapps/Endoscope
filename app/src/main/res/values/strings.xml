@@ -11,7 +11,7 @@
     <string name="resolution">Resolution</string>
     <string name="set_video_resolution">Set video resolution</string>
     <string name="enable_sound_stream">Enable audio stream</string>
-    <string name="off">OFF</string>
+    <string name="disabled">OFF</string>
     <string name="enabled">ON</string>
     <string name="port">Port</string>
     <string name="set_port">Set port</string>
@@ -62,6 +62,13 @@
     <string name="ht_welcome_desc">Endoscope lets you to stream live video between android devices!</string>
     <string name="made_by_header">Endoscope made by</string>
     <string name="ht_made_by_desc">Thank you for installing! \n \nContact E-MAIL: \n PSZEM.SZYM@GMAIL.COM</string>
-
-
+    <string name="dialog_set">SET</string>
+    <string name="port_error">Port cannot be empty</string>
+    <string name="grant_permission_to_camera">Grant permission to camera</string>
+    <string name="permission_not_granted">Camera permission not granted</string>
+    <string name="permission_never_ask">Camera permission set to never ask. You should go to android permission settings.</string>
+    <string name="nfc_error">NFC FAIL</string>
+    <string name="receiver_back_to_menu">BACK TO MAIN MENU</string>
+    <string name="rtsp_connecting">Stream connecting… It can take a while</string>
+    <string name="error_dialog_title">Error</string>
 </resources>

@@ -1,110 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="pl.hypeapp.endoscope" >
+          package="pl.hypeapp.endoscope">
 
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="true" />
+        android:required="true"/>
     <uses-feature
         android:name="android.hardware.camera.autofocus"
-        android:required="true" />
+        android:required="true"/>
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false"/>
 
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <uses-permission android:name="android.permission.NFC" />
-    <uses-feature android:name="android.hardware.nfc" android:required="false"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.NFC"/>
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/App.Theme" >
+        android:theme="@style/App.Theme">
         <activity
-            android:name="pl.hypeapp.endoscope.MainMenuActivity"
-            android:theme="@style/App.Theme" >
+            android:name="pl.hypeapp.endoscope.ui.activity.MainMenuActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/App.Theme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="pl.hypeapp.endoscope.SplashScreenActivity"
-            android:theme="@style/App.Theme" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="pl.hypeapp.endoscope.ConnectToStreamActivity"
-            android:theme="@style/App.Theme"
-            android:launchMode="singleTask">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-
-            <intent-filter>
-                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
                 <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="text/plain" />
             </intent-filter>
-
         </activity>
         <activity
-            android:name="pl.hypeapp.endoscope.StartStreamActivity"
-            android:theme="@style/App.Theme"
-            android:launchMode="singleInstance">
+            android:name="pl.hypeapp.endoscope.ui.activity.SplashScreenActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/App.Theme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-
-
         </activity>
         <activity
-            android:name="pl.hypeapp.endoscope.SettingsActivity"
-            android:theme="@style/App.Theme" >
+            android:name="pl.hypeapp.endoscope.ui.activity.ConnectToStreamActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/App.Theme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
-        </activity>
-        <activity
-        android:name="pl.hypeapp.endoscope.HowToUseActivity"
-        android:theme="@style/App.Theme" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
-        </activity>
-        <activity
-            android:name="pl.hypeapp.endoscope.PlayStreamActivity"
-            android:theme="@style/App.Theme"
-            android:configChanges="orientation|screenSize">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
 
-                <category android:name="android.intent.category.DEFAULT" />
+        </activity>
+        <activity
+            android:name="pl.hypeapp.endoscope.ui.activity.StartStreamActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/App.Theme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+
+        </activity>
+        <activity
+            android:name="pl.hypeapp.endoscope.ui.activity.SettingsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/App.Theme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="pl.hypeapp.endoscope.ui.activity.HowToUseActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/App.Theme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="pl.hypeapp.endoscope.ui.activity.PlayStreamActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="landscape"
+            android:theme="@style/App.Theme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
 
-        <service android:name="net.majorkernelpanic.streaming.rtsp.RtspServer" />
-
-
+        <service android:name="net.majorkernelpanic.streaming.rtsp.RtspServer"/>
 
     </application>
 
