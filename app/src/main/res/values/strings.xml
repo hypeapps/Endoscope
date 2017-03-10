@@ -71,4 +71,6 @@
     <string name="receiver_back_to_menu">BACK TO MAIN MENU</string>
     <string name="rtsp_connecting">Stream connecting… It can take a while</string>
     <string name="error_dialog_title">Error</string>
+    <string name="url_privacy_policy">https://github.com/hypeapps/Endoscope/blob/master/privacy-policy.txt</string>
+    <string name="privacy_policy">Privacy policy</string>
 </resources>

@@ -2,6 +2,8 @@ package pl.hypeapp.endoscope.ui.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
@@ -145,5 +147,13 @@ public class SettingsActivity extends TiActivity<SettingsPresenter, SettingsView
     @Override
     public void setPort(String port) {
         portValue.setText(port);
+    }
+
+    @Override
+    @OnClick(R.id.privacy_policy)
+    public void intentToPrivacyPolicy() {
+        Uri uri = Uri.parse(getString(R.string.url_privacy_policy));
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
     }
 }
