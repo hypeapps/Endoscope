@@ -64,10 +64,13 @@
     <string name="ht_made_by_desc">インストールありがとうございます! \n \n連絡先 メール: \n PSZEM.SZYM@GMAIL.COM</string>
     <string name="dialog_set">SET</string>
     <string name="port_error">Port cannot be empty</string>
+    <string name="permission_not_granted">Camera permission not granted</string>
     <string name="grant_permission_to_camera">Grant permission to camera</string>
     <string name="permission_never_ask">Camera permission set to never ask. You should go to android permission settings.</string>
     <string name="nfc_error">NFC FAIL</string>
     <string name="receiver_back_to_menu">BACK TO MAIN MENU</string>
     <string name="rtsp_connecting">Stream connecting… It can take a while</string>
     <string name="error_dialog_title">Error</string>
+    <string name="url_privacy_policy">https://github.com/hypeapps/Endoscope/blob/master/privacy-policy.txt</string>
+    <string name="privacy_policy">Privacy policy</string>
 </resources>

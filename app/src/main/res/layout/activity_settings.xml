@@ -180,4 +180,16 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/privacy_policy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/privacy_policy"
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/settings_window"
+        android:layout_alignRight="@+id/settings_window"
+        android:layout_alignEnd="@+id/settings_window"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="20dp"/>
+
 </RelativeLayout>
