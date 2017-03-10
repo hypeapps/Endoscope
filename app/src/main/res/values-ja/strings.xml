@@ -68,4 +68,6 @@
     <string name="permission_never_ask">Camera permission set to never ask. You should go to android permission settings.</string>
     <string name="nfc_error">NFC FAIL</string>
     <string name="receiver_back_to_menu">BACK TO MAIN MENU</string>
+    <string name="rtsp_connecting">Stream connecting… It can take a while</string>
+    <string name="error_dialog_title">Error</string>
 </resources>
