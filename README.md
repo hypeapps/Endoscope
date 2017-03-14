@@ -1,4 +1,4 @@
-# Endoscope - RTSP live video streamer for android devices via Wi-Fi.
+# Endoscope - RTSP live video streamer for android devices via Wi-Fi. [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Endoscope-brightgreen.svg?style=flat)](https://android-arsenal.com/details/3/4086)
 
 ![banner](https://s32.postimg.org/rsfitgp9x/endoscope_banner.png)
 
@@ -57,12 +57,12 @@ Thanks to
 
 ## Download
 
-You can download app at [Google Play](https://play.google.com/store/apps/details?id=pl.hypeapp.endoscope)
-
+You can download app at [Google Play](https://play.google.com/store/apps/details?id=pl.hypeapp.endoscope) or
+[F-Droid](https://f-droid.org/repository/browse/?fdid=pl.hypeapp.endoscope)
 ## Contact me
 
 E-mail: pszem.szym@gmail.com
 Twitter: https://twitter.com/hype_app
 
-
-
+## License
+>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
