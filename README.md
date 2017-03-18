@@ -7,10 +7,10 @@ Endoscope allows you to fast link two android devices and stream live video from
 
 You can stream directly at VLC. Ip address looks like rtsp://ip address:port/
 
-+<a href="https://f-droid.org/repository/browse/?fdid=pl.hypeapp.endoscope" target="_blank">
-+<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="90"/></a>
-+<a href="https://play.google.com/store/apps/details?id=pl.hypeapp.endoscope" target="_blank">
-+<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="90"/></a>
+<a href="https://f-droid.org/repository/browse/?fdid=pl.hypeapp.endoscope" target="_blank">
+<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="90"/></a>
+<a href="https://play.google.com/store/apps/details?id=pl.hypeapp.endoscope" target="_blank">
+<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="90"/></a>
 
 ## You can link to stream via:
 
