@@ -37,18 +37,16 @@ You can configure:
 
 - audio stream
 
-## Android libraries
-
-Thanks to
+## Used libraries
 
 - fyhertz [libstreaming](https://github.com/fyhertz/libstreaming)
-
 - kenglxn [QRGen](https://github.com/kenglxn/QRGen)
-
 - dlazaro66 [QRCodeReaderView](https://github.com/dlazaro66/QRCodeReaderView)
-
 - hanks-zyh [SmallBang](https://github.com/hanks-zyh/SmallBang)
-
+- ReactiveX [RxJava](https://github.com/ReactiveX/RxJava)
+- ReactiveX [RxAndroid](https://github.com/ReactiveX/RxAndroid)
+- JakeWharton [ButterKnife](https://github.com/JakeWharton/butterknife)
+- RxPermissions [tbruyelle](https://github.com/tbruyelle/RxPermissions)
 
 ## Screenshots
 
