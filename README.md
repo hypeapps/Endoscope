@@ -46,7 +46,7 @@ You can configure:
 - ReactiveX [RxJava](https://github.com/ReactiveX/RxJava)
 - ReactiveX [RxAndroid](https://github.com/ReactiveX/RxAndroid)
 - JakeWharton [ButterKnife](https://github.com/JakeWharton/butterknife)
-- RxPermissions [tbruyelle](https://github.com/tbruyelle/RxPermissions)
+- tbruyelle [RxPermissions](https://github.com/tbruyelle/RxPermissions)
 
 ## Screenshots
 
