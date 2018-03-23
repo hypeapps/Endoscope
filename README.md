@@ -2,6 +2,7 @@
 
 ![banner](https://s32.postimg.org/rsfitgp9x/endoscope_banner.png)
 
+#### Project is no longer supported. Alternative solution is under development. Stay tuned.
 
 Endoscope allows you to fast link two android devices and stream live video from camera one device to another. Video stream is over Wi-Fi. One device hosts live stream and another connect to it. Remember to use Endscope your devices must be connect to the same wi-fi network.
 
