@@ -4,9 +4,9 @@
 
 #### Project is no longer supported. Alternative solution is under development. Stay tuned.
 
-Endoscope allows you to fast link two android devices and stream live video from camera one device to another. Video stream is over Wi-Fi. One device hosts live stream and another connect to it. Remember to use Endscope your devices must be connect to the same wi-fi network.
+Endoscope allows you to fast link two android devices and stream live video from camera one device to another. Video stream is over Wi-Fi. One device hosts live stream and another connect to it. To use Endscope the devices must be connect to the same wi-fi network.
 
-You can stream directly at VLC. Ip address looks like rtsp://ip address:port/
+You can stream directly at VLC media player. Ip address looks like rtsp://ip address:port/
 
 <a href="https://f-droid.org/repository/browse/?fdid=pl.hypeapp.endoscope" target="_blank">
 <img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="90"/></a>
