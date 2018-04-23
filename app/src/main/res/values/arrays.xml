@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="resolutions">
+    <string-array translatable="false" name="resolutions">
         <item name="0">800x480</item>
         <item name="1">640x480</item>
         <item name="2">480x320</item>
@@ -8,14 +8,14 @@
     </string-array>
 
 
-    <integer-array name="resolution_width">
+    <integer-array translatable="false" name="resolution_width">
         <item>800</item>
         <item>640</item>
         <item>480</item>
         <item>320</item>
     </integer-array>
 
-    <integer-array name="resolution_height">
+    <integer-array translatable="false" name="resolution_height">
         <item>480</item>
         <item>480</item>
         <item>320</item>
@@ -23,12 +23,12 @@
     </integer-array>
 
 
-    <string-array name="stream_audio">
+    <string-array translatable="false" name="stream_audio_bool">
         <item name="0">ON</item>
         <item name="1">OFF</item>
     </string-array>
 
-    <string-array name="video_encoders">
+    <string-array translatable="false" name="video_encoders">
         <item name="0">H264</item>
         <item name="1">H263</item>
     </string-array>

@@ -199,7 +199,12 @@ public class AACStream extends AudioStream {
 		((AACLATMPacketizer)mPacketizer).setSamplingRate(mQuality.samplingRate);
 
 		mAudioRecord = new AudioRecord(MediaRecorder.AudioSource.MIC, mQuality.samplingRate, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT, bufferSize);
-		mMediaCodec = MediaCodec.createEncoderByType("audio/mp4a-latm");
+		try {
+			mMediaCodec = MediaCodec.createEncoderByType("audio/mp4a-latm");
+		} catch (IOException e){
+			Log.d(TAG, "Unable to instantiate a decoder, trying Google one...");
+			mMediaCodec = MediaCodec.createByCodecName("OMX.google.aac.encoder");
+		}
 		MediaFormat format = new MediaFormat();
 		format.setString(MediaFormat.KEY_MIME, "audio/mp4a-latm");
 		format.setInteger(MediaFormat.KEY_BIT_RATE, mQuality.bitRate);
