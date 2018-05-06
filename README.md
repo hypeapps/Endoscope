@@ -1,6 +1,6 @@
 # Endoscope - RTSP live video streamer for android devices via Wi-Fi. [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Endoscope-brightgreen.svg?style=flat)](https://android-arsenal.com/details/3/4086)
 
-![banner](https://s32.postimg.org/rsfitgp9x/endoscope_banner.png)
+![banner](https://raw.githubusercontent.com/hypeapps/Endoscope/master/img/banner.jpg)
 
 #### Project is no longer supported. Alternative solution is under development. Stay tuned.
 
@@ -51,13 +51,7 @@ You can configure:
 
 ## Screenshots
 
-![scr1](https://s31.postimg.org/tlnf27c97/scr10.png) 
-![scr2](https://s31.postimg.org/melq6c1cb/scr3.png) 
-![scr3](https://s31.postimg.org/uvl8h9617/scr1.png) 
-![scr4](https://s31.postimg.org/9ohht8te3/scr7.png) 
-![scr5](https://s31.postimg.org/a2itsudhn/scr8.png) 
-![scr5](https://s32.postimg.org/4gij8qz6d/scr6.png) 
-![scr5](https://s32.postimg.org/uasbyiz6d/scr4.png) 
+<img src="https://raw.githubusercontent.com/hypeapps/Endoscope/master/img/scr1.png" alt="Your Library" height="400"/> <img src="https://raw.githubusercontent.com/hypeapps/Endoscope/master/img/scr2.png" alt="Your Library" height="400"/> <img src="https://raw.githubusercontent.com/hypeapps/Endoscope/master/img/scr3.png" alt="Your Library" height="400"/> <img src="https://raw.githubusercontent.com/hypeapps/Endoscope/master/img/scr4.png" alt="Your Library" height="400"/> <img src="https://raw.githubusercontent.com/hypeapps/Endoscope/master/img/scr5.png" alt="Your Library" height="400"/> <img src="https://raw.githubusercontent.com/hypeapps/Endoscope/master/img/scr6.png" alt="Your Library" height="400"/> 
 
 ## Contact me
 
