@@ -13,10 +13,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import pl.hypeapp.endoscope.R;
 import pl.hypeapp.endoscope.presenter.SplashScreenPresenter;
+import pl.hypeapp.endoscope.ui.animation.SmallBang;
+import pl.hypeapp.endoscope.ui.animation.SmallBangListener;
 import pl.hypeapp.endoscope.util.SettingsPreferencesUtil;
 import pl.hypeapp.endoscope.view.SplashScreenView;
-import xyz.hanks.library.SmallBang;
-import xyz.hanks.library.SmallBangListener;
+
 
 public class SplashScreenActivity extends TiActivity<SplashScreenPresenter, SplashScreenView> implements SplashScreenView {
     private static final int SMALLBANG_RADIUS = 180;

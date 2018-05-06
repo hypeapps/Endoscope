@@ -41,7 +41,6 @@ dependencies {
     }
     compile "com.jakewharton:butterknife:$butterKnifeVersion"
     compile "com.tbruyelle.rxpermissions:rxpermissions:$rxPermissionVersion"
-    compile "hanks.xyz:smallbang-library:$hanksSmallbangVersion"
     compile "io.reactivex:rxandroid:$rxAndroidVersion"
     compile "io.reactivex:rxjava:$rxJavaVersion"
     compile "net.grandcentrix.thirtyinch:thirtyinch:$thirtyinchVersion"
