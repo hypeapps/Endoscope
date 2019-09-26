@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Endoscope</string>
+
+    <string name="resolution_dialog_title">Stel videoresolutie in</string>
+    <string name="stream_sound_dialog_title">Zet streamgeluid aan</string>
+    <string name="port_dialog_title">Stel poort in</string>
+    <string name="codec_dialog_title">Stel videocodec in</string>
+    <string name="button_text">Stel in</string>
+    <string name="stream_audio">Streamaudio</string>
+    <string name="settings">INSTELLINGEN</string>
+    <string name="resolution">Resolutie</string>
+    <string name="set_video_resolution">Stel videoresolutie in</string>
+    <string name="enable_sound_stream">Zet audio stream aan</string>
+    <string name="disabled">UIT</string>
+    <string name="enabled">AAN</string>
+    <string name="port">Poort</string>
+    <string name="set_port">Stel poort in</string>
+    <string name="set_video_encoder_title">Stel video-encoder in</string>
+    <string name="video_encoder">Video-encoder</string>
+    <string name="start_stream">START STREAM</string>
+    <string name="connect_stream">VERBIND STREAM</string>
+    <string name="settings_uppercase">INSTELLINGEN</string>
+    <string name="how_to_use">HOE TE GEBRUIKEN</string>
+    <string name="cancel">Annuleer</string>
+    <string name="port_changed">Poort is gewijzigd!</string>
+    <string name="skip">SLA OVER</string>
+    <string name="done">KLAAR</string>
+    <string name="welcome">Welkom!</string>
+    <string name="nfc">NFC</string>
+    <string name="qr_code">QR-CODE</string>
+    <string name="type_ip">TYPE IP</string>
+    <string name="link_to_stream_via_nfc">Link naar stream via NFC</string>
+    <string name="type_ip_address">Type IP-adres</string>
+    <string name="ip">IP</string>
+    <string name="scan_qr_code">Scan QR-code</string>
+    <string name="scan_qr_code_capital">SCAN QR-CODE</string>
+    <string name="link_nfc">LINK NFC</string>
+    <string name="write_ip_addres">Schrijf IP-adres</string>
+    <string name="connect">Verbind</string>
+
+    <string name="link_stream_via_nfc">Link stream via NFC</string>
+    <string name="read_nfc">LEES NFC</string>
+    <string name="ip_default">255.255.255.255</string>
+    <string name="camera_not_found">Cameratoestemming is niet gevonden.</string>
+    <string name="qr_code_not_found">QR-code is niet gevonden.</string>
+
+    <string name="about_nfc_description">Zet NFC aan. Klik vervolgens op het apparaat dat je wil verbinden op VERBIND STREAM en laat de twee apparaten elkaar aanraken.</string>
+    <string name="about_input_ip">Klik op START STREAM op het apparaat waar je mee wil verbinden en voer dan het IP-adres in.</string>
+    <string name="nfc_reader_description">Klik op START STREAM op het apparaat waar je mee mee wil verbinden, kies NFC en laat daarna de twee apparaten elkaar raken. Ga na dat NFC is aangezet. </string>
+    <string name="scan_qr_code_description">Klik op VERBIND STREAM op het apparaat waar je mee wil verbinden en scan dan de QR-code.</string>
+    <string name="scanner_qr_code">Klik op START STREAM op het apparaat dat je wil verbinden en scan vervolgens de QR-code.</string>
+    <string name="about_type_ip">Klik op BEKIJK STREAM op het apparaat dat je wil verbinden en voer dan boven het IP-adres in.</string>
+    <string name="about_qr_code"></string>
+
+    <string name="wi_fi_disabled">Wifi is uitgezet..</string>
+    <string name="package_name">pl.hypeapp.vrstream</string>
+    <string name="header_enable_wifi">Zet wifi aan</string>
+    <string name="header_link_via">Je kan linken naar de stream via</string>
+    <string name="or">or</string>
+    <string name="ht_wi_fi_enabled">Zorg ervoor dat wifi op je apparaten aan is gezet en aangesloten op hetzelfde netwerk.</string>
+    <string name="ht_link_via">Het koppelen van apparaten is op verschillende manieren mogelijk.</string>
+    <string name="ht_welcome_desc">Endoscope stelt u in staat om live video te streamen tussen Android-apparaten!</string>
+    <string name="made_by_header">Endoscope is gemaakt door</string>
+    <string name="ht_made_by_desc">Bedankt voor installeren! \n \nContact E-MAIL: \n PSZEM.SZYM@GMAIL.COM</string>
+    <string name="dialog_set">STEL IN</string>
+    <string name="port_error">Poort mag niet leeg zijn</string>
+    <string name="grant_permission_to_camera">Verleen toestemming aan camera</string>
+    <string name="permission_not_granted">Cameratoestemming is niet verleend</string>
+    <string name="permission_never_ask">Cameratoestemming is ingesteld om nooit te vragen. Je moet naar instellingen gaan van Android-toestemmingen.</string>
+    <string name="nfc_error">NFC-FOUT</string>
+    <string name="receiver_back_to_menu">TERUG NAAR HOOFDMENU</string>
+    <string name="rtsp_connecting">Stream verbinden… Dit kan even duren</string>
+    <string name="error_dialog_title">Fout</string>
+    <string name="url_privacy_policy">https://github.com/hypeapps/Endoscope/blob/master/privacy-policy.txt</string>
+    <string name="privacy_policy">Privacybeleid</string>
+</resources>
